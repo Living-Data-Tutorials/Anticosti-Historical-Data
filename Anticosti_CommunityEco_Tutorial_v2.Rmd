@@ -20,7 +20,7 @@
 </center>
 
 
-```{r setup, include=FALSE} 
+```{r setup, include = FALSE} 
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -64,7 +64,21 @@ Their sampling approach was as follows:
 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
-tree <- read.csv("anticosti_1973_trees.csv", header = TRUE) 
+# Tree condition data url paths
+url_tree <- "https://open.canada.ca/data/en/dataset/9dda09b0-649f-4002-b207-7b204eb81cbb/resource/a1606235-95aa-4c81-a8db-19b852be288c"
+csv_tree <- "download/anticosti_1973_trees.csv"
+
+# Import the data
+tree <- read.csv(file.path(url_tree, csv_tree), header = TRUE)
+
+# Keep only the columns we need
+tree <- tree[, c("Block", "Compartment", "Plot",
+                 "Cell", "Species", "Species_abbrev",
+                 "Condition", "Number")]
+
+# Separate row number in instances to have all individual counts
+test[rep(seq(.N), Number)]
+
 ```
 
 ## 1a. Before answering this question, we need to understand how different tree species are spread out across the various blocks:

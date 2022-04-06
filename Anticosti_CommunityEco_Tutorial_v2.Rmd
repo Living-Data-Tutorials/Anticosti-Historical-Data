@@ -1,3 +1,15 @@
+---
+title: "After the storm: Impacts of a hemlooper looper (*Lambdina fiscellaria*) outbreak on tree species in Anticosti Island, 1973"
+author: "Living Data Project - Victoria Marie Glynn (McGill) and Maxime Fraser Franco (UQAM)"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  #github_document: default
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+---
+
 
 # **After the storm: Community composition and diversity shifts after a hemlooper looper outbreak (*Lambdina fiscellaria*) on Anticosti Island, 1973**
 
@@ -7,6 +19,8 @@
 ## Using real data from a devastating pest outbreak in Québec, we will begin to explore how **biological invasions** impact ecological communities. 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
+
+Start by giving some context/background on Anticosti to emphazise why it is important...
 
 ### When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that show lions hunting zebras. But predator-prey interactions are often less conspicuous, and still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon, and how this can reverberate throughout the greater beetle and lepidoptera community. 
 

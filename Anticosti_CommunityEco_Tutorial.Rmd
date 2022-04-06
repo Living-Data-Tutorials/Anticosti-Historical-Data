@@ -1,0 +1,67 @@
+
+# **After the storm: Community composition and diversity shifts after a hemlooper looper outbreak (*Lambdina fiscellaria*) on Anticosti Island, 1973**
+
+
+#### Living Data Project - Maxime Fraser Franco (UQAM) and Victoria Marie Glynn (McGill)
+
+Using real data from a devastating pest outbreak in Québec, we will begin to explore how **disturbance** in ecological communities impact:
+
+- community composition
+- diversity metrics
+- species abundance curves
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that show lions hunting zebras. But predator-prey interactions are often less conspicuous, and still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon, and how this can reverberate throughout the greater beetle and lepidoptera community. 
+
+<center>
+
+![Map of Anticosti Island, Québec](anticosti_loc.png)
+
+
+![Hemlock looper larvae on a tree branch](hemlock_looper_larva.jpg)
+
+</center>
+
+
+```{r setup, include=FALSE} 
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## **0. What happened?** 
+
+[insert before and after pictures]
+[talk about degree of damage]
+[link follow-up papers on the area]
+
+
+------------------------------------------------------------------------------
+
+## **1. Getting to know our data**
+
+### Let us begin by loading in the two datasets: 
+
+#### First, let us call in the tree composition dataset, which we will call 'tree'
+
+
+```{r, echo = TRUE}
+tree <- read.csv("anticosti_1973_trees.csv", header = TRUE) 
+```
+
+
+#### Next, let us call in the beetle and lepidoptera biodiversity dataset, which we will call 'insect' 
+
+
+```{r, echo = TRUE}
+insect <- read.csv("microsigebready_carabeslepidoptera_anticosti_1993_en.csv", header = TRUE) 
+```
+
+Before beginning our analyses, it is great practice to quickly inspec the data and ask ourselves, is all the information we are looking for there? 
+
+To do that, there are a handful of commands we can use: 
+
+-------------------------------------------------------------------------------
+
+## **2. Species accumulation curves**
+
+

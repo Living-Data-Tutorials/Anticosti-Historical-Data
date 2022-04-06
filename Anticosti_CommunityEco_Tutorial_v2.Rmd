@@ -1,3 +1,15 @@
+---
+title: "After the storm: Impacts of a hemlooper looper (*Lambdina fiscellaria*) outbreak on tree species in Anticosti Island, 1973"
+author: "Living Data Project - Victoria Marie Glynn (McGill) and Maxime Fraser Franco (UQAM)"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  #github_document: default
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+---
+
 
 # **After the storm: Community composition and diversity shifts after a hemlooper looper outbreak (*Lambdina fiscellaria*) on Anticosti Island, 1973**
 
@@ -8,7 +20,9 @@
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-### When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that show lions hunting zebras. But predator-prey interactions are often less conspicuous, and still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon, and how this can reverberate throughout the greater beetle and lepidoptera community. 
+Start by giving some context/background on Anticosti to emphazise why it is important...
+
+### When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that show lions hunting zebras. But predator-prey interactions are often less conspicuous, and still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon. 
 
 <center>
 
@@ -20,7 +34,7 @@
 </center>
 
 
-```{r setup, include=FALSE} 
+```{r setup, include = FALSE} 
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -64,7 +78,21 @@ Their sampling approach was as follows:
 
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
-tree <- read.csv("anticosti_1973_trees.csv", header = TRUE) 
+# Tree condition data url paths
+url_tree <- "https://open.canada.ca/data/en/dataset/9dda09b0-649f-4002-b207-7b204eb81cbb/resource/a1606235-95aa-4c81-a8db-19b852be288c"
+csv_tree <- "download/anticosti_1973_trees.csv"
+
+# Import the data
+tree <- read.csv(file.path(url_tree, csv_tree), header = TRUE)
+
+# Keep only the columns we need
+tree <- tree[, c("Block", "Compartment", "Plot",
+                 "Cell", "Species", "Species_abbrev",
+                 "Condition", "Number")]
+
+# Separate row number in instances to have all individual counts
+test[rep(seq(.N), Number)]
+
 ```
 
 ## 1a. Before answering this question, we need to understand how different tree species are spread out across the various blocks:

@@ -1,11 +1,9 @@
+
 ---
 title: "After the storm: Impacts of a hemlock looper (*Lambdina fiscellaria*) outbreak on tree species in Anticosti Island, 1973"
 author: "Living Data Project - Victoria Marie Glynn (McGill) and Maxime Fraser Franco (UQAM)"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-description: "LDP Anticosti dataset tutorial"
-output:
-progressive: true
-allow_skip: true
+output: learnr::tutorial
 runtime: shiny_prerendered
 ---
 
@@ -266,8 +264,16 @@ question("Do hemlock loopers preferentially attack a given tree species?",
 )
 ```
 
-# What do our findings imply in terms of pest management on Anticosti? 
+# What do our findings imply in terms of pest management on Anticosti Island? 
 
-This dataset represents one of the many hemlock looper outbreaks Anticosti island, and Québec as a whole, has experienced. Based on your findings, for homework before our next lecture please reflect on the following questions:
+This dataset represents one of the many hemlock looper outbreaks Anticosti island, and Québec as a whole, has experienced. Based on your findings, for homework before our next lecture please reflect on the following questions. To help inform your answers, please refer to the following helpful links about hemlock looper:
 
-- 
+- [Hemlock looper overview](https://www.plantwise.org/knowledgebank/datasheet/29749)
+- [Biological control of the hemlock looper](https://www.plantwise.org/KnowledgeBank/pestalert?pan=19740515762)
+- [Hemlock looper life history, management considerations](https://www.fs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb5191788.pdf)
+
+**Questions**
+
+1. What trees would you most closely monitor? 
+2. What additional protections/restrictions should exist on Anticosti island?
+3.  What management suggestions would you provide to the MFPP? 

@@ -1,5 +1,5 @@
 ---
-title: "After the storm: Impacts of a hemlooper looper (*Lambdina fiscellaria*) outbreak on tree species in Anticosti Island, 1973"
+title: "After the storm: Impacts of a hemlock looper (*Lambdina fiscellaria*) outbreak on tree species in Anticosti Island, 1973"
 author: "Living Data Project - Victoria Marie Glynn (McGill) and Maxime Fraser Franco (UQAM)"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
@@ -10,26 +10,17 @@ output:
     number_sections: true
 ---
 
-
-# **After the storm: Community composition and diversity shifts after a hemlooper looper outbreak (*Lambdina fiscellaria*) on Anticosti Island, 1973**
-
-
-#### Living Data Project - Maxime Fraser Franco (UQAM) and Victoria Marie Glynn (McGill)
-
-## Using real data from a devastating pest outbreak in Québec, we will begin to explore how **biological invasions** impact ecological communities. 
+**Using real data from a devastating pest outbreak in Québec, we will begin to explore how **biological invasions** impact ecological communities.**
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 Start by giving some context/background on Anticosti to emphazise why it is important...
 
-### When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that show lions hunting zebras. But predator-prey interactions are often less conspicuous, and still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon. 
+When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that show lions hunting zebras. But predator-prey interactions are often less conspicuous, and still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon. 
 
 <center>
 
-![Map of Anticosti Island, Québec](anticosti_loc.png)
-
-
-![Hemlock looper larvae on a tree branch](hemlock_looper_larva.jpg)
+![Map of Anticosti Island, Québec](anticosti_loc.png) ![Hemlock looper larvae on a tree branch](hemlock_looper_larva.jpg)
 
 </center>
 
@@ -38,7 +29,7 @@ Start by giving some context/background on Anticosti to emphazise why it is impo
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# **0. What happened?** 
+# What happened? 
 
 [insert before and after pictures]
 
@@ -56,21 +47,15 @@ Their sampling approach was as follows:
 ![Sampling design for forest inventory](sampling_design.png)
 </center>
 
-#### For this tutorial, we will focus on the largest category, the block level. 
+**For this tutorial, we will focus on the largest category, the block level.**
 
-#### Given the hemlock looper was such an aggressive pest, our task today is to determine:
+**Given the hemlock looper was such an aggressive pest, our task today is to determine:**
 
-<br> 
-<br> 
-<center>
-#### **(1) Did the hemlock looper attack trees at random?**
-#### or 
-#### **(2) Does the hemlock looper preferentially attack some trees?**
-</center>
-<br> 
-<br> 
-
-### Based on what you find, we will ask you to provide some management strategies, as the hemlock looper is still an issue in Québec's forests. 
+**1) Does the hemlock looper preferentially attack some trees?**
+or 
+**2) Did the hemlock looper attack trees at random?**
+ 
+**Based on what you find, we will ask you to provide some management strategies, as the hemlock looper is still an issue in Québec's forests.**
 
 ------------------------------------------------------------------------------
 <center>
@@ -91,7 +76,7 @@ tree <- tree[, c("Block", "Compartment", "Plot",
                  "Condition", "Number")]
 
 # Separate row number in instances to have all individual counts
-test[rep(seq(.N), Number)]
+#test[rep(seq(.N), Number)]
 
 ```
 
@@ -102,7 +87,6 @@ test[rep(seq(.N), Number)]
 
 library(ggplot2)
 library(viridis)
-library(hrbrthemes)
 
 
 cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")

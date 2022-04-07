@@ -1,14 +1,12 @@
-
 ---
 title: "After the storm: Impacts of a hemlock looper (*Lambdina fiscellaria*) outbreak on tree species in Anticosti Island, 1973"
 author: "Living Data Project - Victoria Marie Glynn (McGill) and Maxime Fraser Franco (UQAM)"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
+description: "blablabla"
 output:
-  #github_document: default
-  html_document:
-    toc: true
-    toc_float: true
-    number_sections: true
+  learnr::tutorial:
+  progressive: true
+  allow_skip: true
 runtime: shiny_prerendered
 ---
 
@@ -156,7 +154,7 @@ question("What tree species is the most abundant in the data? Select all that ap
   answer("White birch (BOP) - *Betula papyrifera*"),
   answer("White spruce (EPB) - *Picea glauca*"),
   answer("Black spruce (EPN) - *Picea mariana*"),
-  answer("Larch (Meleze) - *Larix* spp."),
+  answer("American Larch (Meleze) - *Larix laricina* spp."),
   answer("Aspen (Peuplier) - *Populus* spp."),
   answer("Pine (Pin) - *Pinus* spp."),
   answer("Balsam fir (SAB) - *Abies balsamea*", correct = TRUE)

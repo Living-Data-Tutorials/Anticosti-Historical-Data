@@ -21,7 +21,7 @@ When you think of predator-prey interactions, what comes to mind? Perhaps it is 
 Map of Anticosti Island, Québec
 
 ```{r echo=FALSE}
-knitr::include_graphics('hemlock_looper_larva.jpg')
+knitr::include_graphics('./hemlock_looper_larva.jpg')
 ```
 
 The hemlock looper is a moth pest that is found [all across Canada](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf), and into the USA, as far south as the state of Georgia. Since 1910, it has wrecked havok in  Québec's forests. Between 1910 and 1975, these outbreaks caused an estimated [24 million cubic meters of forest to be lost](https://fr.wikipedia.org/wiki/Lambdina_fiscellaria) in the province. Since then, additional outbreaks have occurred across Québec in places like Bas-Saint-Laurent , Gaspésie , and Anticosti Island. 
@@ -31,7 +31,7 @@ Since the first outbreak, the Ministry of Forests, Wildlife and Parks of Quebec 
 
 <br>
 ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('balsam_looper.jpg')
+knitr::include_graphics('./balsam_looper.jpg')
 ```
 <br>
 Severely defoliated balsam fir forest in July, photograph by Dr. Luc Jobin
@@ -145,7 +145,7 @@ From this plot, we see that seven different taxa were identified, with their res
 6. Balsam fir (SAB) - *Abies balsamea*
 
 ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('Tree_Anticosti.png')
+knitr::include_graphics('https://github.com/Living-Data-Tutorials/Anticosti-Historical-Data/tree/main/tutorial/Tree_Anticosti.png')
 ```
 
 Tree taxa represented in dataset
@@ -248,7 +248,7 @@ These two previous plots beg the following question: were hemlock loopers attack
 Two great examples are pigeons and koalas -- pigeons live in a diversity of urban environments and are omnivores (eat plant and animal matter), while koalas only live on and eat eucalyptus. 
 
 ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('specialist_generalists.png')
+knitr::include_graphics('./specialist_generalists.png')
 ```
 
 Example of specialist and generalist species

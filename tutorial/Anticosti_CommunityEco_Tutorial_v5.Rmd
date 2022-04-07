@@ -150,19 +150,21 @@ ggplot(boxplot_tab,
 
 #### From this boxplot, we see that seven different tree species were identified, with their respective abbreviation from the dataset shown in parentheses:
 
-1. White birch (BOP) - *Betula papyrifera*
-2. White spruce (EPB) - *Picea glauca*
-3. Black spruce (EPN) - *Picea mariana*
-3. American larch (Meleze) - *Larix laricina*
-4. Aspen (Peuplier) - *Populus* spp.
-5. Pine (Pin) - *Pinus* spp.
-6. Balsam fir (SAB) - *Abies balsamea*
+#### 1. White birch (BOP) - *Betula papyrifera*
+#### 2. White spruce (EPB) - *Picea glauca*
+#### 3. Black spruce (EPN) - *Picea mariana*
+#### 4. American larch (Meleze) - *Larix laricina*
+#### 5. Aspen (Peuplier) - *Populus* spp.
+#### 6. Pine (Pin) - *Pinus* spp.
+#### 7. Balsam fir (SAB) - *Abies balsamea*
 
-```{r echo = FALSE, out.width = "100%"}
-knitr::include_graphics('Tree_Anticosti.png')
-```
+![](images/Tree_Anticosti.png){width=90%}
+<br>
+Tree species that were sampled on Anticosti Island
 
-Tree species represented in dataset
+<br>
+
+### Let's test our knowledge!
 
 #### From looking at the boxplot: 
 
@@ -221,6 +223,8 @@ ggplot(tree_damage,
   coord_flip()
 ```
 
+### Let's test our knowledge!
+
 #### From looking at this plot:
 
 ```{r checkbox-c, echo = FALSE}
@@ -254,10 +258,7 @@ These two previous plots beg the following question: were hemlock loopers attack
 
 Two great examples are pigeons and koalas -- pigeons live in a diversity of urban environments and are omnivores (eat plant and animal matter), while koalas only live on and eat eucalyptus. 
 
-```{r echo = FALSE, out.width = "100%"}
-knitr::include_graphics('specialist_generalists.png')
-```
-
+![](images/specialist_generalists.png)
 Example of specialist and generalist species
 
 With this in mind, let us run one more plot to gain some further insights:
@@ -280,6 +281,8 @@ question("What would you expect to see if a tree was most damaged by hemlock loo
 ```
 
 Maxime's plots
+
+### Let's test our knowledge!
 
 **From the graph and  based on our predictions above, we can now answer the question:**
 ```{r letterx-d, echo=FALSE}

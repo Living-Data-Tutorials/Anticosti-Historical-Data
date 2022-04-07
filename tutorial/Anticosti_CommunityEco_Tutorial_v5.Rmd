@@ -1,33 +1,26 @@
 
 ---
 title: "After the storm: Impacts of a hemlock looper (*Lambdina fiscellaria*) outbreak on tree species in Anticosti Island, 1973"
-author: "Living Data Project - Victoria Marie Glynn (McGill) and Maxime Fraser Franco (UQAM)"
+author: "Living Data Project \nVictoria Marie Glynn (McGill) and Maxime Fraser Franco (UQAM)"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-description: "LDP Anticosti dataset tutorial"
 output: learnr::tutorial
 runtime: shiny_prerendered
 ---
 
-**Using real data from a devastating pest outbreak in Québec, we will begin to explore how biological invasions impact ecological communities.**
+```{r, setup, include = FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = TRUE)
+```
 
----
+## What happened? 
 
 When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that show lions hunting zebras. But predator-prey interactions are often less conspicuous, and still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon. 
-
----
 
 <center>
 
 ![Map of Anticosti Island, Québec](anticosti_loc.png) ![Hemlock looper larvae on a tree branch](hemlock_looper_larva.jpg)
 
 </center>
-
-
-```{r setup, include = FALSE} 
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## What happened? 
 
 The hemlock looper is a moth pest that is found [all across Canada](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf), and into the USA, as far south as the state of Georgia. Since 1910, it has wrecked havok in  Québec's forests. Between 1910 and 1975, these outbreaks caused an estimated [24 million cubic meters of forest to be lost](https://fr.wikipedia.org/wiki/Lambdina_fiscellaria) in the province. Since then, additional outbreaks have occurred across Québec in places like Bas-Saint-Laurent , Gaspésie , and Anticosti Island. 
 
@@ -61,7 +54,6 @@ Let's start by loading some packages we will use for our analyses
 library(data.table)
 library(ggplot2)
 library(viridis)
-library(learnr)
 library(dplyr)
 library(rsconnect)
 ```

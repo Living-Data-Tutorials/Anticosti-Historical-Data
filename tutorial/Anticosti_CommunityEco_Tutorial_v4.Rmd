@@ -71,7 +71,6 @@ Let's start by loading some packages we will use for our analyses
 ```{r, message = FALSE, warning = FALSE}
 library(data.table)
 library(ggplot2)
-library(tidyverse)
 library(viridis)
 library(learnr)
 library(dplyr)

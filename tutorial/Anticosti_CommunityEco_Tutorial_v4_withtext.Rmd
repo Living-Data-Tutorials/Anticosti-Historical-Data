@@ -2,20 +2,12 @@
 title: "After the storm: Impacts of a hemlock looper (*Lambdina fiscellaria*) outbreak on tree species in Anticosti Island, 1973"
 author: "Living Data Project - Victoria Marie Glynn (McGill) and Maxime Fraser Franco (UQAM)"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-<<<<<<< HEAD
 description: "LDP Anticosti dataset tutorial"
-=======
->>>>>>> e501de6bbe3c1a4efbb15defb5ea1fb752de4ef6
 output:
   learnr::tutorial:
-    progressive: true
-    allow_skip: true
+  progressive: true
+  allow_skip: true
 runtime: shiny_prerendered
-description: >
-  Learn how to summarize the columns available in an R data frame with
-  `summarise()`. You will also learn how to chain operations together with the
-  magrittr pipe operator `%>%`, and how to compute grouped summaries using
-  `group_by()` together with `summarise()`.
 ---
 
 **Using real data from a devastating pest outbreak in Québec, we will begin to explore how biological invasions impact ecological communities.**
@@ -135,7 +127,7 @@ From this plot, we see that seven different taxa were identified, with their res
 1. White birch (BOP) - *Betula papyrifera*
 2. White spruce (EPB) - *Picea glauca*
 3. Black spruce (EPN) - *Picea mariana*
-3. American larch (Meleze) - *Larix laricina*
+3. Larch (Meleze) - *Larix* spp.
 4. Aspen (Peuplier) - *Populus* spp.
 5. Pine (Pin) - *Pinus* spp.
 6. Balsam fir (SAB) - *Abies balsamea*
@@ -153,7 +145,7 @@ question("What tree species is the most abundant in the data? Select all that ap
   answer("White birch (BOP) - *Betula papyrifera*"),
   answer("White spruce (EPB) - *Picea glauca*"),
   answer("Black spruce (EPN) - *Picea mariana*"),
-  answer("American Larch (Meleze) - *Larix laricina*"),
+  answer("American Larch (Meleze) - *Larix laricina* spp."),
   answer("Aspen (Peuplier) - *Populus* spp."),
   answer("Pine (Pin) - *Pinus* spp."),
   answer("Balsam fir (SAB) - *Abies balsamea*", correct = TRUE)
@@ -165,7 +157,7 @@ question("What tree species is the least abundant in the data? Select all that a
   answer("White birch (BOP) - *Betula papyrifera*"),
   answer("White spruce (EPB) - *Picea glauca*"),
   answer("Black spruce (EPN) - *Picea mariana*"),
-  answer("American Larch (Meleze) - *Larix laricina*", correct = TRUE),
+  answer("Larch (Meleze) - *Larix* spp.", correct = TRUE),
   answer("Aspen (Peuplier) - *Populus* spp.", correct = TRUE),
   answer("Pine (Pin) - *Pinus* spp.", correct = TRUE),
   answer("Balsam fir (SAB) - *Abies balsamea*")

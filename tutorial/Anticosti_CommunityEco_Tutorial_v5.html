@@ -142,23 +142,42 @@ Severely defoliated balsam fir forest, photograph by Dr. Luc Jobin
 </div>
 <div id="section-learning-objectives" class="section level2">
 <h2>Learning objectives</h2>
+<div id="section-by-the-end-of-this-tutorial-you-will-be-able-to" class="section level3">
+<h3>By the end of this tutorial, you will be able to:</h3>
 <p><br></p>
-<div id="section-given-the-hemlock-looper-was-such-an-aggressive-pest-our-objectives-are-to-determine" class="section level3">
-<h3>Given the hemlock looper was such an aggressive pest, our objectives are to determine:</h3>
+<div id="section-interpret-community-ecology-plots." class="section level4">
+<h4>1. Interpret community ecology plots.</h4>
+</div>
+<div id="section-differentiate-between-a-generalist-and-specialist-pest-species-using-community-ecology-plots." class="section level4">
+<h4>2. Differentiate between a generalist and specialist pest species, using community ecology plots.</h4>
+</div>
+<div id="section-make-data-driven-management-recommendations." class="section level4">
+<h4>3. Make data-driven management recommendations.</h4>
 <p><br></p>
-<div id="section-what-is-the-tree-community-composition-of-anticosti-island" class="section level4">
-<h4><strong>1. What is the tree community composition of Anticosti Island?</strong></h4>
-</div>
-<div id="section-does-the-hemlock-looper-preferentially-attack-some-trees-or-instead-multiple-trees" class="section level4">
-<h4><strong>2. Does the hemlock looper preferentially attack some trees or instead multiple trees?</strong></h4>
-</div>
-<div id="section-does-the-hemlock-looper-attack-specific-trees-because-they-are-more-abundant" class="section level4">
-<h4><strong>3. Does the hemlock looper attack specific trees because they are more abundant?</strong></h4>
+<p>Our Anticosti island tree dataset provides a unique opportunity for us to use <strong>real and historical data</strong> to gain skills in understanding what commonly made research plots, such as stacked bar plots, mean and how these figures can help us think more critically about natural resource management in Canada.</p>
 </div>
 </div>
-<div id="section-based-on-what-you-find-we-will-ask-you-to-provide-some-management-strategies-as-the-hemlock-looper-is-still-an-issue-in-québecs-forests." class="section level3">
-<h3>Based on what you find, we will ask you to provide some management strategies, as the hemlock looper is still an issue in Québec’s forests.</h3>
+</div>
+<div id="section-tutorial-objectives" class="section level2">
+<h2>Tutorial objectives</h2>
+<div id="section-with-our-tree-dataset-this-tutorial-will-walk-us-through-answering-the-following-three-driving-questions" class="section level3">
+<h3>With our tree dataset, this tutorial will walk us through answering the following three driving questions:</h3>
+<p><br></p>
+<div id="section-what-is-the-tree-community-composition-of-anticosti-island-in-1973" class="section level4">
+<h4>1. What is the tree community composition of Anticosti Island in 1973?</h4>
+</div>
+<div id="section-how-was-the-tree-community-of-anticosti-island-impacted-by-the-hemlock-looper-outbreak-in-1973" class="section level4">
+<h4>2. How was the tree community of Anticosti Island impacted by the hemlock looper outbreak in 1973?</h4>
+</div>
+<div id="section-did-the-hemlock-looper-attack-specific-trees-because-they-were-more-abundant-or-did-it-prefer-some-species-regardless-of-their-abundance" class="section level4">
+<h4>3. Did the hemlock looper attack specific trees because they were more abundant, or did it prefer some species regardless of their abundance?</h4>
+</div>
+<div id="section-based-on-what-you-find-in-1-3-what-management-recomendations-would-you-have-for-coping-with-hemlock-looper-outbreaks-in-québecs-forests" class="section level4">
+<h4>4. Based on what you find in 1-3, what management recomendations would you have for coping with hemlock looper outbreaks in Québec’s forests?</h4>
+<p><br></p>
+<p>At the end of each objective, we will have a “test your knowledge!” section before moving forward, as each objective builds upon the next.</p>
 <hr />
+</div>
 </div>
 </div>
 <div id="section-setting-up-our-r-session" class="section level2">
@@ -189,8 +208,8 @@ tree$Species &lt;- gsub(&quot;Larch&quot;, &quot;American larch&quot;, tree$Spec
 tree$Species &lt;- gsub(&quot;Pine&quot;, &quot;Pine sp.&quot;, tree$Species)
 tree$Species &lt;- gsub(&quot;Aspen&quot;, &quot;Aspen sp.&quot;, tree$Species)</code></pre>
 </div>
-<div id="section-learning-objective-1" class="section level2">
-<h2>Learning objective 1</h2>
+<div id="section-tutorial-objective-1" class="section level2">
+<h2>Tutorial objective 1</h2>
 <div id="section-describing-anticosti-islands-tree-community-composition" class="section level3">
 <h3>Describing Anticosti Island’s tree community composition</h3>
 <div id="section-we-will-first-investigate-the-tree-species-that-were-identified-during-the-outbreak.-to-do-so-we-are-going-to-plot-the-tree-species-using-a-boxplot.-this-will-enable-us-to-evaluate-their-distribution-across-the-sampled-sites-on-anticosti-island." class="section level4">
@@ -299,10 +318,10 @@ Tree species that were sampled on Anticosti Island
 </div>
 </div>
 </div>
-<div id="section-learning-objective-2" class="section level2">
-<h2>Learning objective 2</h2>
-<div id="section-how-were-the-different-tree-species-impacted-by-the-hemlock-looper" class="section level3">
-<h3>How were the different tree species impacted by the hemlock looper?</h3>
+<div id="section-tutorial-objective-2" class="section level2">
+<h2>Tutorial objective 2</h2>
+<div id="section-how-was-the-tree-community-of-anticosti-island-impacted-by-the-hemlock-looper" class="section level3">
+<h3>How was the tree community of Anticosti Island impacted by the hemlock looper?</h3>
 <div id="section-here-the-scientists-who-sampled-the-individual-trees-assigned-a-damage-state-to-each-one-of-them.-they-assigned-one-of-the-three-following-states-dead-good-or-questionable." class="section level4">
 <h4>Here, the scientists who sampled the individual trees assigned a damage state to each one of them. They assigned one of the three following states : “Dead”, “Good”, or “Questionable”.</h4>
 <p>To investigate the differences in damage among the tree species, we will first need to calculate the proportion of observed damage states per tree species:</p>
@@ -373,8 +392,8 @@ Example of a specialist and generalist species
 </div>
 </div>
 </div>
-<div id="section-learning-objective-3" class="section level2">
-<h2>Learning objective 3</h2>
+<div id="section-tutorial-objective-3" class="section level2">
+<h2>Tutorial objective 3</h2>
 <div id="section-is-there-a-relationship-between-the-abundance-of-tree-species-and-the-ones-the-hemlock-looper-attacks" class="section level3">
 <h3>Is there a relationship between the abundance of tree species and the ones the hemlock looper attacks?</h3>
 <div id="section-this-question-asks-us-to-consider-any-density-dependent-relationships.-we-thus-need-to-consider-the-relative-proportion-of-a-given-tree-species-as-it-relates-to-the-relative-proportion-of-trees-that-were-denoted-as-dead.-we-need-to-think-about-how-we-bring-this-cuz-im-unsure-for-now." class="section level4">
@@ -435,33 +454,34 @@ ggplot(tree_lineplot[Species == &quot;Balsam fir&quot;],
 </div>
 </div>
 </div>
-<div id="section-interpretations-and-implications" class="section level2">
-<h2>Interpretations and implications</h2>
+<div id="section-tutorial-objective-4" class="section level2">
+<h2>Tutorial objective 4</h2>
 <div id="section-what-do-our-findings-imply-in-terms-of-pest-management-on-anticosti-island" class="section level3">
 <h3>What do our findings imply in terms of pest management on Anticosti Island?</h3>
-<p>This dataset represents one of the many hemlock looper outbreaks Anticosti island, and Québec as a whole, has experienced. Based on your findings, for homework before our next lecture please reflect on the following questions. To help inform your answers, please refer to the following helpful links about hemlock looper:</p>
+<p>This dataset represents one of the many hemlock looper outbreaks Anticosti island, and Québec as a whole, has experienced. Based on your findings, please reflect and respond to the following questions. To help inform your answers, please refer to the following helpful links about hemlock looper:</p>
 <ul>
 <li><a href="https://www.plantwise.org/knowledgebank/datasheet/29749">Hemlock looper overview</a></li>
 <li><a href="https://www.plantwise.org/KnowledgeBank/pestalert?pan=19740515762">Biological control of the hemlock looper</a></li>
 <li><a href="https://www.fs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb5191788.pdf">Hemlock looper life history, management considerations</a></li>
 </ul>
 </div>
-<div id="section-take-home-questions" class="section level3">
-<h3>Take-home questions</h3>
+<div id="section-big-picture-questions" class="section level3">
+<h3>“Big-picture” questions</h3>
 <div id="section-what-trees-would-you-most-closely-monitor" class="section level4">
-<h4>What trees would you most closely monitor?</h4>
+<h4>1. What trees would you most closely monitor?</h4>
 </div>
 <div id="section-what-additional-protectionsrestrictions-should-exist-on-anticosti-island" class="section level4">
-<h4>What additional protections/restrictions should exist on Anticosti island?</h4>
+<h4>2. What additional protections/restrictions should exist on Anticosti island?</h4>
 </div>
 <div id="section-what-management-suggestions-would-you-provide-to-the-mfpp" class="section level4">
-<h4>What management suggestions would you provide to the MFPP?</h4>
+<h4>3. What management suggestions would you provide to the MFPP?</h4>
+<p><br> <strong>As our Anticosti island tree dataset underscores, historical data is a powerful tool to help us best contextualize current management concerns, and assist us in making data-driven decisions.</strong></p>
 <hr />
 </div>
 </div>
 </div>
 <div id="section-references" class="section level2">
-<h2><strong>References</strong></h2>
+<h2>References</h2>
 <p><em>Images</em> <br> - <a href="https://en.wikipedia.org/wiki/Anticosti_Island#/media/File:Canada_Quebec_location_map_2.svg">Map of Anticosti Island, Québec</a> <br> - <a href="https://www.maine.gov/dacf/mfs/forest_health/insects/hemlock_looper.htm">Photograph of a hemlock looper</a> <br> - <a href="https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846?wbdisable=true">Photograph of severely defoliated balsam fir forest</a> <br> - <a href="https://www.flickr.com/photos/bryanto/6190721247">Photograph of a white birch</a> <br> - <a href="https://commons.wikimedia.org/wiki/File:Picea_glauca_Fairbanks.jpg">Photograph of a white spruce</a> <br> - <a href="https://commons.wikimedia.org/wiki/File:Picea_mariana_(Spruce_black).jpg">Photograph of a black spruce</a> <br> - <a href="https://en.wikipedia.org/wiki/Larch#/media/File:SubalpineLarch_7735tl.jpg">Photograph of a larch</a> <br> - <a href="https://www.flickr.com/photos/dianasch/23567442848">Photograph of an aspen</a> <br> - <a href="https://commons.wikimedia.org/wiki/File:Pinus_ponderosa_15932.JPG">Photograph of a pine</a> <br> - <a href="https://commons.wikimedia.org/wiki/File:Abies_balsamea_0165.jpg">Photograph of a balsam fir</a> <br> - <a href="https://www.piqsels.com/en/public-domain-photo-oyrzq">Photograph of a pigeon</a> <br> - <a href="https://pixabay.com/photos/koala-animal-eucalyptus-wildlife-6094650/">Photograph of a koala</a> <br></p>
 <em>Further reading</em> <br> - <a href="https://www.sciencedirect.com/science/article/abs/pii/S0378112798005271?casa_token=pZW2ZnLwB0YAAAAA:bJHXx-f-cIU7UOPzxfe9Swj5OD9Gfm6bs3AM0ZK7IekzDOUzOdmayh9z62VAO6gV3Sjy8VVcMw#FIG2">The impact of hemlock looper (<em>Lambdina fiscellaria fiscellaria</em> (Guen.)) on balsam fir and spruce in New Brunswick, Canada</a> <br> - <a href="http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf">Hemlock Looper, Overview of the last 15 years - Presentation by Christian Hébert during the Pest Forum – 2 December, 2008</a> <br> - <a href="https://corpus.ulaval.ca/jspui/bitstream/20.500.11794/27571/1/33338.pdf#page=54">Early succession of bark and wood boring beetles during an outbreak of the hemlock looper (<em>Lambdina fiscellaria</em> (Guenée)) (Lepidoptera: Geometridae) in boreal balsam fir forest</a> <br> - <a href="https://resjournals.onlinelibrary.wiley.com/doi/abs/10.1111/afe.12347">Early responses of bark and wood boring beetles to an outbreak of the hemlock looper <em>Lambdina fiscellaria</em> (Guenée) (Lepidoptera: Geometridae) in a boreal balsam fir forest of North America</a> <br> - <a href="https://www.cambridge.org/core/journals/canadian-entomologist/article/abs/extreme-cold-weather-causes-the-collapse-of-a-population-of-lambdina-fiscellaria-lepidoptera-geometridae-in-the-laurentian-mountains-of-quebec-canada/4D36CE7C818EF7D75D8E5C7B7F75DA0F">Extreme cold weather causes the collapse of a population of <em>Lambdina fiscellaria</em> (Lepidoptera: Geometridae) in the Laurentian Mountains of Québec, Canada</a> <br> -<a href="https://pubs.cif-ifc.org/doi/pdf/10.5558/tfc50233-6">Capability of ERTS-1 imagery for mapping forest cover types of Anticosti Island</a> 
 <script type="application/shiny-prerendered" data-context="server-start">
@@ -490,31 +510,31 @@ session$onSessionEnded(function() {
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "checkbox-a", question = structure("What tree species is the most abundant in the data? Select all that apply", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_a7d52bb", 
+"character")), answers = list(structure(list(id = "lnr_ans_5c4cd79", 
     option = "White birch (BOP) - *Betula papyrifera*", value = "White birch (BOP) - *Betula papyrifera*", 
     label = structure("White birch (BOP) - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_d47105", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ca0d9c5", 
     option = "White spruce (EPB) - *Picea glauca*", value = "White spruce (EPB) - *Picea glauca*", 
     label = structure("White spruce (EPB) - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_dc49d0a", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_95b3d83", 
     option = "Black spruce (EPN) - *Picea mariana*", value = "Black spruce (EPN) - *Picea mariana*", 
     label = structure("Black spruce (EPN) - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ccc96eb", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8df5ec9", 
     option = "American Larch (Meleze) - *Larix laricina*", value = "American Larch (Meleze) - *Larix laricina*", 
     label = structure("American Larch (Meleze) - <em>Larix laricina<\u002fem>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c8c5ebf", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_11914e9", 
     option = "Aspen (Peuplier) - *Populus* spp.", value = "Aspen (Peuplier) - *Populus* spp.", 
     label = structure("Aspen (Peuplier) - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_162abbb", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f84fdfc", 
     option = "Pine (Pin) - *Pinus* spp.", value = "Pine (Pin) - *Pinus* spp.", 
     label = structure("Pine (Pin) - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_67d8624", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_58c532b", 
     option = "Balsam fir (SAB) - *Abies balsamea*", value = "Balsam fir (SAB) - *Abies balsamea*", 
     label = structure("Balsam fir (SAB) - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -526,39 +546,39 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "checkbox-a-answer", question = "checkbox-a"), loading = structure("<strong>Loading:<\u002fstrong> \nWhat tree species is the most abundant in the data? Select all that apply\n<br/><br/><br/>", html = TRUE, class = c("html", 
 "character")), random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 457190853.287104, options = list()), class = c("learnr_radio", 
+    seed = 1350398047.37117, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "checkbox-b", 
     question = structure("What tree species is the least abundant in the data? Select all that apply.", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_bdb77c7", 
+    "character")), answers = list(structure(list(id = "lnr_ans_38cf757", 
         option = "White birch (BOP) - *Betula papyrifera*", value = "White birch (BOP) - *Betula papyrifera*", 
         label = structure("White birch (BOP) - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_da78a61", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_154257b", 
         option = "White spruce (EPB) - *Picea glauca*", value = "White spruce (EPB) - *Picea glauca*", 
         label = structure("White spruce (EPB) - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_16057da", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_fd2bc41", 
         option = "Black spruce (EPN) - *Picea mariana*", value = "Black spruce (EPN) - *Picea mariana*", 
         label = structure("Black spruce (EPN) - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3283489", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_b870e14", 
         option = "American Larch (Meleze) - *Larix laricina*", 
         value = "American Larch (Meleze) - *Larix laricina*", 
         label = structure("American Larch (Meleze) - <em>Larix laricina<\u002fem>", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e6f4997", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9fbad77", 
         option = "Aspen (Peuplier) - *Populus* spp.", value = "Aspen (Peuplier) - *Populus* spp.", 
         label = structure("Aspen (Peuplier) - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_744ebdb", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_fa7969c", 
         option = "Pine (Pin) - *Pinus* spp.", value = "Pine (Pin) - *Pinus* spp.", 
         label = structure("Pine (Pin) - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_467a30b", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_80481e6", 
         option = "Balsam fir (SAB) - *Abies balsamea*", value = "Balsam fir (SAB) - *Abies balsamea*", 
         label = structure("Balsam fir (SAB) - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -571,37 +591,37 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
         answer = "checkbox-b-answer", question = "checkbox-b"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nWhat tree species is the least abundant in the data? Select all that apply.\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 1996995702.07008, options = list()), class = c("learnr_checkbox", 
+    seed = 441190982.294554, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "checkbox-c", question = structure("What tree species was <strong>MOST<\u002fstrong> affected by the hemlock looper? Select all that apply.", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_d464bc3", 
+"character")), answers = list(structure(list(id = "lnr_ans_5bfeb94", 
     option = "White birch (BOP) - *Betula papyrifera*", value = "White birch (BOP) - *Betula papyrifera*", 
     label = structure("White birch (BOP) - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c57262b", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c895726", 
     option = "White spruce (EPB) - *Picea glauca*", value = "White spruce (EPB) - *Picea glauca*", 
     label = structure("White spruce (EPB) - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e6e6bf3", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b257ac9", 
     option = "Black spruce (EPN) - *Picea mariana*", value = "Black spruce (EPN) - *Picea mariana*", 
     label = structure("Black spruce (EPN) - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c37c897", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_fb2eb67", 
     option = "Larch (Meleze) - *Larix* spp.", value = "Larch (Meleze) - *Larix* spp.", 
     label = structure("Larch (Meleze) - <em>Larix<\u002fem> spp.", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_737b264", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_141e42c", 
     option = "Aspen (Peuplier) - *Populus* spp.", value = "Aspen (Peuplier) - *Populus* spp.", 
     label = structure("Aspen (Peuplier) - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8360c67", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_930bd7c", 
     option = "Pine (Pin) - *Pinus* spp.", value = "Pine (Pin) - *Pinus* spp.", 
     label = structure("Pine (Pin) - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1308ee3", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_fa36048", 
     option = "Balsam fir (SAB) - *Abies balsamea*", value = "Balsam fir (SAB) - *Abies balsamea*", 
     label = structure("Balsam fir (SAB) - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -613,38 +633,38 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "checkbox-c-answer", question = "checkbox-c"), loading = structure("<strong>Loading:<\u002fstrong> \nWhat tree species was <strong>MOST<\u002fstrong> affected by the hemlock looper? Select all that apply.\n<br/><br/><br/>", html = TRUE, class = c("html", 
 "character")), random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 1725572216.19647, options = list()), class = c("learnr_radio", 
+    seed = 2108255678.51827, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "checkbox-d", 
     question = structure("What tree species was <strong>LEAST<\u002fstrong> affected by the hemlock looper? Select all that apply.", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_348b8da", 
+    "character")), answers = list(structure(list(id = "lnr_ans_17db0a1", 
         option = "White birch (BOP) - *Betula papyrifera*", value = "White birch (BOP) - *Betula papyrifera*", 
         label = structure("White birch (BOP) - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_a4a93d1", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c03400b", 
         option = "White spruce (EPB) - *Picea glauca*", value = "White spruce (EPB) - *Picea glauca*", 
         label = structure("White spruce (EPB) - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6dc5386", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_7c650af", 
         option = "Black spruce (EPN) - *Picea mariana*", value = "Black spruce (EPN) - *Picea mariana*", 
         label = structure("Black spruce (EPN) - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c10e845", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_66f9a46", 
         option = "Larch (Meleze) - *Larix* spp.", value = "Larch (Meleze) - *Larix* spp.", 
         label = structure("Larch (Meleze) - <em>Larix<\u002fem> spp.", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_68fcc11", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_84c4492", 
         option = "Aspen (Peuplier) - *Populus* spp.", value = "Aspen (Peuplier) - *Populus* spp.", 
         label = structure("Aspen (Peuplier) - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4900eee", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3ac12ac", 
         option = "Pine (Pin) - *Pinus* spp.", value = "Pine (Pin) - *Pinus* spp.", 
         label = structure("Pine (Pin) - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html", 
         "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6e7dbc8", 
+    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_73914f9", 
         option = "Balsam fir (SAB) - *Abies balsamea*", value = "Balsam fir (SAB) - *Abies balsamea*", 
         label = structure("Balsam fir (SAB) - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html", 
         "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -657,23 +677,23 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", lab
         answer = "checkbox-d-answer", question = "checkbox-d"), 
     loading = structure("<strong>Loading:<\u002fstrong> \nWhat tree species was <strong>LEAST<\u002fstrong> affected by the hemlock looper? Select all that apply.\n<br/><br/><br/>", html = TRUE, class = c("html", 
     "character")), random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 234162649.89096, options = list()), class = c("learnr_checkbox", 
+    seed = 1363681649.36499, options = list()), class = c("learnr_checkbox", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "letter-e", question = structure("What would you expect to see if a tree was most damaged by hemlock looper because it was more abundant?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_3e19d35", 
+"character")), answers = list(structure(list(id = "lnr_ans_db9be3e", 
     option = "An increasing, straight line - one-to-one relationship, where having more trees means more damage will be detected*", 
     value = "An increasing, straight line - one-to-one relationship, where having more trees means more damage will be detected*", 
     label = structure("An increasing, straight line - one-to-one relationship, where having more trees means more damage will be detected*", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e2387f6", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_16f79b1", 
     option = "A decreasing, straight line - one-to-one relationship, where having less trees means more damage will be detected", 
     value = "A decreasing, straight line - one-to-one relationship, where having less trees means more damage will be detected", 
     label = structure("A decreasing, straight line - one-to-one relationship, where having less trees means more damage will be detected", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9d60468", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e13142e", 
     option = "A ... - what drives dynamics is tree species identity, and not that species' abundance", 
     value = "A ... - what drives dynamics is tree species identity, and not that species' abundance", 
     label = structure("A ... - what drives dynamics is tree species identity, and not that species&#39; abundance", html = TRUE, class = c("html", 
@@ -686,22 +706,22 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "letter-e-answer", question = "letter-e"), loading = structure("<strong>Loading:<\u002fstrong> \nWhat would you expect to see if a tree was most damaged by hemlock looper because it was more abundant?\n<br/><br/><br/>", html = TRUE, class = c("html", 
 "character")), random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 1558796034.27413, options = list()), class = c("learnr_radio", 
+    seed = 96721426.4549606, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "letterx-d", question = structure("Do hemlock loopers preferentially attack a given tree species?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_88bd6ab", 
+"character")), answers = list(structure(list(id = "lnr_ans_67819b1", 
     option = "Yes, because", value = "Yes, because", label = structure("Yes, because", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6e39bf0", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_df37549", 
     option = "Yes, ", value = "Yes, ", label = structure("Yes, ", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ea4d1a1", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f2b8515", 
     option = "No, because", value = "No, because", label = structure("No, because", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3fa48ba", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2527572", 
     option = "No, because b", value = "No, because b", label = structure("No, because b", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -712,7 +732,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), message = NULL, post_message = NULL), ids = list(
     answer = "letterx-d-answer", question = "letterx-d"), loading = structure("<strong>Loading:<\u002fstrong> \nDo hemlock loopers preferentially attack a given tree species?\n<br/><br/><br/>", html = TRUE, class = c("html", 
 "character")), random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 1642278411.23525, options = list()), class = c("learnr_radio", 
+    seed = 1572862029.26758, options = list()), class = c("learnr_radio", 
 "tutorial_question")), session = session)
 </script>
  <!--html_preserve-->

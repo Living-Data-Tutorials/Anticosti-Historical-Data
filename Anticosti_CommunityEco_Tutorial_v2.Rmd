@@ -1,5 +1,5 @@
 ---
-title: "After the storm: Impacts of a hemlooper looper (*Lambdina fiscellaria*) outbreak on tree species in Anticosti Island, 1973"
+title: "After the storm: Impacts of a hemlock looper (*Lambdina fiscellaria*) outbreak on tree species in Anticosti Island, 1973"
 author: "Living Data Project - Victoria Marie Glynn (McGill) and Maxime Fraser Franco (UQAM)"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
@@ -10,26 +10,19 @@ output:
     number_sections: true
 ---
 
-
-# **After the storm: Community composition and diversity shifts after a hemlooper looper outbreak (*Lambdina fiscellaria*) on Anticosti Island, 1973**
-
-
-#### Living Data Project - Maxime Fraser Franco (UQAM) and Victoria Marie Glynn (McGill)
-
-## Using real data from a devastating pest outbreak in Québec, we will begin to explore how **biological invasions** impact ecological communities. 
+**Using real data from a devastating pest outbreak in Québec, we will begin to explore how biological invasions impact ecological communities.**
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 Start by giving some context/background on Anticosti to emphazise why it is important...
 
-### When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that show lions hunting zebras. But predator-prey interactions are often less conspicuous, and still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon. 
+When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that show lions hunting zebras. But predator-prey interactions are often less conspicuous, and still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon. 
+
+------------------------------------------------------------------------------
 
 <center>
 
-![Map of Anticosti Island, Québec](anticosti_loc.png)
-
-
-![Hemlock looper larvae on a tree branch](hemlock_looper_larva.jpg)
+![Map of Anticosti Island, Québec](anticosti_loc.png) ![Hemlock looper larvae on a tree branch](hemlock_looper_larva.jpg)
 
 </center>
 
@@ -38,7 +31,7 @@ Start by giving some context/background on Anticosti to emphazise why it is impo
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# **0. What happened?** 
+# What happened? 
 
 [insert before and after pictures]
 
@@ -56,67 +49,68 @@ Their sampling approach was as follows:
 ![Sampling design for forest inventory](sampling_design.png)
 </center>
 
-#### For this tutorial, we will focus on the largest category, the block level. 
 
-#### Given the hemlock looper was such an aggressive pest, our task today is to determine:
+# Learning objectives 
 
-<br> 
-<br> 
-<center>
-#### **(1) Did the hemlock looper attack trees at random?**
-#### or 
-#### **(2) Does the hemlock looper preferentially attack some trees?**
-</center>
-<br> 
-<br> 
+**Given the hemlock looper was such an aggressive pest, our task today is to determine:**
 
-### Based on what you find, we will ask you to provide some management strategies, as the hemlock looper is still an issue in Québec's forests. 
+ 1. **What is the tree species composition of the Anticosti Island?**
+ 2. **Does the hemlock looper preferentially attack some trees or instead multiple trees?**
+ 3. **Does the hemlock looper attack specific trees because they are more abundant?**
+ 
+**Based on what you find, we will ask you to provide some management strategies, as the hemlock looper is still an issue in Québec's forests.**
 
 ------------------------------------------------------------------------------
 <center>
-# **1. How was the tree community impacted during the outbreak?**
 
+# Setting up our R session
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
+Let's start by loading some packages we will use for our analyses
+```{r, message = FALSE, warning = FALSE}
+library(data.table)
+library(ggplot2)
+library(viridis)
+```
+
+Then, we import the data in the current R session
+```{r, message = FALSE, warning = FALSE}
 # Tree condition data url paths
 url_tree <- "https://open.canada.ca/data/en/dataset/9dda09b0-649f-4002-b207-7b204eb81cbb/resource/a1606235-95aa-4c81-a8db-19b852be288c"
 csv_tree <- "download/anticosti_1973_trees.csv"
 
-# Import the data
-tree <- read.csv(file.path(url_tree, csv_tree), header = TRUE)
-
-# Keep only the columns we need
-tree <- tree[, c("Block", "Compartment", "Plot",
-                 "Cell", "Species", "Species_abbrev",
-                 "Condition", "Number")]
+# Import the data and keep the data we need
+tree <- fread(file.path(url_tree, csv_tree),
+              select = c("Block", "Compartment", "Plot",
+                         "Cell", "Species", "Species_abbrev",
+                         "Condition", "Number"))
 
 # Separate row number in instances to have all individual counts
-test[rep(seq(.N), Number)]
-
+tree <- tree[rep(seq(.N), Number)]
+tree[, Number := 1]
 ```
 
-## 1a. Before answering this question, we need to understand how different tree species are spread out across the various blocks:
+# Describing Anticosti Island's tree community composition
+
+## What is the distribution of the tree species across blocks?:
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
-##Further customize tree plot
 
-library(ggplot2)
-library(viridis)
-library(hrbrthemes)
+# Prepare some plot customizations
+cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73",
+               "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
+# Diversity of trees per block
 
-cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
-
-##diversity of trees per block
-
-tree_bloc <- ggplot(tree, aes (y=Number, x=Block, fill = Species_abbrev)) + 
-    geom_bar(position="stack", stat="identity")
+tree_bloc <- ggplot(tree, aes (y = Number, x = Block, fill = Species_abbrev)) + 
+    geom_bar(position = "stack", stat = "identity")
 
 tree_bloc
 
 tree_bloc2 <- tree_bloc + scale_fill_manual(values=cbPalette) + 
     ggtitle("Tree species across blocks, during hemlock looper outbreak in 1973") +
-    xlab("Block") + ylab ("Count of species") + scale_fill_discrete(name = "Tree species")
+    xlab("\nBlock") + 
+    ylab ("Count of species\n") +
+    scale_fill_discrete(name = "Tree species")
 ```
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
@@ -125,37 +119,41 @@ tree_bloc2
 
 <br>
 
-### From looking at this plot: 
+**From looking at this plot:** 
 
-#### (1) Which tree is the most abundant species across all our blocks? 
+- 1. Which tree is the most abundant species across all our blocks? 
 
-#### (2) Which tree is the least abundant species across all our blocks? 
+- 2. Which tree is the least abundant species across all our blocks? 
 
 <br>
 
-## 1b. Now, let us see how different trees were affected due to the hemlock
+# How much were the different tree species damaged by the hemlock looper?
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
-## Differences in tree condition per plot
 
-##diversity of trees per compartment 
+# Differences in tree condition per plot
 
-treecon <- ggplot(tree, aes (y=Number, x=Species_abbrev, fill = Condition)) + 
-    geom_bar(position="stack", stat="identity")
+# Diversity of trees per compartment 
+
+treecon <- ggplot(tree, aes (y = Number, x = Species_abbrev, fill = Condition)) + 
+    geom_bar(position = "stack", stat = "identity")
 
 treecon
 
-cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
-
 treecon_2 <- treecon + scale_fill_manual(values=cbPalette) + 
     ggtitle("Tree condition across species, during hemlock looper outbreak in 1973") +
-    xlab("Species") + ylab ("Count of species") + scale_fill_discrete(name = "Tree condition")
+    xlab("\nSpecies") +
+    ylab ("Count of species\n") +
+    scale_fill_discrete(name = "Tree condition")
 
 ```
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 treecon_2
 ```
+
+# Does the hemlock looper attack trees because they are abundant?
+
 </center>
 
 

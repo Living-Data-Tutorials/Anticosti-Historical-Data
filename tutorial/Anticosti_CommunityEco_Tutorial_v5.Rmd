@@ -27,7 +27,7 @@ When you think of predator-prey interactions, what comes to mind? Perhaps it is 
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# What happened? 
+## What happened? 
 
 The hemlock looper is a moth pest that is found [all across Canada](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf), and into the USA, as far south as the state of Georgia. Since 1910, it has wrecked havok in  Québec's forests. Between 1910 and 1975, these outbreaks caused an estimated [24 million cubic meters of forest to be lost](https://fr.wikipedia.org/wiki/Lambdina_fiscellaria) in the province. Since then, additional outbreaks have occurred across Québec in places like Bas-Saint-Laurent , Gaspésie , and Anticosti Island. 
 
@@ -41,7 +41,7 @@ While the outbreak was occuring, in 1973 Dr. Luc Jobin (Laurentian Forestry Cent
 </center>
 
 
-# Learning objectives 
+## Learning objectives 
 
 **Given the hemlock looper was such an aggressive pest, our task today is to determine:**
 
@@ -54,7 +54,7 @@ While the outbreak was occuring, in 1973 Dr. Luc Jobin (Laurentian Forestry Cent
 ---
 <center>
 
-# Setting up our R session
+## Setting up our R session
 
 Let's start by loading some packages we will use for our analyses
 ```{r, message = FALSE, warning = FALSE}
@@ -83,9 +83,9 @@ tree <- tree[rep(seq(.N), Number)]
 tree[, Number := 1]
 ```
 
-# Describing Anticosti Island's tree community composition
+## Describing Anticosti Island's tree community composition
 
-## What trees were identified?
+### What trees were identified?
 
 We will first make some preparations for our plot to look nice
 ```{r}
@@ -181,7 +181,7 @@ question("What tree species is the least abundant in the data? Select all that a
 
 <br>
 
-# How were different tree species impacted by hemlock looper?
+## How were different tree species impacted by hemlock looper?
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
 
@@ -254,7 +254,7 @@ Two great examples are pigeons and koalas -- pigeons live in a diversity of urba
 
 With this in mind, let us run one more plot to gain some further insights:
 
-# Does the hemlock looper attack tree species that are more abundant, or does it have a preferred tree species?
+## Does the hemlock looper attack tree species that are more abundant, or does it have a preferred tree species?
 
 </center>
 
@@ -285,7 +285,7 @@ question("Do hemlock loopers preferentially attack a given tree species?",
 )
 ```
 
-# What do our findings imply in terms of pest management on Anticosti Island? 
+## What do our findings imply in terms of pest management on Anticosti Island? 
 
 This dataset represents one of the many hemlock looper outbreaks Anticosti island, and Québec as a whole, has experienced. Based on your findings, for homework before our next lecture please reflect on the following questions. To help inform your answers, please refer to the following helpful links about hemlock looper:
 
@@ -297,4 +297,4 @@ This dataset represents one of the many hemlock looper outbreaks Anticosti islan
 
 1. What trees would you most closely monitor? 
 2. What additional protections/restrictions should exist on Anticosti island?
-3.  What management suggestions would you provide to the MFPP? 
+3. What management suggestions would you provide to the MFPP? 

@@ -6,6 +6,7 @@ author: |
   | Maxime Fraser Franco (UQAM)
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: learnr::tutorial
+theme: "cosmo"
 runtime: shiny_prerendered
 ---
 
@@ -21,21 +22,27 @@ When you think of predator-prey interactions, what comes to mind? Perhaps it is 
 
 <br>
 
-![Map of Anticosti Island, Québec](images/anticosti_loc.png) ![Picture of the hemlock looper](images/hemlock_looper_larva.jpg)
+
+```{r, echo=FALSE, out.width="50%", fig.align="center", fig.cap="Map of Anticosti Island, Québec"}
+knitr::include_graphics("images/anticosti_loc.png")
+```
+```{r, echo=FALSE, out.width="50%", fig.align="center", fig.cap="Photograph of a hemlock looper larvae, Maine Forest Service, Forest Health & Monitoring, Slide Collection"}
+knitr::include_graphics("images/hemlock_looper_larva.jpg")
+```
 
 <br>
 
 ### What happened?
 
-The hemlock looper is a moth pest that is found [all across Canada](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf), and into the USA, as far south as the state of Georgia. Since 1910, it has wrecked havok in  Québec's forests. Between 1910 and 1975, these outbreaks caused an estimated [24 million cubic meters of forest to be lost](https://fr.wikipedia.org/wiki/Lambdina_fiscellaria) in the province. Since then, additional outbreaks have occurred across Québec in places like Bas-Saint-Laurent , Gaspésie , and Anticosti Island. 
+The hemlock looper is a moth pest that is found [all across Canada](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf), and into the USA, as far south as the state of Georgia. Since 1910, it has wreaked havoc in Québec's forests. Between 1910 and 1975, these outbreaks caused an estimated [24 million cubic meters of forest to be lost](https://fr.wikipedia.org/wiki/Lambdina_fiscellaria) in the province. Since then, additional outbreaks have occurred across Québec in places like Bas-Saint-Laurent , Gaspésie , and Anticosti Island. 
 
 Since the first outbreak, the Ministry of Forests, Wildlife and Parks of Quebec (MFFP) and the Society for the Protection of Forests against Insects and Diseases (SOPFIM) have been monitoring hemlock looper outbreaks. The MFFP recorded and surveyed one of the most extensive tree mortality events due to a hemlock looper outbreaks from the [period of 1971-1973](https://cfs.nrcan.gc.ca/pubwarehouse/pdfs/6856.pdf). As the hemlock looper larvae usually attacks mature tree stands by eating the leaves, causing them to appear [yellow and red-brown in color](https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846). 
 
 <br>
 
-![](images/balsam_looper.jpg)
-<br>
-Severely defoliated balsam fir forest in July, photograph by Dr. Luc Jobin
+```{r, echo=FALSE, out.width="50%", fig.align="center", fig.cap="Severely defoliated balsam fir forest, photograph by Dr. Luc Jobin"}
+knitr::include_graphics("images/balsam_looper.jpg")
+```
 
 <br>
 
@@ -158,9 +165,11 @@ ggplot(boxplot_tab,
 #### 6. Pine (Pin) - *Pinus* spp.
 #### 7. Balsam fir (SAB) - *Abies balsamea*
 
-![](images/Tree_Anticosti.png){width=90%}
-<br>
-Tree species that were sampled on Anticosti Island
+<br> 
+
+```{r, echo=FALSE, out.width="80%", fig.align="center", fig.cap="Tree species that were sampled on Anticosti Island"}
+knitr::include_graphics("images/Tree_Anticosti.png")
+```
 
 <br>
 
@@ -261,8 +270,11 @@ question("What tree species was **LEAST** affected by the hemlock looper? Select
 
 #### Two great examples are pigeons and koalas -- pigeons live in a diversity of urban environments and are omnivores (eat plant and animal matter), while koalas only live on and eat eucalyptus.
 
-![](images/specialist_generalists.png)
-Example of specialist and generalist species
+<br> 
+
+```{r, echo=FALSE, out.width="70%", fig.align="center", fig.cap="Example of a specialist and generalist species"}
+knitr::include_graphics("images/specialist_generalists.png")
+```
 
 With this in mind, let us run one more plot to gain some further insights:
 
@@ -348,3 +360,48 @@ This dataset represents one of the many hemlock looper outbreaks Anticosti islan
 #### What trees would you most closely monitor?
 #### What additional protections/restrictions should exist on Anticosti island?
 #### What management suggestions would you provide to the MFPP?
+
+---------------------------------------------------------------------------------------
+
+## **References**
+
+*Images*
+<br>
+- [Map of Anticosti Island, Québec](https://en.wikipedia.org/wiki/Anticosti_Island#/media/File:Canada_Quebec_location_map_2.svg)
+<br>
+- [Photograph of a hemlock looper](https://www.maine.gov/dacf/mfs/forest_health/insects/hemlock_looper.htm)
+<br>
+- [Photograph of severely defoliated balsam fir forest](https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846?wbdisable=true)
+<br>
+- [Photograph of a white birch](https://www.flickr.com/photos/bryanto/6190721247)
+<br>
+- [Photograph of a white spruce](https://commons.wikimedia.org/wiki/File:Picea_glauca_Fairbanks.jpg)
+<br>
+- [Photograph of a black spruce](https://commons.wikimedia.org/wiki/File:Picea_mariana_(Spruce_black).jpg)
+<br>
+- [Photograph of a larch](https://en.wikipedia.org/wiki/Larch#/media/File:SubalpineLarch_7735tl.jpg)
+<br>
+- [Photograph of an aspen](https://www.flickr.com/photos/dianasch/23567442848)
+<br>
+- [Photograph of a pine](https://commons.wikimedia.org/wiki/File:Pinus_ponderosa_15932.JPG)
+<br>
+- [Photograph of a balsam fir](https://commons.wikimedia.org/wiki/File:Abies_balsamea_0165.jpg)
+<br>
+- [Photograph of a pigeon](https://www.piqsels.com/en/public-domain-photo-oyrzq)
+<br>
+- [Photograph of a koala](https://pixabay.com/photos/koala-animal-eucalyptus-wildlife-6094650/)
+<br>
+
+*Further reading*
+<br>
+- [The impact of hemlock looper (*Lambdina fiscellaria fiscellaria* (Guen.)) on balsam fir and spruce in New Brunswick, Canada](https://www.sciencedirect.com/science/article/abs/pii/S0378112798005271?casa_token=pZW2ZnLwB0YAAAAA:bJHXx-f-cIU7UOPzxfe9Swj5OD9Gfm6bs3AM0ZK7IekzDOUzOdmayh9z62VAO6gV3Sjy8VVcMw#FIG2)
+<br>
+- [Hemlock Looper, Overview of the last 15 years - Presentation by Christian Hébert during the Pest Forum – 2 December, 2008](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf)
+<br>
+- [Early succession of bark and wood boring beetles during an outbreak of the hemlock looper (*Lambdina fiscellaria* (Guenée)) (Lepidoptera: Geometridae) in boreal balsam fir forest](https://corpus.ulaval.ca/jspui/bitstream/20.500.11794/27571/1/33338.pdf#page=54)
+<br>
+- [Early responses of bark and wood boring beetles to an outbreak of the hemlock looper *Lambdina fiscellaria* (Guenée) (Lepidoptera: Geometridae) in a boreal balsam fir forest of North America](https://resjournals.onlinelibrary.wiley.com/doi/abs/10.1111/afe.12347)
+<br>
+- [Extreme cold weather causes the collapse of a population of *Lambdina fiscellaria* (Lepidoptera: Geometridae) in the Laurentian Mountains of Québec, Canada](https://www.cambridge.org/core/journals/canadian-entomologist/article/abs/extreme-cold-weather-causes-the-collapse-of-a-population-of-lambdina-fiscellaria-lepidoptera-geometridae-in-the-laurentian-mountains-of-quebec-canada/4D36CE7C818EF7D75D8E5C7B7F75DA0F)
+<br> 
+-[Capability of ERTS-1 imagery for mapping forest cover types of Anticosti Island](https://pubs.cif-ifc.org/doi/pdf/10.5558/tfc50233-6)

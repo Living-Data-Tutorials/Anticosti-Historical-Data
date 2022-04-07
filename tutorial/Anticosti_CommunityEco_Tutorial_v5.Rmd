@@ -5,8 +5,9 @@ author: |
   | Victoria Marie Glynn (McGill)
   | Maxime Fraser Franco (UQAM)
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: learnr::tutorial
-theme: 
+output: 
+   learnr::tutorial:
+       theme: "cosmo" 
 runtime: shiny_prerendered
 ---
 
@@ -50,16 +51,17 @@ While the outbreak was occuring, in 1973 Dr. Luc Jobin (Laurentian Forestry Cent
 
 ## Learning objectives 
 
+<br>
+
 ### Given the hemlock looper was such an aggressive pest, our objectives are to determine:
+
+<br> 
 
 #### **1. What is the tree community composition of Anticosti Island?**
 #### **2. Does the hemlock looper preferentially attack some trees or instead multiple trees?**
 #### **3. Does the hemlock looper attack specific trees because they are more abundant?**
 
-<br>
-<br>
-
-Based on what you find, we will ask you to provide some management strategies, as the hemlock looper is still an issue in Québec's forests.
+### Based on what you find, we will ask you to provide some management strategies, as the hemlock looper is still an issue in Québec's forests.
 
 ---
 

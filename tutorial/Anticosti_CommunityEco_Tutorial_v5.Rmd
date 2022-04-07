@@ -62,6 +62,7 @@ library(ggplot2)
 library(viridis)
 library(learnr)
 library(dplyr)
+library(rsconnect)
 ```
 
 Then, we import the data in the current R session

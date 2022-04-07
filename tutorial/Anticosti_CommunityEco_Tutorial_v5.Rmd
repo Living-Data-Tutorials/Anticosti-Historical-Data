@@ -3,9 +3,8 @@ title: "After the storm: Impacts of a hemlock looper (*Lambdina fiscellaria*) ou
 author: "Living Data Project - Victoria Marie Glynn (McGill) and Maxime Fraser Franco (UQAM)"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
-  learnr::tutorial:
-    progressive: true
-    allow_skip: true
+progressive: true
+allow_skip: true
 runtime: shiny_prerendered
 description: >
   Learn how to summarize the columns available in an R data frame with
@@ -272,3 +271,7 @@ question("Do hemlock loopers preferentially attack a given tree species?",
 ```
 
 # What do our findings imply in terms of pest management on Anticosti? 
+
+This dataset represents one of the many hemlock looper outbreaks Anticosti island, and Québec as a whole, has experienced. Based on your findings, for homework before our next lecture please reflect on the following questions:
+
+- 

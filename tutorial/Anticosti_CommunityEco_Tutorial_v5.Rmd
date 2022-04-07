@@ -1,10 +1,9 @@
-
 ---
 title: "After the storm: Impacts of a hemlock looper (*Lambdina fiscellaria*) outbreak on tree species in Anticosti Island, 1973"
 author: |
-  |  Living Data Project
-  |  Victoria Marie Glynn (McGill)
-  |  Maxime Fraser Franco (UQAM)
+  | Living Data Project  
+  | Victoria Marie Glynn (McGill)
+  | Maxime Fraser Franco (UQAM)
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: learnr::tutorial
 runtime: shiny_prerendered
@@ -88,6 +87,8 @@ tree[, Number := 1]
 # Change "Pine" to "Pine sp."
 # Change "Aspen" to "Aspen sp."
 tree$Species <- gsub("Larch", "American larch", tree$Species)
+tree$Species <- gsub("Pine", "Pine sp.", tree$Species)
+tree$Species <- gsub("Aspen", "Aspen sp.", tree$Species)
 
 ```
 
@@ -216,9 +217,10 @@ ggplot(tree_damage,
            color = "black") +
   scale_fill_manual(values = c("light green", "plum", "khaki1")) +
   ggtitle("Relative damage for each tree species") +
-  xlab("\nTree specie") +
-  ylab ("Proportion of damage\n") +
-  custom_theme
+  xlab("Tree specie\n") +
+  ylab ("\nProportion of damage") +
+  custom_theme +
+  coord_flip()
 ```
 
 #### From looking at this plot:
@@ -303,6 +305,6 @@ This dataset represents one of the many hemlock looper outbreaks Anticosti islan
 
 ### Take-home questions
 
-#### **What trees would you most closely monitor?**
-#### **What additional protections/restrictions should exist on Anticosti island?**
-#### **What management suggestions would you provide to the MFPP?**
+#### What trees would you most closely monitor?
+#### What additional protections/restrictions should exist on Anticosti island?
+#### What management suggestions would you provide to the MFPP?

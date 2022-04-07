@@ -1,7 +1,10 @@
 
 ---
 title: "After the storm: Impacts of a hemlock looper (*Lambdina fiscellaria*) outbreak on tree species in Anticosti Island, 1973"
-author: "Living Data Project \nVictoria Marie Glynn (McGill) and Maxime Fraser Franco (UQAM)"
+author: |
+  |  Living Data Project
+  |  Victoria Marie Glynn (McGill)
+  |  Maxime Fraser Franco (UQAM)
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: learnr::tutorial
 runtime: shiny_prerendered
@@ -9,6 +12,7 @@ runtime: shiny_prerendered
 
 ```{r, setup, include = FALSE}
 library(learnr)
+library(rsconnect)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -20,7 +24,7 @@ When you think of predator-prey interactions, what comes to mind? Perhaps it is 
 
 Map of Anticosti Island, Québec
 
-```{r echo=FALSE}
+```{r echo = FALSE}
 knitr::include_graphics('hemlock_looper_larva.jpg')
 ```
 
@@ -30,7 +34,7 @@ The hemlock looper is a moth pest that is found [all across Canada](http://www.g
 Since the first outbreak, the Ministry of Forests, Wildlife and Parks of Quebec (MFFP) and the Society for the Protection of Forests against Insects and Diseases (SOPFIM) have been monitoring hemlock looper outbreaks. The MFFP recorded and surveyed one of the most extensive tree mortality events due to a hemlock looper outbreaks from the [period of 1971-1973](https://cfs.nrcan.gc.ca/pubwarehouse/pdfs/6856.pdf). As the hemlock looper larvae usually attacks mature tree stands by eating the leaves, causing them to appear [yellow and red-brown in color](https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846). 
 
 <br>
-```{r echo=FALSE, out.width='100%'}
+```{r echo = FALSE, out.width = "100%"}
 knitr::include_graphics('balsam_looper.jpg')
 ```
 <br>
@@ -42,13 +46,16 @@ While the outbreak was occuring, in 1973 Dr. Luc Jobin (Laurentian Forestry Cent
 
 ## Learning objectives 
 
-**Given the hemlock looper was such an aggressive pest, our task today is to determine:**
+### Given the hemlock looper was such an aggressive pest, our objectives are to determine:
 
- 1. **What is the tree community composition of Anticosti Island?**
- 2. **Does the hemlock looper preferentially attack some trees or instead multiple trees?**
- 3. **Does the hemlock looper attack specific trees because they are more abundant?**
- 
-**Based on what you find, we will ask you to provide some management strategies, as the hemlock looper is still an issue in Québec's forests.**
+#### **1. What is the tree community composition of Anticosti Island?**
+#### **2. Does the hemlock looper preferentially attack some trees or instead multiple trees?**
+#### **3. Does the hemlock looper attack specific trees because they are more abundant?**
+
+<br>
+<br>
+
+Based on what you find, we will ask you to provide some management strategies, as the hemlock looper is still an issue in Québec's forests.
 
 ---
 
@@ -58,9 +65,7 @@ Let's start by loading some packages we will use for our analyses
 ```{r, message = FALSE, warning = FALSE}
 library(data.table)
 library(ggplot2)
-library(viridis)
 library(dplyr)
-library(rsconnect)
 ```
 
 Then, we import the data in the current R session
@@ -78,16 +83,24 @@ tree <- fread(file.path(url_tree, csv_tree),
 # Separate row number in instances to have all individual counts
 tree <- tree[rep(seq(.N), Number)]
 tree[, Number := 1]
+
+# Change "Larch" to "American larch"
+# Change "Pine" to "Pine sp."
+# Change "Aspen" to "Aspen sp."
+tree$Species <- gsub("Larch", "American larch", tree$Species)
+
 ```
 
-## Describing Anticosti Island's tree community composition
+## Learning objective 1
 
-### What trees were identified?
+### Describing Anticosti Island's tree community composition
 
-We will first make some preparations for our plot to look nice
-```{r}
+#### We will first investigate the tree species that were identified during the outbreak. To do so, we are going to plot the tree species using a boxplot. This will enable us to evaluate their distribution across the sampled sites on Anticosti Island.
+
+We will first make some preparations for our boxplot to look nice:
+```{r, warnings = FALSE}
 # First, we arrange a table to plot our tree species abundances
-tree[, species_richness := length(Species_abbrev),
+tree[, species_richness := length(Species),
      by = .(Cell, Plot, Compartment, Block)]
 
 boxplot_tab <- unique(tree[,.(Species, species_richness)])
@@ -109,32 +122,34 @@ custom_theme <- theme(# axis values size
                       # axis titles size
                       axis.title = element_text(size = 15, 
                                                 face = "plain"),
+                      plot.title = element_text(size = 17, 
+                                           face = "plain"),
                       axis.line = element_line(size = 0.95),
-                      #  plot.margin = unit(c(2, 1.2, 2, 2), "lines"),
-                      legend.position = "none",
+                      #legend.position = "none",
                       panel.grid = element_blank(),
                       panel.background = element_blank())
 ```
 
-Now we can visualize our plot
-```{r}
+Now we can visualize our boxplot:
+```{r, warnings = FALSE, message = FALSE, fig.width = 8, fig.height = 8}
 ggplot(boxplot_tab,
        aes(x = Species,
            y = species_richness)) +
-  geom_boxplot(fill = "lightgreen",
+  geom_boxplot(fill = "light green",
                color = "black") +
   geom_dotplot(binaxis = "y",
                stackdir = "center",
                dotsize = 0.4) +
   geom_jitter(shape = 16,
               position = position_jitter(0.2)) +
-  xlab("\nTree specie") +
-  ylab("Number of individuals\n") +
+  xlab("Tree specie\n") +
+  ylab("\nNumber of individuals") +
   scale_y_continuous(breaks = seq(0, 30, 5)) +
-  custom_theme
+  custom_theme +
+  coord_flip()
 ```
 
-From this plot, we see that seven different taxa were identified, with their respective abbreviation from the dataset shown in parentheses:
+#### From this boxplot, we see that seven different tree species were identified, with their respective abbreviation from the dataset shown in parentheses:
 
 1. White birch (BOP) - *Betula papyrifera*
 2. White spruce (EPB) - *Picea glauca*
@@ -144,15 +159,15 @@ From this plot, we see that seven different taxa were identified, with their res
 5. Pine (Pin) - *Pinus* spp.
 6. Balsam fir (SAB) - *Abies balsamea*
 
-```{r echo=FALSE, out.width='100%'}
+```{r echo = FALSE, out.width = "100%"}
 knitr::include_graphics('Tree_Anticosti.png')
 ```
 
-Tree taxa represented in dataset
+Tree species represented in dataset
 
-**From looking at this plot:** 
+#### From looking at the boxplot: 
 
-```{r checkbox-a, echo=FALSE}
+```{r checkbox-a, echo = FALSE}
 question("What tree species is the most abundant in the data? Select all that apply",
   answer("White birch (BOP) - *Betula papyrifera*"),
   answer("White spruce (EPB) - *Picea glauca*"),
@@ -164,7 +179,7 @@ question("What tree species is the most abundant in the data? Select all that ap
 )
 ```
 
-```{r checkbox-b, echo=FALSE}
+```{r checkbox-b, echo = FALSE}
 question("What tree species is the least abundant in the data? Select all that apply.",
   answer("White birch (BOP) - *Betula papyrifera*"),
   answer("White spruce (EPB) - *Picea glauca*"),
@@ -176,48 +191,39 @@ question("What tree species is the least abundant in the data? Select all that a
 )
 ```
 
-<br>
+## Learning objective 2
 
-## How were different tree species impacted by hemlock looper?
+### How were the different tree species impacted by the hemlock looper?
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
+#### Here, the scientists who sampled the individual trees assigned a damage state to each one of them. They assigned one of the three following states : "Dead", "Good", or "Questionable".
 
-# Differences in tree condition per plot
-
-# Diversity of trees per compartment 
-
+To investigate the differences in damage among the tree species, we will first need to calculate the proportion of observed damage states per tree species:
+```{r, message = FALSE, warning = FALSE}
 tree_damage <- tree %>%
-  group_by(Species_abbrev, Condition) %>%
+  group_by(Species, Condition) %>%
   summarise(n = n()) %>%
   mutate(freq = n / sum(n))
-
-tree_damage
-
-treecon <- ggplot(tree_damage,
-                  aes(y = freq,
-                      x = Species_abbrev,
-                      fill = Condition)) + 
-    geom_bar(position = "stack",
-             stat = "identity")
-
-treecon
-
-treecon_2 <- treecon +
-  scale_fill_manual(values = viridis) + 
-  ggtitle("Tree condition across species, during hemlock looper outbreak in 1973") +
-  xlab("\nSpecies") +
-  ylab ("Relative proportion\n") +
-  scale_fill_discrete(name = "Tree condition")
-
 ```
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE}
-treecon_2
+We can then plot this with the following commands:
+```{r, message = FALSE, warning = FALSE, fig.width = 9, fig.height = 6}
+ggplot(tree_damage,
+       aes(y = freq,
+           x = Species,
+           fill = Condition)) + 
+  geom_bar(position = "stack",
+           stat = "identity",
+           color = "black") +
+  scale_fill_manual(values = c("light green", "plum", "khaki1")) +
+  ggtitle("Relative damage for each tree species") +
+  xlab("\nTree specie") +
+  ylab ("Proportion of damage\n") +
+  custom_theme
 ```
 
-**From looking at this plot:** 
+#### From looking at this plot:
 
-```{r checkbox-c, echo=FALSE}
+```{r checkbox-c, echo = FALSE}
 question("What tree species was **MOST** affected by the hemlock looper? Select all that apply.",
   answer("White birch (BOP) - *Betula papyrifera*"),
   answer("White spruce (EPB) - *Picea glauca*"),
@@ -229,7 +235,7 @@ question("What tree species was **MOST** affected by the hemlock looper? Select 
 )
 ```
 
-```{r checkbox-d, echo=FALSE}
+```{r checkbox-d, echo = FALSE}
 question("What tree species was **LEAST** affected by the hemlock looper? Select all that apply.",
   answer("White birch (BOP) - *Betula papyrifera*"),
   answer("White spruce (EPB) - *Picea glauca*"),
@@ -240,6 +246,7 @@ question("What tree species was **LEAST** affected by the hemlock looper? Select
   answer("Balsam fir (SAB) - *Abies balsamea*")
 )
 ```
+
 These two previous plots beg the following question: were hemlock loopers attacking Balsam firs (SAB) because they are more abundant, or because this is their preferred prey? In other words, is this a **generalist** or **specialist** pest? What does this mean?
 
 - A species is a **generalist** if it can live in a variety of environments and eat a variety of foods, meaning it is quite flexible in its diet and habitat requirements. 
@@ -247,7 +254,7 @@ These two previous plots beg the following question: were hemlock loopers attack
 
 Two great examples are pigeons and koalas -- pigeons live in a diversity of urban environments and are omnivores (eat plant and animal matter), while koalas only live on and eat eucalyptus. 
 
-```{r echo=FALSE, out.width='100%'}
+```{r echo = FALSE, out.width = "100%"}
 knitr::include_graphics('specialist_generalists.png')
 ```
 
@@ -255,15 +262,14 @@ Example of specialist and generalist species
 
 With this in mind, let us run one more plot to gain some further insights:
 
-## Does the hemlock looper attack tree species that are more abundant, or does it have a preferred tree species?
+## Learning objective 3
 
+### Is there a relationship between the abundance of trees and the trees that the hemlock looper attacks?
 
-This question essentially asks us to consider the **relative proportion** of a given tree species, as it relates to the relative proportion of trees that were denoted as "dead." 
+This question asks us to consider any density-dependent relationships. We thus need to consider the **relative proportion** of a given tree species, as it relates to the relative proportion of trees that were denoted as "dead." (WE NEED TO THINK ABOUT HOW WE BRING THIS CUZ IM UNSURE FOR NOW).
 
 With this in mind, please answer the following question to help us draw predictions for our plot:
-
-
-```{r letter-e, echo=FALSE}
+```{r letter-e, echo = FALSE}
 
 question("What would you expect to see if a tree was most damaged by hemlock looper because it was more abundant?",
          answer("An increasing, straight line - one-to-one relationship, where having more trees means more damage will be detected*", correct = TRUE),
@@ -285,7 +291,9 @@ question("Do hemlock loopers preferentially attack a given tree species?",
 )
 ```
 
-## What do our findings imply in terms of pest management on Anticosti Island? 
+## Interpretations and implications
+
+### What do our findings imply in terms of pest management on Anticosti Island? 
 
 This dataset represents one of the many hemlock looper outbreaks Anticosti island, and Québec as a whole, has experienced. Based on your findings, for homework before our next lecture please reflect on the following questions. To help inform your answers, please refer to the following helpful links about hemlock looper:
 
@@ -293,8 +301,8 @@ This dataset represents one of the many hemlock looper outbreaks Anticosti islan
 - [Biological control of the hemlock looper](https://www.plantwise.org/KnowledgeBank/pestalert?pan=19740515762)
 - [Hemlock looper life history, management considerations](https://www.fs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb5191788.pdf)
 
-**Questions**
+### Take-home questions
 
-1. What trees would you most closely monitor? 
-2. What additional protections/restrictions should exist on Anticosti island?
-3. What management suggestions would you provide to the MFPP? 
+#### **What trees would you most closely monitor?**
+#### **What additional protections/restrictions should exist on Anticosti island?**
+#### **What management suggestions would you provide to the MFPP?**

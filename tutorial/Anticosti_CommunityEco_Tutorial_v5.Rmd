@@ -6,7 +6,7 @@ author: |
   | Maxime Fraser Franco (UQAM)
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: learnr::tutorial
-theme: "cosmo"
+theme: 
 runtime: shiny_prerendered
 ---
 

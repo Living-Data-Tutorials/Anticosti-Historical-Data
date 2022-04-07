@@ -2,10 +2,6 @@
 title: "After the storm: Impacts of a hemlock looper (*Lambdina fiscellaria*) outbreak on tree species in Anticosti Island, 1973"
 author: "Living Data Project - Victoria Marie Glynn (McGill) and Maxime Fraser Franco (UQAM)"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-<<<<<<< HEAD
-description: "LDP Anticosti dataset tutorial"
-=======
->>>>>>> e501de6bbe3c1a4efbb15defb5ea1fb752de4ef6
 output:
   learnr::tutorial:
     progressive: true

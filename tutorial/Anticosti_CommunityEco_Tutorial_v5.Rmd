@@ -2,20 +2,12 @@
 title: "After the storm: Impacts of a hemlock looper (*Lambdina fiscellaria*) outbreak on tree species in Anticosti Island, 1973"
 author: "Living Data Project - Victoria Marie Glynn (McGill) and Maxime Fraser Franco (UQAM)"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-<<<<<<< HEAD
 description: "LDP Anticosti dataset tutorial"
-=======
->>>>>>> e501de6bbe3c1a4efbb15defb5ea1fb752de4ef6
 output:
   learnr::tutorial:
     progressive: true
     allow_skip: true
 runtime: shiny_prerendered
-description: >
-  Learn how to summarize the columns available in an R data frame with
-  `summarise()`. You will also learn how to chain operations together with the
-  magrittr pipe operator `%>%`, and how to compute grouped summaries using
-  `group_by()` together with `summarise()`.
 ---
 
 **Using real data from a devastating pest outbreak in Québec, we will begin to explore how biological invasions impact ecological communities.**

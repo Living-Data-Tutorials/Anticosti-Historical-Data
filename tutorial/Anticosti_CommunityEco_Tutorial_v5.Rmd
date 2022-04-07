@@ -3,19 +3,17 @@ title: "After the storm: Impacts of a hemlock looper (*Lambdina fiscellaria*) ou
 author: "Living Data Project - Victoria Marie Glynn (McGill) and Maxime Fraser Franco (UQAM)"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 description: "LDP Anticosti dataset tutorial"
-output:
-progressive: true
-allow_skip: true
+output: learnr::tutorial
 runtime: shiny_prerendered
 ---
 
 **Using real data from a devastating pest outbreak in Québec, we will begin to explore how biological invasions impact ecological communities.**
 
---------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that show lions hunting zebras. But predator-prey interactions are often less conspicuous, and still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon. 
 
-------------------------------------------------------------------------------
+---
 
 <center>
 
@@ -52,7 +50,7 @@ While the outbreak was occuring, in 1973 Dr. Luc Jobin (Laurentian Forestry Cent
  
 **Based on what you find, we will ask you to provide some management strategies, as the hemlock looper is still an issue in Québec's forests.**
 
-------------------------------------------------------------------------------
+---
 <center>
 
 # Setting up our R session
@@ -87,41 +85,55 @@ tree[, Number := 1]
 
 ## What trees were identified?
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE}
+We will first make some preparations for our plot to look nice
+```{r}
+# First, we arrange a table to plot our tree species abundances
+tree[, species_richness := length(Species_abbrev),
+     by = .(Cell, Plot, Compartment, Block)]
 
-# Prepare some plot customizations
-cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73",
-               "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+boxplot_tab <- unique(tree[,.(Species, species_richness)])
 
-# Diversity of trees 
 
-## Relative frequency of tree species
-
-tree_rel <- tree %>%
-  group_by(Species_abbrev) %>%
-  summarise(n = n()) %>%
-  mutate(freq = n / sum(n))
-
-tree_rel
-```
-```{r, echo = FALSE, message = FALSE, warning = FALSE, include = FALSE}
-
-tree_bloc <- ggplot(tree_rel, aes (y = freq, x = "", fill = Species_abbrev)) + 
-    geom_bar(position = "stack", stat = "identity")
-
-tree_bloc
-
-tree_bloc2 <- tree_bloc + scale_fill_manual(values=cbPalette) + 
-    ggtitle("Tree species identified during hemlock looper outbreak in 1973") +
-    xlab("") + 
-    ylab ("Relative proportion\n") +
-    scale_fill_discrete(name = "Tree species")
-```
-
-```{r, echo = FALSE, message = FALSE, warning = FALSE}
-tree_bloc2
+# We then prepare a custom theme to have a nice plot
+custom_theme <- theme(# axis values size
+                      axis.text.x = element_text(face = "plain", 
+                                                 size = 12,
+                                                 color = "black"),
+                      axis.text.y = element_text(face = "plain", 
+                                                 size = 12,
+                                                 color = "black"),
+                      # axis ticks lenght
+                      axis.ticks.length = unit(.15, "cm"),
+                      # axis ticks width
+                      axis.ticks = element_line(size = 0.90, 
+                                                color = "black"),
+                      # axis titles size
+                      axis.title = element_text(size = 15, 
+                                                face = "plain"),
+                      axis.line = element_line(size = 0.95),
+                      #  plot.margin = unit(c(2, 1.2, 2, 2), "lines"),
+                      legend.position = "none",
+                      panel.grid = element_blank(),
+                      panel.background = element_blank())
 ```
 
+Now we can visualize our plot
+```{r}
+ggplot(boxplot_tab,
+       aes(x = Species,
+           y = species_richness)) +
+  geom_boxplot(fill = "lightgreen",
+               color = "black") +
+  geom_dotplot(binaxis = "y",
+               stackdir = "center",
+               dotsize = 0.4) +
+  geom_jitter(shape = 16,
+              position = position_jitter(0.2)) +
+  xlab("\nTree specie") +
+  ylab("Number of individuals\n") +
+  scale_y_continuous(breaks = seq(0, 30, 5)) +
+  custom_theme
+```
 
 From this plot, we see that seven different taxa were identified, with their respective abbreviation from the dataset shown in parentheses:
 
@@ -182,16 +194,21 @@ tree_damage <- tree %>%
 
 tree_damage
 
-treecon <- ggplot(tree_damage, aes (y = freq, x = Species_abbrev, fill = Condition)) + 
-    geom_bar(position = "stack", stat = "identity")
+treecon <- ggplot(tree_damage,
+                  aes(y = freq,
+                      x = Species_abbrev,
+                      fill = Condition)) + 
+    geom_bar(position = "stack",
+             stat = "identity")
 
 treecon
 
-treecon_2 <- treecon + scale_fill_manual(values=cbPalette) + 
-    ggtitle("Tree condition across species, during hemlock looper outbreak in 1973") +
-    xlab("\nSpecies") +
-    ylab ("Relative proportion\n") +
-    scale_fill_discrete(name = "Tree condition")
+treecon_2 <- treecon +
+  scale_fill_manual(values = viridis) + 
+  ggtitle("Tree condition across species, during hemlock looper outbreak in 1973") +
+  xlab("\nSpecies") +
+  ylab ("Relative proportion\n") +
+  scale_fill_discrete(name = "Tree condition")
 
 ```
 

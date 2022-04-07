@@ -5,8 +5,9 @@ author: |
   | Victoria Marie Glynn (McGill)
   | Maxime Fraser Franco (UQAM)
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output: learnr::tutorial
-theme: "cosmo"
+output: 
+   learnr::tutorial:
+       theme: "cosmo" 
 runtime: shiny_prerendered
 ---
 
@@ -52,16 +53,35 @@ While the outbreak was occuring, in 1973 Dr. Luc Jobin (Laurentian Forestry Cent
 
 ## Learning objectives 
 
-### Given the hemlock looper was such an aggressive pest, our objectives are to determine:
-
-#### **1. What is the tree community composition of Anticosti Island?**
-#### **2. Does the hemlock looper preferentially attack some trees or instead multiple trees?**
-#### **3. Does the hemlock looper attack specific trees because they are more abundant?**
+### By the end of this tutorial, you will be able to: 
 
 <br>
+
+#### 1. Interpret community ecology plots.
+#### 2. Differentiate between a generalist and specialist pest species, using community ecology plots.
+#### 3. Make data-driven management recommendations.
+
 <br>
 
-Based on what you find, we will ask you to provide some management strategies, as the hemlock looper is still an issue in Québec's forests.
+Our Anticosti island tree dataset provides a unique opportunity for us to use **real and historical data** to gain skills in understanding what  commonly made research plots, such as stacked bar plots, mean and how these figures can help us think more critically about natural resource management in Canada.
+
+## Tutorial objectives 
+
+### With our tree dataset, this tutorial will walk us through answering the following three driving questions:
+
+<br> 
+
+#### 1. What is the tree community composition of Anticosti Island in 1973?
+
+#### 2. How was the tree community of Anticosti Island impacted by the hemlock looper outbreak in 1973?
+
+#### 3. Did the hemlock looper attack specific trees because they were more abundant, or did it prefer some species regardless of their abundance?
+
+#### 4. Based on what you find in 1-3, what management recomendations would you have for coping with hemlock looper outbreaks in Québec's forests?
+
+<br> 
+
+At the end of each objective, we will have a "test your knowledge!" section before moving forward, as each objective builds upon the next. 
 
 ---------------------------------------------------------------------------------------
 
@@ -99,9 +119,7 @@ tree$Species <- gsub("Aspen", "Aspen sp.", tree$Species)
 
 ```
 
----------------------------------------------------------------------------------------
-
-## Learning objective 1
+## Tutorial objective 1
 
 ### Describing Anticosti Island's tree community composition
 
@@ -205,11 +223,9 @@ question("What tree species is the least abundant in the data? Select all that a
 )
 ```
 
----------------------------------------------------------------------------------------
+## Tutorial objective 2
 
-## Learning objective 2
-
-### How were the different tree species impacted by the hemlock looper?
+### How was the tree community of Anticosti Island impacted by the hemlock looper?
 
 #### Here, the scientists who sampled the individual trees assigned a damage state to each one of them. They assigned one of the three following states : "Dead", "Good", or "Questionable".
 
@@ -283,9 +299,7 @@ knitr::include_graphics("images/specialist_generalists.png")
 
 With this in mind, let us run one more plot to gain some further insights:
 
----------------------------------------------------------------------------------------
-
-## Learning objective 3
+## Tutorial objective 3
 
 ### Is there a relationship between the abundance of tree species and the ones the hemlock looper attacks?
 
@@ -390,25 +404,30 @@ question("Do hemlock loopers preferentially attack a given tree species?",
 )
 ```
 
-## Interpretations and implications
+## Tutorial objective 4
 
 ### What do our findings imply in terms of pest management on Anticosti Island? 
 
-This dataset represents one of the many hemlock looper outbreaks Anticosti island, and Québec as a whole, has experienced. Based on your findings, for homework before our next lecture please reflect on the following questions. To help inform your answers, please refer to the following helpful links about hemlock looper:
+This dataset represents one of the many hemlock looper outbreaks Anticosti island, and Québec as a whole, has experienced. Based on your findings, please reflect and respond to the following questions. To help inform your answers, please refer to the following helpful links about hemlock looper:
 
 - [Hemlock looper overview](https://www.plantwise.org/knowledgebank/datasheet/29749)
 - [Biological control of the hemlock looper](https://www.plantwise.org/KnowledgeBank/pestalert?pan=19740515762)
 - [Hemlock looper life history, management considerations](https://www.fs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb5191788.pdf)
 
-### Take-home questions
+### "Big-picture" questions
 
-#### What trees would you most closely monitor?
-#### What additional protections/restrictions should exist on Anticosti island?
-#### What management suggestions would you provide to the MFPP?
+#### 1. What trees would you most closely monitor?
+
+#### 2. What additional protections/restrictions should exist on Anticosti island?
+
+#### 3. What management suggestions would you provide to the MFPP?
+
+<br> 
+**As our Anticosti island tree dataset underscores, historical data is a powerful tool to help us best contextualize current management concerns, and assist us in making data-driven decisions.**
 
 ---------------------------------------------------------------------------------------
 
-## **References**
+## References
 
 *Images*
 <br>

@@ -344,29 +344,13 @@ Tree species that were sampled on Anticosti Island
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div>
-<p>These two previous plots beg the following question: were hemlock loopers attacking Balsam firs (SAB) because they are more abundant, or because this is their preferred prey? In other words, is this a <strong>generalist</strong> or <strong>specialist</strong> pest? What does this mean?</p>
-<ul>
-<li>A species is a <strong>generalist</strong> if it can live in a variety of environments and eat a variety of foods, meaning it is quite flexible in its diet and habitat requirements.</li>
-<li>A species is a <strong>specialist</strong> if it has a limited diet, and stricter habitat requirements, meaning it cannot live anywhere and cannot eat anything.</li>
-</ul>
-<p>Two great examples are pigeons and koalas – pigeons live in a diversity of urban environments and are omnivores (eat plant and animal matter), while koalas only live on and eat eucalyptus.</p>
-<p><br></p>
-<div class="figure" style="text-align: center">
-<img src="images/specialist_generalists.png" alt="Example of a specialist and generalist species" width="70%" />
-<p class="caption">
-Example of a specialist and generalist species
-</p>
-</div>
-<p>With this in mind, let us run one more plot to gain some further insights:</p>
+
 </div>
 </div>
 </div>
 <div id="section-learning-objective-3" class="section level2">
 <h2>Learning objective 3</h2>
-<div id="section-is-there-a-relationship-between-the-abundance-of-trees-and-the-trees-that-the-hemlock-looper-attacks" class="section level3">
-<h3>Is there a relationship between the abundance of trees and the trees that the hemlock looper attacks?</h3>
-<p>This question asks us to consider any density-dependent relationships. We thus need to consider the <strong>relative proportion</strong> of a given tree species, as it relates to the relative proportion of trees that were denoted as “dead.” (WE NEED TO THINK ABOUT HOW WE BRING THIS CUZ IM UNSURE FOR NOW).</p>
-<p>With this in mind, please answer the following question to help us draw predictions for our plot:</p>
+
 <div class="panel panel-default">
 <div data-label="letter-e" class="tutorial-question panel-body">
 <div id="letter-e-answer_container" class="shiny-html-output"></div>
@@ -376,6 +360,7 @@ Example of a specialist and generalist species
 </div>
 </div>
 <p>Maxime’s plots</p>
+</div>
 </div>
 <div id="section-lets-test-our-knowledge-2" class="section level3">
 <h3>Let’s test our knowledge!</h3>
@@ -444,231 +429,7 @@ session$onSessionEnded(function() {
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "checkbox-a", question = structure("What tree species is the most abundant in the data? Select all that apply", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_3eae355", 
-    option = "White birch (BOP) - *Betula papyrifera*", value = "White birch (BOP) - *Betula papyrifera*", 
-    label = structure("White birch (BOP) - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4d48ed0", 
-    option = "White spruce (EPB) - *Picea glauca*", value = "White spruce (EPB) - *Picea glauca*", 
-    label = structure("White spruce (EPB) - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8aea01d", 
-    option = "Black spruce (EPN) - *Picea mariana*", value = "Black spruce (EPN) - *Picea mariana*", 
-    label = structure("Black spruce (EPN) - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2a8c476", 
-    option = "American Larch (Meleze) - *Larix laricina*", value = "American Larch (Meleze) - *Larix laricina*", 
-    label = structure("American Larch (Meleze) - <em>Larix laricina<\u002fem>", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5b9c3fb", 
-    option = "Aspen (Peuplier) - *Populus* spp.", value = "Aspen (Peuplier) - *Populus* spp.", 
-    label = structure("Aspen (Peuplier) - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ca324b8", 
-    option = "Pine (Pin) - *Pinus* spp.", value = "Pine (Pin) - *Pinus* spp.", 
-    label = structure("Pine (Pin) - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4c8309e", 
-    option = "Balsam fir (SAB) - *Abies balsamea*", value = "Balsam fir (SAB) - *Abies balsamea*", 
-    label = structure("Balsam fir (SAB) - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
-"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
-"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
-"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
-"character")), message = NULL, post_message = NULL), ids = list(
-    answer = "checkbox-a-answer", question = "checkbox-a"), loading = structure("<strong>Loading:<\u002fstrong> \nWhat tree species is the most abundant in the data? Select all that apply\n<br/><br/><br/>", html = TRUE, class = c("html", 
-"character")), random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 1674393451.7203, options = list()), class = c("learnr_radio", 
-"tutorial_question")), session = session)
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "checkbox-b", 
-    question = structure("What tree species is the least abundant in the data? Select all that apply.", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_ba539e4", 
-        option = "White birch (BOP) - *Betula papyrifera*", value = "White birch (BOP) - *Betula papyrifera*", 
-        label = structure("White birch (BOP) - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_50f02bc", 
-        option = "White spruce (EPB) - *Picea glauca*", value = "White spruce (EPB) - *Picea glauca*", 
-        label = structure("White spruce (EPB) - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_eee466b", 
-        option = "Black spruce (EPN) - *Picea mariana*", value = "Black spruce (EPN) - *Picea mariana*", 
-        label = structure("Black spruce (EPN) - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d93e350", 
-        option = "American Larch (Meleze) - *Larix laricina*", 
-        value = "American Larch (Meleze) - *Larix laricina*", 
-        label = structure("American Larch (Meleze) - <em>Larix laricina<\u002fem>", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_f2024b7", 
-        option = "Aspen (Peuplier) - *Populus* spp.", value = "Aspen (Peuplier) - *Populus* spp.", 
-        label = structure("Aspen (Peuplier) - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d4eaf5c", 
-        option = "Pine (Pin) - *Pinus* spp.", value = "Pine (Pin) - *Pinus* spp.", 
-        label = structure("Pine (Pin) - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_8356951", 
-        option = "Balsam fir (SAB) - *Abies balsamea*", value = "Balsam fir (SAB) - *Abies balsamea*", 
-        label = structure("Balsam fir (SAB) - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
-    "character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
-    "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-    "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
-    "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
-    "character")), message = NULL, post_message = NULL), ids = list(
-        answer = "checkbox-b-answer", question = "checkbox-b"), 
-    loading = structure("<strong>Loading:<\u002fstrong> \nWhat tree species is the least abundant in the data? Select all that apply.\n<br/><br/><br/>", html = TRUE, class = c("html", 
-    "character")), random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 1766834233.17725, options = list()), class = c("learnr_checkbox", 
-"tutorial_question")), session = session)
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "checkbox-c", question = structure("What tree species was <strong>MOST<\u002fstrong> affected by the hemlock looper? Select all that apply.", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_bd40abc", 
-    option = "White birch (BOP) - *Betula papyrifera*", value = "White birch (BOP) - *Betula papyrifera*", 
-    label = structure("White birch (BOP) - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_72b3b00", 
-    option = "White spruce (EPB) - *Picea glauca*", value = "White spruce (EPB) - *Picea glauca*", 
-    label = structure("White spruce (EPB) - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5e8fe82", 
-    option = "Black spruce (EPN) - *Picea mariana*", value = "Black spruce (EPN) - *Picea mariana*", 
-    label = structure("Black spruce (EPN) - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_26f9224", 
-    option = "Larch (Meleze) - *Larix* spp.", value = "Larch (Meleze) - *Larix* spp.", 
-    label = structure("Larch (Meleze) - <em>Larix<\u002fem> spp.", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5f04a2b", 
-    option = "Aspen (Peuplier) - *Populus* spp.", value = "Aspen (Peuplier) - *Populus* spp.", 
-    label = structure("Aspen (Peuplier) - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e21e953", 
-    option = "Pine (Pin) - *Pinus* spp.", value = "Pine (Pin) - *Pinus* spp.", 
-    label = structure("Pine (Pin) - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_26ad0d3", 
-    option = "Balsam fir (SAB) - *Abies balsamea*", value = "Balsam fir (SAB) - *Abies balsamea*", 
-    label = structure("Balsam fir (SAB) - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
-"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
-"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
-"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
-"character")), message = NULL, post_message = NULL), ids = list(
-    answer = "checkbox-c-answer", question = "checkbox-c"), loading = structure("<strong>Loading:<\u002fstrong> \nWhat tree species was <strong>MOST<\u002fstrong> affected by the hemlock looper? Select all that apply.\n<br/><br/><br/>", html = TRUE, class = c("html", 
-"character")), random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 1115140618.48072, options = list()), class = c("learnr_radio", 
-"tutorial_question")), session = session)
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "checkbox-d", 
-    question = structure("What tree species was <strong>LEAST<\u002fstrong> affected by the hemlock looper? Select all that apply.", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_1b8713a", 
-        option = "White birch (BOP) - *Betula papyrifera*", value = "White birch (BOP) - *Betula papyrifera*", 
-        label = structure("White birch (BOP) - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6327842", 
-        option = "White spruce (EPB) - *Picea glauca*", value = "White spruce (EPB) - *Picea glauca*", 
-        label = structure("White spruce (EPB) - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2120f20", 
-        option = "Black spruce (EPN) - *Picea mariana*", value = "Black spruce (EPN) - *Picea mariana*", 
-        label = structure("Black spruce (EPN) - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_33e6a1d", 
-        option = "Larch (Meleze) - *Larix* spp.", value = "Larch (Meleze) - *Larix* spp.", 
-        label = structure("Larch (Meleze) - <em>Larix<\u002fem> spp.", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c97172d", 
-        option = "Aspen (Peuplier) - *Populus* spp.", value = "Aspen (Peuplier) - *Populus* spp.", 
-        label = structure("Aspen (Peuplier) - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4e0a171", 
-        option = "Pine (Pin) - *Pinus* spp.", value = "Pine (Pin) - *Pinus* spp.", 
-        label = structure("Pine (Pin) - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_68180da", 
-        option = "Balsam fir (SAB) - *Abies balsamea*", value = "Balsam fir (SAB) - *Abies balsamea*", 
-        label = structure("Balsam fir (SAB) - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
-    "character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
-    "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-    "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
-    "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
-    "character")), message = NULL, post_message = NULL), ids = list(
-        answer = "checkbox-d-answer", question = "checkbox-d"), 
-    loading = structure("<strong>Loading:<\u002fstrong> \nWhat tree species was <strong>LEAST<\u002fstrong> affected by the hemlock looper? Select all that apply.\n<br/><br/><br/>", html = TRUE, class = c("html", 
-    "character")), random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 397409957.314942, options = list()), class = c("learnr_checkbox", 
-"tutorial_question")), session = session)
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "letter-e", question = structure("What would you expect to see if a tree was most damaged by hemlock looper because it was more abundant?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_5ce0f28", 
-    option = "An increasing, straight line - one-to-one relationship, where having more trees means more damage will be detected*", 
-    value = "An increasing, straight line - one-to-one relationship, where having more trees means more damage will be detected*", 
-    label = structure("An increasing, straight line - one-to-one relationship, where having more trees means more damage will be detected*", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9319175", 
-    option = "A decreasing, straight line - one-to-one relationship, where having less trees means more damage will be detected", 
-    value = "A decreasing, straight line - one-to-one relationship, where having less trees means more damage will be detected", 
-    label = structure("A decreasing, straight line - one-to-one relationship, where having less trees means more damage will be detected", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_c77208c", 
-    option = "A ... - what drives dynamics is tree species identity, and not that species' abundance", 
-    value = "A ... - what drives dynamics is tree species identity, and not that species' abundance", 
-    label = structure("A ... - what drives dynamics is tree species identity, and not that species&#39; abundance", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
-"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
-"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
-"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
-"character")), message = NULL, post_message = NULL), ids = list(
-    answer = "letter-e-answer", question = "letter-e"), loading = structure("<strong>Loading:<\u002fstrong> \nWhat would you expect to see if a tree was most damaged by hemlock looper because it was more abundant?\n<br/><br/><br/>", html = TRUE, class = c("html", 
-"character")), random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 444992307.792784, options = list()), class = c("learnr_radio", 
-"tutorial_question")), session = session)
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "letterx-d", question = structure("Do hemlock loopers preferentially attack a given tree species?", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_d48790f", 
-    option = "Yes, because", value = "Yes, because", label = structure("Yes, because", html = TRUE, class = c("html", 
-    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_af6c698", 
-    option = "Yes, ", value = "Yes, ", label = structure("Yes, ", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_484a6b5", 
-    option = "No, because", value = "No, because", label = structure("No, because", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3b56639", 
-    option = "No, because b", value = "No, because b", label = structure("No, because b", html = TRUE, class = c("html", 
-    "character")), correct = FALSE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
-"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
-"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
-"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
-"character")), message = NULL, post_message = NULL), ids = list(
-    answer = "letterx-d-answer", question = "letterx-d"), loading = structure("<strong>Loading:<\u002fstrong> \nDo hemlock loopers preferentially attack a given tree species?\n<br/><br/><br/>", html = TRUE, class = c("html", 
-"character")), random_answer_order = FALSE, allow_retry = FALSE, 
-    seed = 2059094433.04116, options = list()), class = c("learnr_radio", 
-"tutorial_question")), session = session)
+
 </script>
  <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="dependencies">

@@ -260,12 +260,15 @@ question("What tree species was **LEAST** affected by the hemlock looper? Select
 )
 ```
 
-These two previous plots beg the following question: were hemlock loopers attacking Balsam firs (SAB) because they are more abundant, or because this is their preferred prey? In other words, is this a **generalist** or **specialist** pest? What does this mean?
 
-- A species is a **generalist** if it can live in a variety of environments and eat a variety of foods, meaning it is quite flexible in its diet and habitat requirements. 
-- A species is a **specialist** if it has a limited diet, and stricter habitat requirements, meaning it cannot live anywhere and cannot eat anything. 
+### What can we deduce in light of these results?
 
-Two great examples are pigeons and koalas -- pigeons live in a diversity of urban environments and are omnivores (eat plant and animal matter), while koalas only live on and eat eucalyptus. 
+#### The two previous plots beg the following question: were hemlock loopers attacking Balsam firs (SAB) because they are more abundant, or because this is their preferred prey? In other words, is this a **generalist** or **specialist** pest? What does this mean?
+
+#### - A species is a **generalist** if it can live in a variety of environments and eat a variety of foods, meaning it is quite flexible in its diet and habitat requirements. 
+#### - A species is a **specialist** if it has a limited diet, and stricter habitat requirements, meaning it cannot live anywhere and cannot eat anything. 
+
+#### Two great examples are pigeons and koalas -- pigeons live in a diversity of urban environments and are omnivores (eat plant and animal matter), while koalas only live on and eat eucalyptus.
 
 <br> 
 
@@ -277,11 +280,12 @@ With this in mind, let us run one more plot to gain some further insights:
 
 ## Learning objective 3
 
-### Is there a relationship between the abundance of trees and the trees that the hemlock looper attacks?
+### Is there a relationship between the abundance of tree species and the ones the hemlock looper attacks?
 
-This question asks us to consider any density-dependent relationships. We thus need to consider the **relative proportion** of a given tree species, as it relates to the relative proportion of trees that were denoted as "dead." (WE NEED TO THINK ABOUT HOW WE BRING THIS CUZ IM UNSURE FOR NOW).
+#### This question asks us to consider any density-dependent relationships. We thus need to consider the **relative proportion** of a given tree species, as it relates to the relative proportion of trees that were denoted as "dead." (WE NEED TO THINK ABOUT HOW WE BRING THIS CUZ IM UNSURE FOR NOW).
 
-With this in mind, please answer the following question to help us draw predictions for our plot:
+#### With this in mind, please answer the following question to help us draw predictions for our plot:
+
 ```{r letter-e, echo = FALSE}
 
 question("What would you expect to see if a tree was most damaged by hemlock looper because it was more abundant?",
@@ -292,7 +296,42 @@ question("What would you expect to see if a tree was most damaged by hemlock loo
 )
 ```
 
-Maxime's plots
+### Let's investigate the density-dependent relationship
+
+We'll start by filtering out the "Questionable" tree status to answer our question
+```{r}
+
+# Filtering out "Questionable"
+tree_filter <- tree[Condition != "Questionable"]
+
+# Assign 1 when dead and 0 when alive in a new column 
+tree_filter[, status := ifelse(Condition == "Dead", 1, 0)]
+
+# Calculate proportion of dead species by cell
+tree_filter[, prop_dead := mean(status), by = .(Species, Cell)]
+
+# Generalist question : do they go in cell with more species? (Maybe not)
+tree_filter[, sp_cell := length(unique(Species)), by = Cell]
+
+tree_filter[, sp_ind_by_cell := sum(Number), by = .(Species, Cell)]
+
+tree_lineplot <- unique(tree_filter[, .(Cell, Species, prop_dead, sp_ind_by_cell)])
+
+tree_lineplot[, scaled := (sp_ind_by_cell - mean(sp_ind_by_cell)) / sd(sp_ind_by_cell), by = Species]
+
+ggplot(tree_lineplot[Species == "Balsam fir"],
+       aes(x = scaled,
+           y = prop_dead)) +
+  geom_point() +
+  geom_smooth(method = "glm")
+
+
+
+# dead based on other species present?????
+
+
+
+```
 
 ### Let's test our knowledge!
 

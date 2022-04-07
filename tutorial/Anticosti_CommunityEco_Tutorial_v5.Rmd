@@ -16,6 +16,8 @@ library(rsconnect)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+---------------------------------------------------------------------------------------
+
 ## Context
 
 When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that show lions hunting zebras. But predator-prey interactions are often less conspicuous, and still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon. 
@@ -61,7 +63,7 @@ While the outbreak was occuring, in 1973 Dr. Luc Jobin (Laurentian Forestry Cent
 
 Based on what you find, we will ask you to provide some management strategies, as the hemlock looper is still an issue in Québec's forests.
 
----
+---------------------------------------------------------------------------------------
 
 ## Setting up our R session
 
@@ -96,6 +98,8 @@ tree$Species <- gsub("Pine", "Pine sp.", tree$Species)
 tree$Species <- gsub("Aspen", "Aspen sp.", tree$Species)
 
 ```
+
+---------------------------------------------------------------------------------------
 
 ## Learning objective 1
 
@@ -201,6 +205,8 @@ question("What tree species is the least abundant in the data? Select all that a
 )
 ```
 
+---------------------------------------------------------------------------------------
+
 ## Learning objective 2
 
 ### How were the different tree species impacted by the hemlock looper?
@@ -260,7 +266,6 @@ question("What tree species was **LEAST** affected by the hemlock looper? Select
 )
 ```
 
-
 ### What can we deduce in light of these results?
 
 #### The two previous plots beg the following question: were hemlock loopers attacking Balsam firs (SAB) because they are more abundant, or because this is their preferred prey? In other words, is this a **generalist** or **specialist** pest? What does this mean?
@@ -277,6 +282,8 @@ knitr::include_graphics("images/specialist_generalists.png")
 ```
 
 With this in mind, let us run one more plot to gain some further insights:
+
+---------------------------------------------------------------------------------------
 
 ## Learning objective 3
 
@@ -298,39 +305,77 @@ question("What would you expect to see if a tree was most damaged by hemlock loo
 
 ### Let's investigate the density-dependent relationship
 
-We'll start by filtering out the "Questionable" tree status to answer our question
+We'll start by filtering out the "Questionable" tree status to answer our question, and calculate the total abundance of species by cell, either dead or alive. With this, we'll be able to calculate the abundance of a focal specie relative to the abundance of all species within a cell.
 ```{r}
 
-# Filtering out "Questionable"
-tree_filter <- tree[Condition != "Questionable"]
+# Filter out "Questionable individuals"
+tree_filter <- tree[Condition != "Questionable",
+                    .(Cell, Species, Condition, Number)]
 
-# Assign 1 when dead and 0 when alive in a new column 
-tree_filter[, status := ifelse(Condition == "Dead", 1, 0)]
-
-# Calculate proportion of dead species by cell
-tree_filter[, prop_dead := mean(status), by = .(Species, Cell)]
-
-# Generalist question : do they go in cell with more species? (Maybe not)
-tree_filter[, sp_cell := length(unique(Species)), by = Cell]
-
+# Calculate number of individuals by species for each cell
 tree_filter[, sp_ind_by_cell := sum(Number), by = .(Species, Cell)]
 
-tree_lineplot <- unique(tree_filter[, .(Cell, Species, prop_dead, sp_ind_by_cell)])
+# Calculate number of individuals by species for each cell relative to other species
+tree_filter[, sum_ind_sp_cell := sum(unique(sp_ind_by_cell)), by = Cell]
+tree_filter[, prop_ind_sp_cell := sp_ind_by_cell / sum_ind_sp_cell, by = Cell]
 
-tree_lineplot[, scaled := (sp_ind_by_cell - mean(sp_ind_by_cell)) / sd(sp_ind_by_cell), by = Species]
+```
 
-ggplot(tree_lineplot[Species == "Balsam fir"],
-       aes(x = scaled,
+We then evaluate the proportion of dead tree species relative to all dead species within a cell:
+```{r}
+
+# Calculate total "Dead" by Cell
+tree_filter[Condition == "Dead", total_dead := length(Condition), by = Cell]
+
+# Calculate proportion of dead species over all deaths by cell
+tree_filter[Condition == "Dead", total_dead_sp_cell := length(Condition), by = .(Species, Cell)]
+tree_filter[Condition == "Dead", prop_dead := total_dead_sp_cell / total_dead, by = .(Species, Cell)]
+
+# Keep unique values with only "Dead" rows and use this table for plotting
+tree_filter <- unique(tree_filter[Condition == "Dead",])
+```
+
+We finish by plotting the relationship between the two:
+```{r}
+
+# Filter out Aspen and Pine because only two observations
+species <- c("Balsam fir", "Black spruce", "White spruce")
+tree_filter <- tree_filter[Species %in% species]
+
+# Check to filter cells only with 1 species found dead
+tree_filter[, unique_dead := length(unique(Species)), by = Cell]
+tree_filter <- tree_filter[unique_dead != 1]
+
+
+ggplot(tree_filter,
+       aes(x = prop_ind_sp_cell,
            y = prop_dead)) +
   geom_point() +
+  scale_y_continuous(c(0, 1, 0.25)) +
+  #geom_abline(intercept = 0, slope =1) +
+  geom_smooth(method = "glm") +
+  facet_wrap(~Species,
+             scales = "free_x")
+
+ggplot(tree_filter[Species == "Balsam fir"],
+       aes(x = prop_ind_sp_cell,
+           y = prop_dead)) +
+  geom_point() +
+  scale_y_continuous(c(0, 1, 0.25)) +
+  #geom_abline(intercept = 0, slope =1) +
   geom_smooth(method = "glm")
+  #facet_wrap(~Species,
+  #           scales = "free_x")
 
+model <- glm(cbind(total_dead_sp_cell, total_dead - total_dead_sp_cell) ~ 
+               prop_ind_sp_cell,
+             data = tree_filter,
+             family = binomial(link = logit))
 
+# Generalist question : do they go in cell with more species? (Maybe not)
+#tree_filter[, sp_cell := length(unique(Species)), by = Cell]
 
 # dead based on other species present?????
-
-
-
 ```
 
 ### Let's test our knowledge!

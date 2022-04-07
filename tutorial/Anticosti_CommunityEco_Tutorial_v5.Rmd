@@ -16,12 +16,17 @@ When you think of predator-prey interactions, what comes to mind? Perhaps it is 
 
 ---
 
-<center>
+```{r echo=FALSE}
+knitr::include_graphics('anticosti_loc.png')
+```
 
-![Map of Anticosti Island, Québec](anticosti_loc.png) ![Hemlock looper larvae on a tree branch](hemlock_looper_larva.jpg)
+Map of Anticosti Island, Québec
 
-</center>
+```{r echo=FALSE}
+knitr::include_graphics('hemlock_looper_larva.jpg')
+```
 
+Hemlock looper larvae on a tree branch
 
 ```{r setup, include = FALSE} 
 knitr::opts_chunk$set(echo = TRUE)
@@ -34,11 +39,15 @@ The hemlock looper is a moth pest that is found [all across Canada](http://www.g
 
 Since the first outbreak, the Ministry of Forests, Wildlife and Parks of Quebec (MFFP) and the Society for the Protection of Forests against Insects and Diseases (SOPFIM) have been monitoring hemlock looper outbreaks. The MFFP recorded and surveyed one of the most extensive tree mortality events due to a hemlock looper outbreaks from the [period of 1971-1973](https://cfs.nrcan.gc.ca/pubwarehouse/pdfs/6856.pdf). As the hemlock looper larvae usually attacks mature tree stands by eating the leaves, causing them to appear [yellow and red-brown in color](https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846). 
 
-![Severely defoliated balsam fir forest in July, photograph by Dr. Luc Jobin](balsam_looper.jpg)
+<br>
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('balsam_looper.jpg')
+```
+<br>
+Severely defoliated balsam fir forest in July, photograph by Dr. Luc Jobin
+<br>
 
 While the outbreak was occuring, in 1973 Dr. Luc Jobin (Laurentian Forestry Centres), Michel Chabot (student at that moment, now a forester er in MFFP) went to Anticosti island to visually survey the degree of damage that the hemlock looper was causing. In their data, openly hosted on the [Government of Canada webpage](https://open.canada.ca/data/en/dataset/9dda09b0-649f-4002-b207-7b204eb81cbb), they denoted a tree as either being "good," meaning it did not show any damage from the outbreak, "dead" if the hemlock looper had attacked and killed the stand, and "questionable" if they were unsure. This historical, and yet still very relevant dataset, allows us to think further about how an outbreak occurs and the impact it has in ecological communities. 
-
-</center>
 
 
 # Learning objectives 
@@ -52,7 +61,6 @@ While the outbreak was occuring, in 1973 Dr. Luc Jobin (Laurentian Forestry Cent
 **Based on what you find, we will ask you to provide some management strategies, as the hemlock looper is still an issue in Québec's forests.**
 
 ---
-<center>
 
 # Setting up our R session
 
@@ -147,11 +155,11 @@ From this plot, we see that seven different taxa were identified, with their res
 5. Pine (Pin) - *Pinus* spp.
 6. Balsam fir (SAB) - *Abies balsamea*
 
-<center>
-![Tree taxa represented in dataset](Tree_Anticosti.png)
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('Tree_Anticosti.png')
+```
 
-</center>
-
+Tree taxa represented in dataset
 
 **From looking at this plot:** 
 
@@ -250,13 +258,16 @@ These two previous plots beg the following question: were hemlock loopers attack
 
 Two great examples are pigeons and koalas -- pigeons live in a diversity of urban environments and are omnivores (eat plant and animal matter), while koalas only live on and eat eucalyptus. 
 
-![Example of specialist and generalist species](specialist_generalists.png)
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('specialist_generalists.png')
+```
+
+Example of specialist and generalist species
 
 With this in mind, let us run one more plot to gain some further insights:
 
 # Does the hemlock looper attack tree species that are more abundant, or does it have a preferred tree species?
 
-</center>
 
 This question essentially asks us to consider the **relative proportion** of a given tree species, as it relates to the relative proportion of trees that were denoted as "dead." 
 

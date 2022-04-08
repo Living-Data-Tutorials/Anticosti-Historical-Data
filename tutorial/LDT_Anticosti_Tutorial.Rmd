@@ -130,11 +130,7 @@ tree <- tree[rep(seq(.N), Number)]
 tree[, Number := 1]
 
 # Change "Larch" to "American larch"
-# Change "Pine" to "Pine spp."
-# Change "Aspen" to "Aspen spp."
 tree$Species <- gsub("Larch", "American larch", tree$Species)
-tree$Species <- gsub("Pine", "Pine spp.", tree$Species)
-tree$Species <- gsub("Aspen", "Aspen spp.", tree$Species)
 
 ```
 

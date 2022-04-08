@@ -309,30 +309,47 @@ knitr::include_graphics("images/specialist_generalists.png")
 
 ### Is there a relationship between the abundance of tree species and the ones the hemlock looper attacks?
 
-#### This question asks us to consider the role of relative abundance in pest prevalence. Below is a drawing to convey this idea
+#### This question asks us to consider the role of relative abundance in pest prevalence. Below is a comic to convey this idea
 
 
-#### Imagine you are a hemlock looper about to lay its eggs. Wouldn't it be most convenient to lay them on the first tree you find? In this case, the more abundant a tree is, the more likely it is to be predated upon. Conversely, perhaps the looper prefers a particular tree species because it has more tender leaves. In this case, even if this species was more rare in the forest, we would notice it has more hemlock looper damage than we would expect based on its relative abundance.
+#### Imagine you are a hemlock looper about to lay its eggs. Wouldn't it be most convenient to lay them on the first tree you find? In this case, the more abundant a tree is, the more likely it is to be predated upon. 
+
+#### Alternatively, perhaps hemlock loopers prefer a particular tree species because it has more tender leaves. In this case, even if this species was more rare in the forest, we would notice it has more hemlock looper damage than we would expect based on its relative abundance.
 
 ```{r, echo=FALSE, out.width="70%", fig.align="center", fig.cap="Comic on the role of relative abundance and pest prevalence, by Victoria Marie Glynn"}
-knitr::include_graphics("images/specialist_generalists.png")
+knitr::include_graphics("images/moth_pref.png")
 ```
+<br> 
 
-#### We thus need to consider the **relative proportion** of a given tree species, as it relates to the relative proportion of trees that were denoted as "dead." 
+#### We thus need to consider the **relative proportion** of a given tree species, our x-axis or independent variable, as it relates to the relative proportion of trees that were denoted as "dead," our y-axis or dependent variable, which is proxy for predation pressure.   
+
+<br> 
 
 #### With this in mind, we can create the following schematic to predict three possible scenarios:
 
-#### (1) The hemlock looper has no preference on what tree it predates upon -- it is a **generalist** pest species. 
-
-#### (2) The hemlock looper prefers to predate upon some species versus others -- it is a **specialist** pest species. 
-
-#### (3) The hemlock looper avoids some species, and thus these are less predated upon -- it is a **specialist** pest species. 
-
-```{r, echo=FALSE, out.width="70%", fig.align="center", fig.cap="Comic on the role of relative abundance and pest prevalence, by Victoria Marie Glynn"}
+```{r, echo=FALSE, out.width="70%", fig.align="center", fig.cap="Three possible scenarios regarding the hemlock loopers' predation behavior"}
 knitr::include_graphics("images/rel_abund.jpg")
 ```
 
+<br> 
+
+#### (1) The hemlock looper has no preference on what tree it predates upon -- it is a **generalist** pest species. 
+
+##### → We would see this on our graph as a **one-to-one relationship** (diagonal black line), where a tree species' abundance in the forest is directly proportional to the number of trees from that species denoted as "dead."
+
+#### (2) The hemlock looper prefers to predate upon some species versus others -- it is a **specialist** pest species. 
+
+##### → We would see this on our graph if a species' points lie **above the one-to-one line** (orange triangle), as this means that more individuals of a given tree species are denoted as "dead" relative to their relative abundance in the forest. 
+
+#### (3) The hemlock looper avoids some species, and thus these are less predated upon -- it is a **specialist** pest species. 
+
+##### → We would see this on our graph if a species' points lie **below the one-to-one line** (blue triangle), as this means that less individuals of a given tree species are denoted as "dead" relative to their relative abundance in the forest. 
+
+<br> 
+
 ### Let's plot our actual data and see where the results lie, in relationship to our guiding schematic above.
+
+<br> 
 
 We'll start by filtering out the "Questionable" tree status to answer our question, and calculate the total abundance of species by cell, either dead or alive. With this, we'll be able to calculate the abundance of a focal specie relative to the abundance of all species within a cell.
 ```{r}
@@ -391,7 +408,7 @@ ggplot(tree_filter,
              shape = 21,
              aes(fill = Species)) +
   scale_colour_manual(values = c("black","black", "black")) +
-  scale_fill_manual(values = c("#999999","#E69F00", "#56B4E9")) +
+  scale_fill_manual(values = c("plum", "light green", "khaki1")) +
   ylab("Abundance of dead trees relative to all dead trees\n") +
   xlab("\nRelative abundance of focal tree species") +
   scale_y_continuous(breaks = seq(0, 1, .25),

@@ -329,7 +329,7 @@ knitr::include_graphics("images/specialist_generalists.png")
 #### (3) The hemlock looper avoids some species, and thus these are less predated upon -- it is a **specialist** pest species. 
 
 ```{r, echo=FALSE, out.width="70%", fig.align="center", fig.cap="Comic on the role of relative abundance and pest prevalence, by Victoria Marie Glynn"}
-knitr::include_graphics("images/rel_abund.png")
+knitr::include_graphics("images/rel_abund.jpg")
 ```
 
 ### Let's plot our actual data and see where the results lie, in relationship to our guiding schematic above.

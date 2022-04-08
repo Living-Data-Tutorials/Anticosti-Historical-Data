@@ -19,17 +19,44 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ---------------------------------------------------------------------------------------
 
+## Welcome to the Living Data Tutorials
+
+### The project
+
+#### The Living Data Tutorials (LDTs) were developped by graduate students in ecology and evolution during the spring of 2022. Our aims were to provide free and open-access teaching material in the form of online tutorials for undergraduate students in ecology and evolution. All the tutorials make use of a freely accessible canadian dataset to address specific topics in ecology and evolution. The following tutorial was built with the open-source R language using the [leanr package](https://rstudio.github.io/learnr/). You can find the project folders and files in this [GitHub repository](https://github.com/Living-Data-Tutorials/Anticosti-Historical-Data).
+
+The present tutorial was developed by Victoria Marie Glynn who is a PhD student at McGill University in Montreal, and Maxime Fraser Franco who is a PhD student at UQAM university in Montreal. Please feel free to contact us if you have any question.
+
+Victoria Marie Glynn - email
+
+Maxime Fraser Franco - fraser_franco.maxime@courrier.uqam.ca
+
+### Learning objectives 
+
+### By the end of this tutorial, you will be able to: 
+
+<br>
+
+#### 1. Interpret community ecology plots.
+#### 2. Differentiate between a generalist and specialist pest species, using community ecology plots.
+#### 3. Make data-driven management recommendations.
+
+<br>
+
+Our Anticosti island tree dataset provides a unique opportunity for us to use **real and historical data** to gain skills in understanding what commonly made research plots, such as stacked bar plots, mean and how these figures can help us think more critically about natural resource management in Canada.
+
+---------------------------------------------------------------------------------------
+
 ## Context
 
 When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that showcase lions hunting zebras. But predator-prey interactions are often less conspicuous, and yet still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon. 
 
 <br>
 
-
-```{r, echo=FALSE, out.width="50%", fig.align="center", fig.cap="Map of Anticosti Island, Québec"}
+```{r, echo = FALSE, out.width="50%", fig.align="center", fig.cap = "Map of Anticosti Island, Québec"}
 knitr::include_graphics("images/anticosti_loc.png")
 ```
-```{r, echo=FALSE, out.width="50%", fig.align="center", fig.cap="Photograph of a hemlock looper larvae, Maine Forest Service, Forest Health & Monitoring, Slide Collection"}
+```{r, echo = FALSE, out.width = "50%", fig.align = "center", fig.cap = "Photograph of a hemlock looper larvae, Maine Forest Service, Forest Health & Monitoring, Slide Collection"}
 knitr::include_graphics("images/hemlock_looper_larva.jpg")
 ```
 
@@ -43,27 +70,15 @@ Since the first outbreak, the Ministry of Forests, Wildlife and Parks of Québec
 
 <br>
 
-```{r, echo=FALSE, out.width="50%", fig.align="center", fig.cap="Severely defoliated balsam fir forest due to a hemlock looper outbreak, photograph by Dr. Luc Jobin"}
+```{r, echo = FALSE, out.width = "50%", fig.align = "center", fig.cap = "Severely defoliated balsam fir forest due to a hemlock looper outbreak, photograph by Dr. Luc Jobin"}
 knitr::include_graphics("images/balsam_looper.jpg")
 ```
 
 <br>
 
-While the outbreak was occuring, in 1973 Dr. Luc Jobin from the [Laurentian Forestry Centre](https://www.nrcan.gc.ca/science-and-data/research-centres-and-labs/forestry-research-centres/laurentian-forestry-centre/13473), and his student Michel Chabot (then going onto becoming a forester in MFFP) went to Anticosti island to visually survey the degree of damage that the hemlock looper was causing. In their data, openly hosted on the [Government of Canada's website](https://open.canada.ca/data/en/dataset/9dda09b0-649f-4002-b207-7b204eb81cbb), they denoted a tree as either being "good," meaning it did not show any signs of damage from the outbreak, "dead" if the hemlock looper had attacked and killed the stand, and "questionable" if they were unsure. This historical, and yet still very relevant dataset, allows us to think about the impact pest outbreaks have in ecological communities.
+While the outbreak was occuring, in 1973 Dr. Luc Jobin from the [Laurentian Forestry Centre](https://www.nrcan.gc.ca/science-and-data/research-centres-and-labs/forestry-research-centres/laurentian-forestry-centre/13473), and his student Michel Chabot (then going onto becoming a forester in MFFP) went to Anticosti island to visually survey the degree of damage that the hemlock looper was causing. In their data, openly hosted on the [Government of Canada's website](https://open.canada.ca/data/en/dataset/9dda09b0-649f-4002-b207-7b204eb81cbb), they denoted a tree as either being "good," meaning it did not show any signs of damage from the outbreak, "dead" if the hemlock looper had attacked and killed the stand, and "questionable" if they were unsure. This historical, and yet still very relevant dataset, allows us to think about the impact pest outbreaks have on ecological communities.
 
-## Learning objectives 
-
-### By the end of this tutorial, you will be able to: 
-
-<br>
-
-#### 1. Interpret community ecology plots.
-#### 2. Differentiate between a generalist and specialist pest species, using community ecology plots.
-#### 3. Make data-driven management recommendations.
-
-<br>
-
-Our Anticosti island tree dataset provides a unique opportunity for us to use **real and historical data** to gain skills in understanding what  commonly made research plots, such as stacked bar plots, mean and how these figures can help us think more critically about natural resource management in Canada.
+---------------------------------------------------------------------------------------
 
 ## Tutorial objectives 
 
@@ -100,38 +115,44 @@ Then, we import the data in the current R session
 url_tree <- "https://open.canada.ca/data/en/dataset/9dda09b0-649f-4002-b207-7b204eb81cbb/resource/a1606235-95aa-4c81-a8db-19b852be288c"
 csv_tree <- "download/anticosti_1973_trees.csv"
 
-# Import the data and keep the data we need
+# Import the data and keep the columns we need
 tree <- fread(file.path(url_tree, csv_tree),
               select = c("Block", "Compartment", "Plot",
                          "Cell", "Species", "Species_abbrev",
                          "Condition", "Number"))
 
-# Separate row number in instances to have all individual counts
+# Separate row number as individual instances to have all individual tree counts
 tree <- tree[rep(seq(.N), Number)]
 tree[, Number := 1]
 
 # Change "Larch" to "American larch"
-# Change "Pine" to "Pine"
-# Change "Aspen" to "Aspen"
+# Change "Pine" to "Pine spp."
+# Change "Aspen" to "Aspen spp."
 tree$Species <- gsub("Larch", "American larch", tree$Species)
-tree$Species <- gsub("Pine", "Pine", tree$Species)
-tree$Species <- gsub("Aspen", "Aspen", tree$Species)
+tree$Species <- gsub("Pine", "Pine spp.", tree$Species)
+tree$Species <- gsub("Aspen", "Aspen spp.", tree$Species)
 
 ```
+
+---------------------------------------------------------------------------------------
 
 ## Tutorial objective 1
 
 ### Describing Anticosti Island's tree community composition
 
-#### We will first gain an overview of the tree species that were identified during the outbreak. To do so, we are going to plot the tree species using a boxplot. This will enable us to evaluate their distribution  on Anticosti Island.
+#### We will first gain an overview of the tree species that were identified during the outbreak. To do so, we are going to plot the tree species using a boxplot. This will enable us to evaluate their distribution on Anticosti Island.
 
 We will first make some preparations for our boxplot to look nice:
 ```{r, warnings = FALSE}
 # First, we arrange a table to plot our tree species abundances
+
+# a. Compute the species richness by Cell
 tree[, species_richness := length(Species),
      by = .(Cell, Plot, Compartment, Block)]
 
-boxplot_tab <- unique(tree[,.(Species, species_richness)])
+# b. Keep only unique rows
+# We filter out the "Condition" column to ensure that rows are unique
+boxplot_tab <- unique(tree[, !"Condition"])
 
 
 # We then prepare a custom theme to have a nice plot
@@ -164,12 +185,11 @@ ggplot(boxplot_tab,
        aes(x = Species,
            y = species_richness)) +
   geom_boxplot(fill = "light green",
-               color = "black") +
-  geom_dotplot(binaxis = "y",
-               stackdir = "center",
-               dotsize = 0.4) +
+               color = "black",
+               outlier.shape = NA) +
   geom_jitter(shape = 16,
-              position = position_jitter(0.2)) +
+              alpha = 0.3,
+              position = position_jitter(0.3)) +
   xlab("Tree specie\n") +
   ylab("\nNumber of individuals") +
   scale_y_continuous(breaks = seq(0, 30, 5)) +
@@ -183,8 +203,8 @@ ggplot(boxplot_tab,
 #### 2. White spruce (EPB) - *Picea glauca*
 #### 3. Black spruce (EPN) - *Picea mariana*
 #### 4. American larch (Meleze) - *Larix laricina*
-#### 5. Aspen (Peuplier) - *Populus* spp.
-#### 6. Pine (Pin) - *Pinus* spp.
+#### 5. Aspen spp. (Peuplier) - *Populus* spp.
+#### 6. Pine spp. (Pin) - *Pinus* spp.
 #### 7. Balsam fir (SAB) - *Abies balsamea*
 
 <br> 
@@ -223,6 +243,8 @@ question("What tree species is the **LEAST** abundant in the data?",
 )
 ```
 
+---------------------------------------------------------------------------------------
+
 ## Tutorial objective 2
 
 ### How was the tree community of Anticosti Island impacted by the hemlock looper?
@@ -230,7 +252,6 @@ question("What tree species is the **LEAST** abundant in the data?",
 #### Here, the scientists who sampled the individual trees assigned a damage state to each one of them. They assigned one of the three following states : "Good", "Dead," or "Questionable".
 
 To investigate the differences in damage among the tree species, we will first need to calculate the proportion of observed damage states per tree species:
-
 ```{r, message = FALSE, warning = FALSE}
 tree_damage <- tree %>%
   group_by(Species, Condition) %>%
@@ -264,9 +285,9 @@ question("What tree species was **MOST** affected by the hemlock looper? Select 
   answer("White birch (BOP) - *Betula papyrifera*"),
   answer("White spruce (EPB) - *Picea glauca*"),
   answer("Black spruce (EPN) - *Picea mariana*"),
-  answer("Larch (Meleze) - *Larix* spp."),
-  answer("Aspen (Peuplier) - *Populus* spp."),
-  answer("Pine (Pin) - *Pinus* spp."),
+  answer("American larch (Meleze) - *Larix laricina*."),
+  answer("Aspen spp. (Peuplier) - *Populus* spp."),
+  answer("Pine spp. (Pin) - *Pinus* spp."),
   answer("Balsam fir (SAB) - *Abies balsamea*", correct = TRUE)
 )
 ```
@@ -276,9 +297,9 @@ question("What tree species was **LEAST** affected by the hemlock looper? Select
   answer("White birch (BOP) - *Betula papyrifera*"),
   answer("White spruce (EPB) - *Picea glauca*"),
   answer("Black spruce (EPN) - *Picea mariana*"),
-  answer("Larch (Meleze) - *Larix* spp.", correct = TRUE),
-  answer("Aspen (Peuplier) - *Populus* spp.", correct = TRUE),
-  answer("Pine (Pin) - *Pinus* spp.", correct = TRUE),
+  answer("American larch (Meleze) - *Larix laricina*", correct = TRUE),
+  answer("Aspen spp. (Peuplier) - *Populus* spp.", correct = TRUE),
+  answer("Pine spp. (Pin) - *Pinus* spp.", correct = TRUE),
   answer("Balsam fir (SAB) - *Abies balsamea*")
 )
 ```
@@ -286,6 +307,7 @@ question("What tree species was **LEAST** affected by the hemlock looper? Select
 ### What can we deduce in light of these results?
 
 #### The two previous plots beg the following question: were hemlock loopers attacking Balsam firs (SAB) because were more abundant on Anticosti island, or because this is their preferred prey? In other words, is this a **generalist** or **specialist** predator pest species? 
+
 <br>
 
 #### Let us break this idea down: 
@@ -299,35 +321,37 @@ question("What tree species was **LEAST** affected by the hemlock looper? Select
 
 <br> 
 
-```{r, echo=FALSE, out.width="70%", fig.align="center", fig.cap="Example of a specialist and generalist species"}
+```{r, echo = FALSE, out.width = "70%", fig.align = "center", fig.cap = "Example of a specialist and generalist species"}
 knitr::include_graphics("images/specialist_generalists.png")
 ```
 
-### With this in mind, let us run one more plot to gain some further insights:
+### With this in mind, let us continue our investigation to gain some further insights:
+
+---------------------------------------------------------------------------------------
 
 ## Tutorial objective 3
 
 ### Is there a relationship between the abundance of tree species and the ones the hemlock looper attacks?
 
-#### This question asks us to consider the role of relative abundance in pest prevalence. Below is a comic to convey this idea
-
+#### This question asks us to consider the role of relative abundance in pest prevalence. Below is a comic to convey this idea.
 
 #### Imagine you are a hemlock looper about to lay its eggs. Wouldn't it be most convenient to lay them on the first tree you find? In this case, the more abundant a tree is, the more likely it is to be predated upon. 
 
 #### Alternatively, perhaps hemlock loopers prefer a particular tree species because it has more tender leaves. In this case, even if this species was more rare in the forest, we would notice it has more hemlock looper damage than we would expect based on its relative abundance.
 
-```{r, echo=FALSE, out.width="70%", fig.align="center", fig.cap="Comic on the role of relative abundance and pest prevalence, by Victoria Marie Glynn"}
+```{r, echo = FALSE, out.width = "70%", fig.align = "center", fig.cap = "Comic on the role of relative abundance and pest prevalence, by Victoria Marie Glynn"}
 knitr::include_graphics("images/moth_pref.png")
 ```
+
 <br> 
 
-#### We thus need to consider the **relative proportion** of a given tree species, our x-axis or independent variable, as it relates to the relative proportion of trees that were denoted as "dead," our y-axis or dependent variable, which is proxy for predation pressure.   
+#### We thus need to consider the **relative abundance** (%) of a given tree species, our x-axis or independent variable, as it relates to the relative prevalence (%) of trees that were denoted as "dead," our y-axis or dependent variable, which is proxy for predation pressure.
 
 <br> 
 
 #### With this in mind, we can create the following schematic to predict three possible scenarios:
 
-```{r, echo=FALSE, out.width="70%", fig.align="center", fig.cap="Three possible scenarios regarding the hemlock loopers' predation behavior"}
+```{r, echo = FALSE, out.width = "80%", fig.align = "center", fig.cap = "Three possible scenarios regarding the hemlock loopers' predation behavior"}
 knitr::include_graphics("images/rel_abund.jpg")
 ```
 
@@ -335,15 +359,15 @@ knitr::include_graphics("images/rel_abund.jpg")
 
 #### (1) The hemlock looper has no preference on what tree it predates upon -- it is a **generalist** pest species. 
 
-##### → We would see this on our graph as a **one-to-one relationship** (diagonal black line), where a tree species' abundance in the forest is directly proportional to the number of trees from that species denoted as "dead."
+##### → We would see this on our graph as a **one-to-one relationship** (diagonal black line), where a tree species' abundance in the forest is directly proportional to the number of trees from that species denoted as "dead." This means that the more the trees, the more the hemlock looper eats it.
 
 #### (2) The hemlock looper prefers to predate upon some species versus others -- it is a **specialist** pest species. 
 
-##### → We would see this on our graph if a species' points lie **above the one-to-one line** (orange triangle), as this means that more individuals of a given tree species are denoted as "dead" relative to their relative abundance in the forest. 
+##### → We would see this on our graph if a tree species' points lie **above the one-to-one line** (orange triangle), as this means that the hemlock looper kills more trees of a given species (tree denoted as "dead") even if the relative abundance of this tree specie is lower.
 
 #### (3) The hemlock looper avoids some species, and thus these are less predated upon -- it is a **specialist** pest species. 
 
-##### → We would see this on our graph if a species' points lie **below the one-to-one line** (blue triangle), as this means that less individuals of a given tree species are denoted as "dead" relative to their relative abundance in the forest. 
+##### → We would see this on our graph if a species' points lie **below the one-to-one line** (blue triangle), as this means that less individuals of a given tree species are killed by the hemlock looper even if their abundance relative to other species is higher.
 
 <br> 
 
@@ -351,7 +375,7 @@ knitr::include_graphics("images/rel_abund.jpg")
 
 <br> 
 
-We'll start by filtering out the "Questionable" tree status to answer our question, and calculate the total abundance of species by cell, either dead or alive. With this, we'll be able to calculate the abundance of a focal specie relative to the abundance of all species within a cell.
+We'll start by filtering out the "Questionable" tree status to answer our question, and calculate the total abundance of tree species by cell, either dead or alive. With this, we'll be able to calculate the abundance of a focal specie relative to the abundance of all species within a cell.
 ```{r}
 
 # Filter out "Questionable individuals"
@@ -367,7 +391,7 @@ tree_filter[, prop_ind_sp_cell := sp_ind_by_cell / sum_ind_sp_cell, by = Cell]
 
 ```
 
-We then evaluate the proportion of dead tree species relative to all dead species within a cell:
+We then evaluate the count of a tree specie's deaths relative to all dead species within a cell:
 ```{r}
 
 # Calculate total "Dead" by Cell
@@ -422,7 +446,7 @@ ggplot(tree_filter,
 ### Let's test our knowledge!
 
 **From the graph and  based on our predictions above, we can now answer the question:**
-```{r letterx-d, echo=FALSE}
+```{r letterx-d, echo = FALSE}
 question("Do hemlock loopers preferentially attack a given tree species?",
   answer("**Yes**, hemlock loopers preferentially attack **balsam fir trees** because there are proportionally more dead trees of this species relative to their overall abundance in the forest", correct = TRUE),
   answer("**Yes**, hemlock loopers preferentially attack **white spruce trees** because there are proportionally less dead trees of this species relative to their overall abundance in the forest"),
@@ -431,9 +455,11 @@ question("Do hemlock loopers preferentially attack a given tree species?",
 )
 ```
 
+---------------------------------------------------------------------------------------
+
 ## Tutorial objective 4
 
-### What do our findings imply in terms of pest management on Anticosti Island? 
+### What do our findings imply in terms of pest management on Anticosti Island?
 
 This dataset represents one of the many hemlock looper outbreaks Anticosti island, and Québec as a whole, has experienced. Based on your findings, please reflect and respond to the following questions. To help inform your answers, please refer to the following helpful links about hemlock looper:
 
@@ -450,6 +476,7 @@ This dataset represents one of the many hemlock looper outbreaks Anticosti islan
 #### 3. What management suggestions would you provide to the MFPP?
 
 <br> 
+
 **As our Anticosti island tree dataset underscores, historical data is a powerful tool to help us best contextualize current management concerns, and assist us in making data-driven decisions.**
 
 ---------------------------------------------------------------------------------------

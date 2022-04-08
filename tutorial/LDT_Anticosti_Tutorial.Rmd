@@ -51,6 +51,7 @@ knitr::include_graphics("images/ciee.jpeg")
 Our Anticosti Island tree dataset provides a unique opportunity for us to use **real and historical data** to gain skills in understanding what commonly made research plots, such as stacked bar plots, mean and how these figures can help us think more critically about natural resource management in Canada.
 
 ---------------------------------------------------------------------------------------
+
 ## What we will explore
 
 When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that showcase lions hunting zebras. But predator-prey interactions are often less conspicuous, and yet still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon. 

@@ -225,11 +225,11 @@ knitr::include_graphics("images/Tree_Anticosti.png")
 question("What tree species is the **MOST** abundant in the data?",
   answer("White birch (BOP) - *Betula papyrifera*"),
   answer("White spruce (EPB) - *Picea glauca*"),
-  answer("Black spruce (EPN) - *Picea mariana*"),
+  answer("Black spruce (EPN) - *Picea mariana*", correct = TRUE),
   answer("American Larch (Meleze) - *Larix laricina*"),
   answer("Aspen (Peuplier) - *Populus* spp."),
   answer("Pine (Pin) - *Pinus* spp."),
-  answer("Balsam fir (SAB) - *Abies balsamea*", correct = TRUE)
+  answer("Balsam fir (SAB) - *Abies balsamea*")
 )
 ```
 

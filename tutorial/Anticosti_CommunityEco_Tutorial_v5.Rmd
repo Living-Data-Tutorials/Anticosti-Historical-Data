@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Context
 
-When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that show lions hunting zebras. But predator-prey interactions are often less conspicuous, and still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon. 
+When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that showcase lions hunting zebras. But predator-prey interactions are often less conspicuous, and yet still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon. 
 
 <br>
 
@@ -37,19 +37,19 @@ knitr::include_graphics("images/hemlock_looper_larva.jpg")
 
 ### What happened?
 
-The hemlock looper is a moth pest that is found [all across Canada](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf), and into the USA, as far south as the state of Georgia. Since 1910, it has wreaked havoc in Québec's forests. Between 1910 and 1975, these outbreaks caused an estimated [24 million cubic meters of forest to be lost](https://fr.wikipedia.org/wiki/Lambdina_fiscellaria) in the province. Since then, additional outbreaks have occurred across Québec in places like Bas-Saint-Laurent , Gaspésie , and Anticosti Island. 
+The hemlock looper is a moth pest that is found [all across Canada](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf), and parts of the USA, often as far south as the state of Georgia. Since 1910, it has wreaked havoc in Québec's forests. Between 1910 and 1975, these outbreaks caused an estimated [24 million cubic meters of forest to be lost](https://fr.wikipedia.org/wiki/Lambdina_fiscellaria) in the province. Since then, additional outbreaks have occurred across Québec in places like Bas-Saint-Laurent, Gaspésie, and Anticosti Island. 
 
-Since the first outbreak, the Ministry of Forests, Wildlife and Parks of Quebec (MFFP) and the Society for the Protection of Forests against Insects and Diseases (SOPFIM) have been monitoring hemlock looper outbreaks. The MFFP recorded and surveyed one of the most extensive tree mortality events due to a hemlock looper outbreaks from the [period of 1971-1973](https://cfs.nrcan.gc.ca/pubwarehouse/pdfs/6856.pdf). As the hemlock looper larvae usually attacks mature tree stands by eating the leaves, causing them to appear [yellow and red-brown in color](https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846). 
+Since the first outbreak, the Ministry of Forests, Wildlife and Parks of Québec ([MFFP](https://mffp.gouv.qc.ca/?lang=en)) and the Society for the Protection of Forests against Insects and Diseases ([SOPFIM](https://sopfim.qc.ca/fr/)) have been monitoring hemlock looper outbreaks. The MFFP surveyed one of the most extensive tree mortality events due to a hemlock looper outbreaks from the [period of 1971-1973](https://cfs.nrcan.gc.ca/pubwarehouse/pdfs/6856.pdf). As the hemlock looper larvae usually attacks mature tree stands by eating the leaves, it causes them to appear [yellow and red-brown in color](https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846), a tell-tale sign that an outbreak has occurred. 
 
 <br>
 
-```{r, echo=FALSE, out.width="50%", fig.align="center", fig.cap="Severely defoliated balsam fir forest, photograph by Dr. Luc Jobin"}
+```{r, echo=FALSE, out.width="50%", fig.align="center", fig.cap="Severely defoliated balsam fir forest due to a hemlock looper outbreak, photograph by Dr. Luc Jobin"}
 knitr::include_graphics("images/balsam_looper.jpg")
 ```
 
 <br>
 
-While the outbreak was occuring, in 1973 Dr. Luc Jobin (Laurentian Forestry Centres), Michel Chabot (student at that moment, now a forester er in MFFP) went to Anticosti island to visually survey the degree of damage that the hemlock looper was causing. In their data, openly hosted on the [Government of Canada webpage](https://open.canada.ca/data/en/dataset/9dda09b0-649f-4002-b207-7b204eb81cbb), they denoted a tree as either being "good," meaning it did not show any damage from the outbreak, "dead" if the hemlock looper had attacked and killed the stand, and "questionable" if they were unsure. This historical, and yet still very relevant dataset, allows us to think further about how an outbreak occurs and the impact it has in ecological communities. 
+While the outbreak was occuring, in 1973 Dr. Luc Jobin from the [Laurentian Forestry Centre](https://www.nrcan.gc.ca/science-and-data/research-centres-and-labs/forestry-research-centres/laurentian-forestry-centre/13473), and his student Michel Chabot (then going onto becoming a forester in MFFP) went to Anticosti island to visually survey the degree of damage that the hemlock looper was causing. In their data, openly hosted on the [Government of Canada's website](https://open.canada.ca/data/en/dataset/9dda09b0-649f-4002-b207-7b204eb81cbb), they denoted a tree as either being "good," meaning it did not show any signs of damage from the outbreak, "dead" if the hemlock looper had attacked and killed the stand, and "questionable" if they were unsure. This historical, and yet still very relevant dataset, allows us to think about the impact pest outbreaks have in ecological communities.
 
 ## Learning objectives 
 
@@ -67,7 +67,7 @@ Our Anticosti island tree dataset provides a unique opportunity for us to use **
 
 ## Tutorial objectives 
 
-### With our tree dataset, this tutorial will walk us through answering the following three driving questions:
+### With our Anticosti island tree dataset, this tutorial will walk us through answering the following **four** driving questions:
 
 <br> 
 
@@ -111,11 +111,11 @@ tree <- tree[rep(seq(.N), Number)]
 tree[, Number := 1]
 
 # Change "Larch" to "American larch"
-# Change "Pine" to "Pine sp."
-# Change "Aspen" to "Aspen sp."
+# Change "Pine" to "Pine"
+# Change "Aspen" to "Aspen"
 tree$Species <- gsub("Larch", "American larch", tree$Species)
-tree$Species <- gsub("Pine", "Pine sp.", tree$Species)
-tree$Species <- gsub("Aspen", "Aspen sp.", tree$Species)
+tree$Species <- gsub("Pine", "Pine", tree$Species)
+tree$Species <- gsub("Aspen", "Aspen", tree$Species)
 
 ```
 
@@ -123,7 +123,7 @@ tree$Species <- gsub("Aspen", "Aspen sp.", tree$Species)
 
 ### Describing Anticosti Island's tree community composition
 
-#### We will first investigate the tree species that were identified during the outbreak. To do so, we are going to plot the tree species using a boxplot. This will enable us to evaluate their distribution across the sampled sites on Anticosti Island.
+#### We will first gain an overview of the tree species that were identified during the outbreak. To do so, we are going to plot the tree species using a boxplot. This will enable us to evaluate their distribution  on Anticosti Island.
 
 We will first make some preparations for our boxplot to look nice:
 ```{r, warnings = FALSE}
@@ -200,7 +200,7 @@ knitr::include_graphics("images/Tree_Anticosti.png")
 #### From looking at the boxplot: 
 
 ```{r checkbox-a, echo = FALSE}
-question("What tree species is the most abundant in the data? Select all that apply",
+question("What tree species is the **MOST** abundant in the data?",
   answer("White birch (BOP) - *Betula papyrifera*"),
   answer("White spruce (EPB) - *Picea glauca*"),
   answer("Black spruce (EPN) - *Picea mariana*"),
@@ -212,13 +212,13 @@ question("What tree species is the most abundant in the data? Select all that ap
 ```
 
 ```{r checkbox-b, echo = FALSE}
-question("What tree species is the least abundant in the data? Select all that apply.",
+question("What tree species is the **LEAST** abundant in the data?",
   answer("White birch (BOP) - *Betula papyrifera*"),
   answer("White spruce (EPB) - *Picea glauca*"),
   answer("Black spruce (EPN) - *Picea mariana*"),
   answer("American Larch (Meleze) - *Larix laricina*", correct = TRUE),
-  answer("Aspen (Peuplier) - *Populus* spp.", correct = TRUE),
-  answer("Pine (Pin) - *Pinus* spp.", correct = TRUE),
+  answer("Aspen (Peuplier) - *Populus* spp."),
+  answer("Pine (Pin) - *Pinus* spp."),
   answer("Balsam fir (SAB) - *Abies balsamea*")
 )
 ```
@@ -227,9 +227,10 @@ question("What tree species is the least abundant in the data? Select all that a
 
 ### How was the tree community of Anticosti Island impacted by the hemlock looper?
 
-#### Here, the scientists who sampled the individual trees assigned a damage state to each one of them. They assigned one of the three following states : "Dead", "Good", or "Questionable".
+#### Here, the scientists who sampled the individual trees assigned a damage state to each one of them. They assigned one of the three following states : "Good", "Dead," or "Questionable".
 
 To investigate the differences in damage among the tree species, we will first need to calculate the proportion of observed damage states per tree species:
+
 ```{r, message = FALSE, warning = FALSE}
 tree_damage <- tree %>%
   group_by(Species, Condition) %>%
@@ -284,7 +285,12 @@ question("What tree species was **LEAST** affected by the hemlock looper? Select
 
 ### What can we deduce in light of these results?
 
-#### The two previous plots beg the following question: were hemlock loopers attacking Balsam firs (SAB) because they are more abundant, or because this is their preferred prey? In other words, is this a **generalist** or **specialist** pest? What does this mean?
+#### The two previous plots beg the following question: were hemlock loopers attacking Balsam firs (SAB) because were more abundant on Anticosti island, or because this is their preferred prey? In other words, is this a **generalist** or **specialist** predator pest species? 
+<br>
+
+#### Let us break this idea down: 
+
+<br> 
 
 #### - A species is a **generalist** if it can live in a variety of environments and eat a variety of foods, meaning it is quite flexible in its diet and habitat requirements. 
 #### - A species is a **specialist** if it has a limited diet, and stricter habitat requirements, meaning it cannot live anywhere and cannot eat anything. 
@@ -297,27 +303,36 @@ question("What tree species was **LEAST** affected by the hemlock looper? Select
 knitr::include_graphics("images/specialist_generalists.png")
 ```
 
-With this in mind, let us run one more plot to gain some further insights:
+### With this in mind, let us run one more plot to gain some further insights:
 
 ## Tutorial objective 3
 
 ### Is there a relationship between the abundance of tree species and the ones the hemlock looper attacks?
 
-#### This question asks us to consider any density-dependent relationships. We thus need to consider the **relative proportion** of a given tree species, as it relates to the relative proportion of trees that were denoted as "dead." (THE RELATIONSHIP IS NOT DENSITY BUT RELATIVE ABUNDANCE INSTEAD. dENSITY WOULD RELATE TO ABUNDANCE RELATIVE TO SIZE OF PLOT IN METERS)
+#### This question asks us to consider the role of relative abundance in pest prevalence. Below is a drawing to convey this idea
 
-#### With this in mind, please answer the following question to help us draw predictions for our plot:
 
-```{r letter-e, echo = FALSE}
+#### Imagine you are a hemlock looper about to lay its eggs. Wouldn't it be most convenient to lay them on the first tree you find? In this case, the more abundant a tree is, the more likely it is to be predated upon. Conversely, perhaps the looper prefers a particular tree species because it has more tender leaves. In this case, even if this species was more rare in the forest, we would notice it has more hemlock looper damage than we would expect based on its relative abundance.
 
-question("What would you expect to see if a tree was most damaged by hemlock looper because it was more abundant?",
-         answer("An increasing, straight line - one-to-one relationship, where having more trees means more damage will be detected*", correct = TRUE),
-         answer("A decreasing, straight line - one-to-one relationship, where having less trees means more damage will be detected"),
-         answer("A ... - what drives dynamics is tree species identity, and not that species' abundance")
- 
-)
+```{r, echo=FALSE, out.width="70%", fig.align="center", fig.cap="Comic on the role of relative abundance and pest prevalence, by Victoria Marie Glynn"}
+knitr::include_graphics("images/specialist_generalists.png")
 ```
 
-### Let's investigate the density-dependent relationship
+#### We thus need to consider the **relative proportion** of a given tree species, as it relates to the relative proportion of trees that were denoted as "dead." 
+
+#### With this in mind, we can create the following schematic to predict three possible scenarios:
+
+#### (1) The hemlock looper has no preference on what tree it predates upon -- it is a **generalist** pest species. 
+
+#### (2) The hemlock looper prefers to predate upon some species versus others -- it is a **specialist** pest species. 
+
+#### (3) The hemlock looper avoids some species, and thus these are less predated upon -- it is a **specialist** pest species. 
+
+```{r, echo=FALSE, out.width="70%", fig.align="center", fig.cap="Comic on the role of relative abundance and pest prevalence, by Victoria Marie Glynn"}
+knitr::include_graphics("images/rel_abund.png")
+```
+
+### Let's plot our actual data and see where the results lie, in relationship to our guiding schematic above.
 
 We'll start by filtering out the "Questionable" tree status to answer our question, and calculate the total abundance of species by cell, either dead or alive. With this, we'll be able to calculate the abundance of a focal specie relative to the abundance of all species within a cell.
 ```{r}
@@ -352,11 +367,11 @@ tree_filter <- unique(tree_filter[Condition == "Dead",])
 We make some final adjustments to the data to filter out only what we need:
 ```{r}
 
-# Filter out Aspen and Pine because only two observations
+# Filter out Aspen and Pine because we only have two observations
 species <- c("Balsam fir", "Black spruce", "White spruce")
 tree_filter <- tree_filter[Species %in% species]
 
-# Check to filter cells only with 1 species found dead
+# Filter cells with only with 1 species found dead
 tree_filter[, unique_dead := length(unique(Species)), by = Cell]
 tree_filter <- tree_filter[unique_dead != 1]
 
@@ -392,10 +407,10 @@ ggplot(tree_filter,
 **From the graph and  based on our predictions above, we can now answer the question:**
 ```{r letterx-d, echo=FALSE}
 question("Do hemlock loopers preferentially attack a given tree species?",
-  answer("Yes, because", correct = TRUE),
-  answer("Yes, "),
-  answer("No, because"),
-  answer("No, because b")
+  answer("**Yes**, hemlock loopers preferentially attack **balsam fir trees** because there are proportionally more dead trees of this species relative to their overall abundance in the forest", correct = TRUE),
+  answer("**Yes**, hemlock loopers preferentially attack **white spruce trees** because there are proportionally less dead trees of this species relative to their overall abundance in the forest"),
+  answer("**No**, the relative abundance of dead trees for each species is directly proportional to their overall abundance in the forest"),
+  answer("I am not sure, I would need more data")
 )
 ```
 

@@ -286,11 +286,11 @@ ggplot(tree_damage,
 question("What tree species was **MOST** affected by the hemlock looper? Select all that apply.",
   answer("White birch (BOP) - *Betula papyrifera*"),
   answer("White spruce (EPB) - *Picea glauca*"),
-  answer("Black spruce (EPN) - *Picea mariana*"),
+  answer("Black spruce (EPN) - *Picea mariana*", correct = TRUE),
   answer("American larch (Meleze) - *Larix laricina*."),
   answer("Aspen (Peuplier) - *Populus* spp."),
   answer("Pine (Pin) - *Pinus* spp."),
-  answer("Balsam fir (SAB) - *Abies balsamea*", correct = TRUE)
+  answer("Balsam fir (SAB) - *Abies balsamea*")
 )
 ```
 

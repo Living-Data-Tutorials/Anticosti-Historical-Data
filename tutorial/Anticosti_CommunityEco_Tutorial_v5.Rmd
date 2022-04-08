@@ -246,7 +246,7 @@ ggplot(tree_damage,
   geom_bar(position = "stack",
            stat = "identity",
            color = "black") +
-  scale_fill_manual(values = c("light green", "plum", "khaki1")) +
+  scale_fill_manual(values = c("plum", "light green", "khaki1")) +
   ggtitle("Relative damage for each tree species") +
   xlab("Tree specie\n") +
   ylab ("\nProportion of damage") +
@@ -303,7 +303,7 @@ With this in mind, let us run one more plot to gain some further insights:
 
 ### Is there a relationship between the abundance of tree species and the ones the hemlock looper attacks?
 
-#### This question asks us to consider any density-dependent relationships. We thus need to consider the **relative proportion** of a given tree species, as it relates to the relative proportion of trees that were denoted as "dead." (WE NEED TO THINK ABOUT HOW WE BRING THIS CUZ IM UNSURE FOR NOW).
+#### This question asks us to consider any density-dependent relationships. We thus need to consider the **relative proportion** of a given tree species, as it relates to the relative proportion of trees that were denoted as "dead." (THE RELATIONSHIP IS NOT DENSITY BUT RELATIVE ABUNDANCE INSTEAD. dENSITY WOULD RELATE TO ABUNDANCE RELATIVE TO SIZE OF PLOT IN METERS)
 
 #### With this in mind, please answer the following question to help us draw predictions for our plot:
 
@@ -349,7 +349,7 @@ tree_filter[Condition == "Dead", prop_dead := total_dead_sp_cell / total_dead, b
 tree_filter <- unique(tree_filter[Condition == "Dead",])
 ```
 
-We finish by plotting the relationship between the two:
+We make some final adjustments to the data to filter out only what we need:
 ```{r}
 
 # Filter out Aspen and Pine because only two observations
@@ -360,36 +360,31 @@ tree_filter <- tree_filter[Species %in% species]
 tree_filter[, unique_dead := length(unique(Species)), by = Cell]
 tree_filter <- tree_filter[unique_dead != 1]
 
+```
 
+We finish by plotting the relationship between the two:
+```{r fig.width = 8.5, fig.height = 6}
 ggplot(tree_filter,
        aes(x = prop_ind_sp_cell,
-           y = prop_dead)) +
-  geom_point() +
-  scale_y_continuous(c(0, 1, 0.25)) +
-  #geom_abline(intercept = 0, slope =1) +
-  geom_smooth(method = "glm") +
-  facet_wrap(~Species,
-             scales = "free_x")
+           y = prop_dead,
+           colour = Species)) +
+  geom_abline(intercept = 0,
+              slope = 1,
+              size = 0.8,
+              linetype = "dashed") +
+  geom_point(size = 4,
+             shape = 21,
+             aes(fill = Species)) +
+  scale_colour_manual(values = c("black","black", "black")) +
+  scale_fill_manual(values = c("#999999","#E69F00", "#56B4E9")) +
+  ylab("Abundance of dead trees relative to all dead trees\n") +
+  xlab("\nRelative abundance of focal tree species") +
+  scale_y_continuous(breaks = seq(0, 1, .25),
+                     limits = c(0,1)) +
+  scale_x_continuous(breaks = seq(0, 1, .25),
+                     limits = c(0,1)) +
+  custom_theme
 
-ggplot(tree_filter[Species == "Balsam fir"],
-       aes(x = prop_ind_sp_cell,
-           y = prop_dead)) +
-  geom_point() +
-  scale_y_continuous(c(0, 1, 0.25)) +
-  #geom_abline(intercept = 0, slope =1) +
-  geom_smooth(method = "glm")
-  #facet_wrap(~Species,
-  #           scales = "free_x")
-
-model <- glm(cbind(total_dead_sp_cell, total_dead - total_dead_sp_cell) ~ 
-               prop_ind_sp_cell,
-             data = tree_filter,
-             family = binomial(link = logit))
-
-# Generalist question : do they go in cell with more species? (Maybe not)
-#tree_filter[, sp_cell := length(unique(Species)), by = Cell]
-
-# dead based on other species present?????
 ```
 
 ### Let's test our knowledge!

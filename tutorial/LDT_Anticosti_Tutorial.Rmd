@@ -34,6 +34,7 @@ Maxime Fraser Franco - fraser_franco.maxime@courrier.uqam.ca
 ```{r, echo = FALSE, out.width = "50%", fig.align = "center", fig.cap = "Canadian Institute of Ecology and Evolution (CIEE)"}
 knitr::include_graphics("images/ciee.jpeg")
 ```
+
 ---------------------------------------------------------------------------------------
 
 ## Learning objectives 
@@ -535,3 +536,5 @@ This dataset represents one of the many hemlock looper outbreaks Anticosti Islan
 - [Extreme cold weather causes the collapse of a population of *Lambdina fiscellaria* (Lepidoptera: Geometridae) in the Laurentian Mountains of Québec, Canada](https://www.cambridge.org/core/journals/canadian-entomologist/article/abs/extreme-cold-weather-causes-the-collapse-of-a-population-of-lambdina-fiscellaria-lepidoptera-geometridae-in-the-laurentian-mountains-of-quebec-canada/4D36CE7C818EF7D75D8E5C7B7F75DA0F)
 <br> 
 -[Capability of ERTS-1 imagery for mapping forest cover types of Anticosti Island](https://pubs.cif-ifc.org/doi/pdf/10.5558/tfc50233-6)
+
+---------------------------------------------------------------------------------------

@@ -204,8 +204,8 @@ ggplot(boxplot_tab,
 #### 2. White spruce (EPB) - *Picea glauca*
 #### 3. Black spruce (EPN) - *Picea mariana*
 #### 4. American larch (Meleze) - *Larix laricina*
-#### 5. Aspen spp. (Peuplier) - *Populus* spp.
-#### 6. Pine spp. (Pin) - *Pinus* spp.
+#### 5. Aspen (Peuplier) - *Populus* spp.
+#### 6. Pine (Pin) - *Pinus* spp.
 #### 7. Balsam fir (SAB) - *Abies balsamea*
 
 <br> 
@@ -287,8 +287,8 @@ question("What tree species was **MOST** affected by the hemlock looper? Select 
   answer("White spruce (EPB) - *Picea glauca*"),
   answer("Black spruce (EPN) - *Picea mariana*"),
   answer("American larch (Meleze) - *Larix laricina*."),
-  answer("Aspen spp. (Peuplier) - *Populus* spp."),
-  answer("Pine spp. (Pin) - *Pinus* spp."),
+  answer("Aspen (Peuplier) - *Populus* spp."),
+  answer("Pine (Pin) - *Pinus* spp."),
   answer("Balsam fir (SAB) - *Abies balsamea*", correct = TRUE)
 )
 ```
@@ -299,8 +299,8 @@ question("What tree species was **LEAST** affected by the hemlock looper? Select
   answer("White spruce (EPB) - *Picea glauca*"),
   answer("Black spruce (EPN) - *Picea mariana*"),
   answer("American larch (Meleze) - *Larix laricina*", correct = TRUE),
-  answer("Aspen spp. (Peuplier) - *Populus* spp.", correct = TRUE),
-  answer("Pine spp. (Pin) - *Pinus* spp.", correct = TRUE),
+  answer("Aspen (Peuplier) - *Populus* spp.", correct = TRUE),
+  answer("Pine (Pin) - *Pinus* spp.", correct = TRUE),
   answer("Balsam fir (SAB) - *Abies balsamea*")
 )
 ```
@@ -326,7 +326,9 @@ question("What tree species was **LEAST** affected by the hemlock looper? Select
 knitr::include_graphics("images/specialist_generalists.png")
 ```
 
-### With this in mind, let us continue our investigation to gain some further insights:
+<br>
+
+#### With this in mind, let us continue our investigation to gain some further insights.
 
 ---------------------------------------------------------------------------------------
 
@@ -384,11 +386,14 @@ tree_filter <- tree[Condition != "Questionable",
                     .(Cell, Species, Condition, Number)]
 
 # Calculate number of individuals by species for each cell
-tree_filter[, sp_ind_by_cell := sum(Number), by = .(Species, Cell)]
+tree_filter[, sp_ind_by_cell := sum(Number),
+            by = .(Species, Cell)]
 
 # Calculate number of individuals by species for each cell relative to other species
-tree_filter[, sum_ind_sp_cell := sum(unique(sp_ind_by_cell)), by = Cell]
-tree_filter[, prop_ind_sp_cell := sp_ind_by_cell / sum_ind_sp_cell, by = Cell]
+tree_filter[, sum_ind_sp_cell := sum(unique(sp_ind_by_cell)),
+            by = Cell]
+tree_filter[, prop_ind_sp_cell := sp_ind_by_cell / sum_ind_sp_cell,
+            by = Cell]
 
 ```
 
@@ -396,11 +401,17 @@ We then evaluate the count of a tree specie's deaths relative to all dead specie
 ```{r}
 
 # Calculate total "Dead" by Cell
-tree_filter[Condition == "Dead", total_dead := length(Condition), by = Cell]
+tree_filter[Condition == "Dead",
+            total_dead := length(Condition),
+            by = Cell]
 
 # Calculate proportion of dead species over all deaths by cell
-tree_filter[Condition == "Dead", total_dead_sp_cell := length(Condition), by = .(Species, Cell)]
-tree_filter[Condition == "Dead", prop_dead := total_dead_sp_cell / total_dead, by = .(Species, Cell)]
+tree_filter[Condition == "Dead",
+            total_dead_sp_cell := length(Condition),
+            by = .(Species, Cell)]
+tree_filter[Condition == "Dead",
+            prop_dead := total_dead_sp_cell / total_dead,
+            by = .(Species, Cell)]
 
 # Keep unique values with only "Dead" rows and use this table for plotting
 tree_filter <- unique(tree_filter[Condition == "Dead",])
@@ -433,7 +444,7 @@ ggplot(tree_filter,
              shape = 21,
              aes(fill = Species)) +
   scale_colour_manual(values = c("black","black", "black")) +
-  scale_fill_manual(values = c("darkgreen", "chartreuse4", "green3")) + # chartreuse
+  scale_fill_manual(values = c("darkgreen", "chartreuse4", "green3")) +
   ylab("Abundance of dead trees relative to all dead trees\n") +
   xlab("\nRelative abundance of focal tree species") +
   scale_y_continuous(breaks = seq(0, 1, .25),
@@ -474,7 +485,7 @@ This dataset represents one of the many hemlock looper outbreaks Anticosti Islan
 
 #### 2. What additional protections/restrictions should exist on Anticosti Island?
 
-#### 3. What management suggestions would you provide to the MFPP?
+#### 3. What management suggestions would you provide to the MFFP?
 
 <br> 
 

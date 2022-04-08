@@ -10,7 +10,7 @@ Here is the link to the data :
 
 The tutorial was built with the free and open-source software environment [R](https://www.r-project.org/) using the [leanr package](https://rstudio.github.io/learnr/) and and deployed using [Shiny](https://shiny.rstudio.com/). You can find the project folders and files in this [GitHub repository](https://github.com/Living-Data-Tutorials/Anticosti-Historical-Data).
 
-[Anticosti tutorial](https://vmglynn-ldp.shinyapps.io/LDT_Anticosti_Tutorial/)
+[Anticosti tutorial](https://vmglynn-ldp.shinyapps.io/LDT_Anticosti_Tutorial/#section-welcome-to-the-living-data-tutorials)
 
 The present tutorial was developed by Victoria Marie Glynn who is a PhD student at McGill University in Montréal, Québec, and Maxime Fraser Franco who is a PhD student at the Université du Québec à Montréal (UQAM) in Montréal, Québec. Please feel free to contact us if you have any question.
 

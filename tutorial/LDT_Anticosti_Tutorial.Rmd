@@ -11,6 +11,12 @@ output:
 runtime: shiny_prerendered
 ---
 
+<style>
+.html-widget {
+    margin: auto;
+}
+</style>
+
 ```{r, setup, include = FALSE}
 library(learnr)
 library(rsconnect)
@@ -65,15 +71,18 @@ knitr::include_graphics("images/ciee.jpeg")
 
 <br>
 
-```{r, echo = FALSE, out.width = "50%"}
+```{r, echo = FALSE, out.width = "50%", fig.align = "center", warning=FALSE, fig.cap = "Anticosti Island, Québec, shown as a blue pin on a map of Eastern Canada and Northeastern United States of America"}
+
 library(leaflet)
 pacman::p_load(leaflet)
 leaflet() %>%
   addTiles() %>%  # Add default OpenStreetMap map tiles
-  addMarkers(lng= -63, lat= 49.5 , popup="Anticosti Island, Québec, shown as a blue pin on a map of Eastern Canada and Northeastern United States of America") %>%
+  addMarkers(lng= -63, lat= 49.5) %>%
   setView(-62, 48, zoom = 5)
 
 ```
+
+<br>
 
 ```{r, echo = FALSE, out.width = "50%", fig.align = "center", fig.cap = "Photograph of a hemlock looper larvae, Maine Forest Service, Forest Health & Monitoring, Slide Collection"}
 knitr::include_graphics("images/hemlock_looper_larva.jpg")

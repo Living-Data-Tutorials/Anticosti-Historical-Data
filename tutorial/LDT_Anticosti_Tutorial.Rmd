@@ -11,12 +11,6 @@ output:
 runtime: shiny_prerendered
 ---
 
-<style>
-.html-widget {
-    margin: auto;
-}
-</style>
-
 ```{r, setup, include = FALSE}
 library(learnr)
 library(rsconnect)
@@ -29,7 +23,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### The project
 
-#### The Living Data Tutorials (LDTs) were developed by graduate students in ecology and evolution during the spring of 2022 as part of the Canadian Institute of Ecology and Evolution's [(CIEE)](https://www.ciee-icee.ca/data.html) Living Data Project (LDP). Our aims were to provide free and open-access teaching material in the form of online tutorials for undergraduate students in ecology and evolution. All the tutorials make use of publicly available Canadian datasets to address specific topics in ecology and evolution. The following tutorial was built with the free and open-source software environment [R](https://www.r-project.org/) using the [leanr package](https://rstudio.github.io/learnr/). You can find the project folders and files in this [GitHub repository](https://github.com/Living-Data-Tutorials/Anticosti-Historical-Data).
+#### The Living Data Tutorials (LDTs) were developed by graduate students in ecology and evolution during the spring of 2022 as part of the Canadian Institute of Ecology and Evolution's [(CIEE)](https://www.ciee-icee.ca/data.html) Living Data Project (LDP). Our goal is to provide free and open-access teaching material in the form of online tutorials to undergraduate students in ecology and evolution.
+
+#### All the tutorials make use of publicly available Canadian datasets to address specific topics in ecology and evolution. The following tutorial was built with the free and open-source software environment [R](https://www.r-project.org/) using the [leanr package](https://rstudio.github.io/learnr/). You can find the project folders and files in this [GitHub repository](https://github.com/Living-Data-Tutorials/Anticosti-Historical-Data).
 
 <br>
 
@@ -42,6 +38,8 @@ knitr::opts_chunk$set(echo = TRUE)
 #### Maxime Fraser Franco - fraser_franco.maxime@courrier.uqam.ca
 
 <br>
+
+#### We would like to thank Anne Cotton-Gagnon, MSc, and Christian Hébert, PhD, from Natural Resources Canada and the Laurentian Forestry Centre for their insights on the original datasets and access to the reports and maps associated with such.
 
 ```{r, echo = FALSE, out.width = "50%", fig.align = "left"}
 knitr::include_graphics("images/ciee.jpeg")
@@ -71,6 +69,11 @@ knitr::include_graphics("images/ciee.jpeg")
 
 <br>
 
+<style>
+.html-widget {
+    margin: auto;
+}
+</style>
 ```{r, echo = FALSE, out.width = "50%", fig.align = "center", warning=FALSE, fig.cap = "Anticosti Island, Québec, shown as a blue pin on a map of Eastern Canada and Northeastern United States of America"}
 
 library(leaflet)
@@ -270,13 +273,13 @@ question("What tree species is the **MOST** abundant?",
 
 ```{r checkbox-b, echo = FALSE}
 question("What tree species is the **LEAST** abundant?",
-  answer("White birch - *Betula papyrifera*", message = "**Hint**: We are looking for the species with the **smallest** median value of individuals identified"),
-  answer("White spruce - *Picea glauca*",  message = "**Hint**: We are looking for the species with the **smallest** median value of individuals identified"),
-  answer("Black spruce - *Picea mariana*",  message = "**Hint**: We are looking for the species with the **smallest** median value of individuals identified"),
-  answer("American larch - *Larix laricina*", correct = TRUE, message = "American larch is the tree species with the **smallest** median value of individuals identified"),
+  answer("White birch - *Betula papyrifera*", message = "**Hint**: We are looking for the species with the **smallest** median value of individuals identified."),
+  answer("White spruce - *Picea glauca*",  message = "**Hint**: We are looking for the species with the **smallest** median value of individuals identified."),
+  answer("Black spruce - *Picea mariana*",  message = "**Hint**: We are looking for the species with the **smallest** median value of individuals identified."),
+  answer("American larch - *Larix laricina*", correct = TRUE, message = "American larch is the tree species with the **smallest** median value of individuals identified."),
   answer("Aspen - *Populus* spp.", message = "**Hint**: You are close! Is there a tree species with a **smaller** median value of individuals identified?"),
   answer("Pine - *Pinus* spp.", message = "**Hint**: You are close! Is there a tree species with a **smaller** median value of individuals identified?"),
-  answer("Balsam fir - *Abies balsamea*", message = "**Hint**: We are looking for the species with the **smallest** median value of individuals identified"),
+  answer("Balsam fir - *Abies balsamea*", message = "**Hint**: We are looking for the species with the **smallest** median value of individuals identified."),
   allow_retry = TRUE
 )
 ```
@@ -322,26 +325,26 @@ ggplot(tree_damage,
 
 ```{r checkbox-c, echo = FALSE}
 question("What tree species was **MOST** affected by the hemlock looper? Select all that apply.",
-  answer("White birch - *Betula papyrifera*", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'dead' (purple bar)"),
+  answer("White birch - *Betula papyrifera*", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'dead' (purple bar)."),
   answer("White spruce  - *Picea glauca*",  message = "**Hint**: You are close! Is there a tree species with **more** individuals denoted as 'dead' (purple bar)?"),
-  answer("Black spruce - *Picea mariana*", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'dead' (purple bar)"),
-  answer("American larch - *Larix laricina*.", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'dead' (purple bar)"),
-  answer("Aspen - *Populus* spp.", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'dead' (purple bar)"),
-  answer("Pine - *Pinus* spp.", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'dead' (purple bar)"),
-  answer("Balsam fir - *Abies balsamea*", correct = TRUE,  message = "Balsam fir is the species with the **most** individuals denoted as 'dead' (purple bar)"),
+  answer("Black spruce - *Picea mariana*", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'dead' (purple bar)."),
+  answer("American larch - *Larix laricina*.", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'dead' (purple bar)."),
+  answer("Aspen - *Populus* spp.", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'dead' (purple bar)."),
+  answer("Pine - *Pinus* spp.", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'dead' (purple bar)."),
+  answer("Balsam fir - *Abies balsamea*", correct = TRUE,  message = "Balsam fir is the species with the **most** individuals denoted as 'dead' (purple bar)."),
   allow_retry = TRUE
 )
 ```
 
 ```{r checkbox-d, echo = FALSE}
 question("What three tree species were **LEAST** affected by the hemlock looper? Select all that apply.",
-  answer("White birch - *Betula papyrifera*", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'good' (green bar)"),
-  answer("White spruce - *Picea glauca*", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'good' (green bar)"),
-  answer("Black spruce - *Picea mariana*", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'good' (green bar)"),
+  answer("White birch - *Betula papyrifera*", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'good' (green bar)."),
+  answer("White spruce - *Picea glauca*", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'good' (green bar)."),
+  answer("Black spruce - *Picea mariana*", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'good' (green bar)."),
   answer("American larch - *Larix laricina*", correct = TRUE),
   answer("Aspen - *Populus* spp.", correct = TRUE),
-  answer("Pine - *Pinus* spp.", correct = TRUE, message = "American larch, aspen, and pine are the three species with the **most** individuals denoted as 'good' (green bar)"),
-  answer("Balsam fir - *Abies balsamea*", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'good' (green bar)"),
+  answer("Pine - *Pinus* spp.", correct = TRUE, message = "American larch, aspen, and pine are the three species with the **most** individuals denoted as 'good' (green bar)."),
+  answer("Balsam fir - *Abies balsamea*", message = "**Hint**: We are looking for the species with the **most** individuals denoted as 'good' (green bar)."),
   allow_retry = TRUE
 )
 ```
@@ -415,18 +418,18 @@ knitr::include_graphics("images/rel_abund.jpg")
 
 ### Let's plot our actual data and see where the results lie, in relationship to our guiding schematic above.
 
-We'll start by filtering out the "Questionable" tree status, as it is unclear if these have or have not been attacked by the hemlock looper. Then, we will calculate the total abundance of tree species by plot, which were denoted as either "dead" or "alive." With this, like we did before, we will be able to calculate the abundance of a given species relative to the abundance of all species within a plot.
+We'll start by filtering out the "Questionable" tree status, as it is unclear if these trees will die as a result of the hemlock looper outbreak. Then, we will calculate the total abundance of tree species by plot, which were denoted as either "dead" or "alive." With this, like we did before, we will be able to calculate the abundance of a given species relative to the abundance of all species within a plot.
 ```{r}
 
 # Filter out "Questionable" individuals
 tree_filter <- tree[Condition != "Questionable",
                     .(Block, Compartment, Plot, Species, Condition, Number)]
 
-# Calculate number of individuals of each species for each plot
+# Calculate the number of individuals of each species for each plot
 tree_filter[, ind_sp_plot := sum(Number),
             by = .(Species, Plot, Compartment, Block)]
 
-# Calculate the total abundance of individuals irrespective of the species, in each plot
+# Calculate the total abundance of individuals, irrespective of the species, in each plot
 tree_filter[, total_id_plot := sum(unique(ind_sp_plot)),
             by = .(Plot, Compartment, Block)]
 
@@ -435,14 +438,14 @@ tree_filter[, rel_abund_plot := ind_sp_plot / total_id_plot]
 
 ```
 
-We then evaluate the count of a tree species' deaths relative to all species denoted as "dead," in all plots :
+We then evaluate the count of "dead" trees per species, relative to all individuals denoted as "dead," across all plots :
 ```{r}
-# Calculate total count of "dead" individuals by Plot
+# Calculate the total count of "dead" individuals by plot
 tree_filter[Condition == "Dead",
             total_dead := length(Condition),
             by = .(Plot, Compartment, Block)]
 
-# Calculate count of "dead" individuals of each species for each Plot
+# Calculate the number of "dead" individuals per each species, for each plot
 tree_filter[Condition == "Dead",
             dead_sp_plot := length(Condition),
             by = .(Species, Plot, Compartment, Block)]
@@ -457,7 +460,7 @@ tree_filter <- unique(tree_filter[Condition == "Dead",])
 ```
 
 ```{r, eval = FALSE, echo = FALSE, include = FALSE}
-# Filter out Aspen and Pine because we only have two observations
+# Filter out aspen and pine trees because we only have two observations per species
 #species <- c("Balsam fir", "Black spruce", "White spruce")
 #tree_filter <- tree_filter[Species %in% species]
 
@@ -498,10 +501,10 @@ ggplot(tree_filter,
 
 ```{r letterx-d, echo = FALSE}
 question("Do hemlock loopers preferentially attack a given tree species?",
-  answer("**Yes**, hemlock loopers preferentially attack **balsam fir trees** because there are proportionally more dead trees of this species relative to their overall abundance in the forest", correct = TRUE),
-  answer("**Yes**, hemlock loopers preferentially attack **black spruce trees** because there are proportionally less dead trees of this species relative to their overall abundance in the forest"),
-  answer("**No**, the relative abundance of dead trees for each species is directly proportional to their overall abundance in the forest"),
-  answer("I am not sure, I would need more data"),
+  answer("**Yes**, hemlock loopers preferentially attack **balsam fir trees** because there are proportionally more dead trees of this species relative to their overall abundance in the forest", correct = TRUE, message = "We see that all the data points for balsam fir (darkest green) are above the one-to-one line (dotted, black)."),
+  answer("**Yes**, hemlock loopers preferentially attack **black spruce trees** because there are proportionally less dead trees of this species relative to their overall abundance in the forest",  message = "**Hint**: Recall that if data points are **below** the one-to-one line, this means that although there are many trees of this species, this does not correlate to more trees being denoted 'dead.'"),
+  answer("**No**, the relative abundance of dead trees for each species is directly proportional to their overall abundance in the forest", message = "**Hint**: Where are most data points located, relative to the one-to-one line (dotted, black)? What does this mean in terms of pest preference?"),
+  answer("I am not sure, I would need more data", message = "**Hint**: You do have enough information to answer this question! Recall that the position of the data points relative to the one-to-one line (dotted, black) can provide insights on pest preference."),
   allow_retry = TRUE
 )
 ```
@@ -526,9 +529,49 @@ question("Do hemlock loopers preferentially attack a given tree species?",
 
 <br> 
 
-#### **As our Anticosti Island tree dataset underscores, historical data is a powerful tool to help us best contextualize current management concerns, and assist us in making data-driven decisions.**
+### Factors to consider
+
+There is no one "right answer" to pest management, as it should be an integrative, collaborative, and ever-evolving endeavor. However, having data to drive these decisions is a powerful tool.
+
+<br>
+
+- Although our data indicates that on Anticosti Island, the hemlock looper had a preference for balsam fir in 1973, this is not its only or main host. By directing management initiatives towards a **single** tree species, this may cause other equally-liked prey to be even more strongly attacked -- this is a delicate balance to strike. Likewise, this dataset is from the 20th century -- would you foresee predator-prey dynamics in Anticosti Island to have changed since? 
+
+<br>
+
+- Adding a biological agent, like the fungi *Entomophthora* or bacteria *Bacillus thuringiensis kurstaki* (Btk) to control hemlock looper seems like a sensible option. Perhaps you think this is better than spraying a chemical insecticide. But biological agents are controversial, as they can often have unintended consequences, impacting species you did not wish to target. See this wonderful [paper](https://www.esf.edu/efb/parry/invasivesseminar_readings/Simberloff_2012.pdf) that delves into this topic further.
+
+<br>
+
+- Prevention is often be more effective than intervention. Understanding the hemlock looper's life history is a critical component here -- we know the larvae prefer certain species and more mature tree stands. We can promote forests of a certain age and species composition, and evenly spread out tree stands, to reduce the probability of a hemlock looper outbreak in the future.
+
+<br>
+
+- With all management initiatives, it is important to consult the local community and have them integrally involved in the process, such as the [Innu community on the North Shore](https://ici.radio-canada.ca/nouvelle/1011203/unesco-cinq-communautes-innues-solidaires-danticosti). Asking them what the want the forest to look like and what they need, and not making these assumptions, can help insure that pest management initiatives are ethical, sustainable, and as such, a success. 
 
 ---------------------------------------------------------------------------------------
+
+## Main takeaways
+
+### As our Anticosti Island tree dataset underscores, historical data is a powerful tool to help us best contextualize current management concerns, and assist us in making data-driven decisions.
+
+### From our tutorial, you have:
+
+##### 1. **Interpreted community ecology plots,** *to understand the tree community present on Anticosti Island in 1973, and how different species were impacted by the hemlock looper outbreak.*
+
+<br>
+
+##### 2. **Differentiated between a generalist and specialist pest species, using community ecology plots,** *by connecting how the relative abundance of a given tree species is linked to the prevalence of a tree being denoted as "dead."*
+
+<br>
+
+##### 3. **Made data-driven management recommendations,** *considering not only the data presented in the tutorial, but also looking further into the biology of the hemlock looper, what already established strategies exist, and thinking critically about the link between society and the environment.* 
+
+<br>
+
+### Together, this tutorial underscores that historical data is a powerful, but not the only consideration to bring into modern pest management.
+
+------------------------------------------------------------
 
 ## References
 

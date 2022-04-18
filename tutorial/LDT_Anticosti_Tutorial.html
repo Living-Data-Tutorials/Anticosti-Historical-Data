@@ -10,8 +10,8 @@
 
 
 
-<meta name="progressive" content="false" />
-<meta name="allow-skip" content="false" />
+<meta name="progressive" content="true" />
+<meta name="allow-skip" content="true" />
 
 <title>After the storm: Impacts of a hemlock looper outbreak on tree species in Anticosti Island, 1973</title>
 
@@ -104,6 +104,77 @@ $(document).ready(function () {
 </script>
 <!-- end tabsets -->
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 </head>
@@ -117,111 +188,80 @@ $(document).ready(function () {
 
 <div class="topics">
 
+<style type="text/css">
+  body{
+  font-size: 13pt;
+}
+  p.caption {
+    font-size: 0.8em;
+}
+</style>
 <hr />
 <div id="section-welcome-to-the-living-data-tutorials"
-class="section level2">
+class="section level2" data-progressive="FALSE">
 <h2>Welcome to the Living Data Tutorials</h2>
 <div id="section-the-project" class="section level3">
 <h3>The project</h3>
-<div
-id="section-the-living-data-tutorials-ldts-were-developed-by-graduate-students-in-ecology-and-evolution-during-the-spring-of-2022-as-part-of-the-canadian-institute-of-ecology-and-evolutions-ciee-living-data-project-ldp.-our-goal-is-to-provide-free-and-open-access-teaching-material-in-the-form-of-online-tutorials-to-undergraduate-students-in-ecology-and-evolution."
-class="section level4">
-<h4>The Living Data Tutorials (LDTs) were developed by graduate students
+<p>The Living Data Tutorials (LDTs) were developed by graduate students
 in ecology and evolution during the spring of 2022 as part of the
 Canadian Institute of Ecology and Evolution’s (<a
 href="https://www.ciee-icee.ca/data.html">CIEE</a>) Living Data Project
 (LDP). Our goal is to provide free and open-access teaching material in
 the form of online tutorials to undergraduate students in ecology and
-evolution.</h4>
-</div>
-<div
-id="section-all-the-tutorials-make-use-of-publicly-available-canadian-datasets-to-address-specific-topics-in-ecology-and-evolution.-the-following-tutorial-was-built-with-the-free-and-open-source-r-programming-language-using-the-leanr-package.-you-can-find-the-project-folders-and-files-in-this-github-repository."
-class="section level4">
-<h4>All the tutorials make use of publicly available Canadian datasets
-to address specific topics in ecology and evolution. The following
-tutorial was built with the free and open-source <a
+evolution.</p>
+<p>All the tutorials make use of publicly available Canadian datasets to
+address specific topics in ecology and evolution. The following tutorial
+was built with the free and open-source <a
 href="https://www.r-project.org/">R</a> programming language using the
 <a href="https://rstudio.github.io/learnr/">leanr package</a>. You can
 find the project folders and files in this <a
 href="https://github.com/Living-Data-Tutorials/Anticosti-Historical-Data">GitHub
-repository</a>.</h4>
-</div>
-<div
-id="section-we-would-like-to-thank-anne-cotton-gagnon-msc-and-christian-hébert-phd-from-natural-resources-canada-and-the-laurentian-forestry-centre-for-their-insights-on-the-original-datasets-and-access-to-the-reports-and-maps-associated-with-such."
-class="section level4">
-<h4>We would like to thank <a
+repository</a>.</p>
+<p>We would like to thank <a
 href="https://scf.rncan.gc.ca/employes/vue/acottong">Anne
 Cotton-Gagnon</a>, MSc, and <a
 href="https://cfs.nrcan.gc.ca/employees/read/chhebert">Christian
 Hébert</a>, PhD, from Natural Resources Canada and the Laurentian
 Forestry Centre for their insights on the original datasets and access
-to the reports and maps associated with such.</h4>
-</div>
+to the reports and maps associated with such.</p>
 </div>
 <div id="section-developers" class="section level3">
 <h3>Developers</h3>
-<div
-id="section-the-present-tutorial-was-developed-by-victoria-marie-glynn-who-is-a-phd-student-at-mcgill-university-in-montréal-québec-and-maxime-fraser-franco-who-is-a-phd-student-at-the-université-du-québec-à-montréal-uqam-in-montréal-québec.-please-feel-free-to-contact-us-if-you-have-any-question."
-class="section level4">
-<h4>The present tutorial was developed by Victoria Marie Glynn who is a
+<p>The present tutorial was developed by Victoria Marie Glynn who is a
 PhD student at McGill University in Montréal, Québec, and Maxime Fraser
 Franco who is a PhD student at the Université du Québec à Montréal
-(UQAM) in Montréal, Québec. Please feel free to contact us if you have
-any question.</h4>
-</div>
-<div id="section-victoria-marie-glynn---victoria.glynnmail.mcgill.ca"
-class="section level4">
-<h4>Victoria Marie Glynn - <a
-href="mailto:victoria.glynn@mail.mcgill.ca"
-class="email">victoria.glynn@mail.mcgill.ca</a></h4>
-</div>
-<div
-id="section-maxime-fraser-franco---fraser_franco.maximecourrier.uqam.ca"
-class="section level4">
-<h4>Maxime Fraser Franco - <a
+(UQAM) in Montréal, Québec.</p>
+<p>Please feel free to contact us if you have any question :</p>
+<p>Victoria Marie Glynn - <a href="mailto:victoria.glynn@mail.mcgill.ca"
+class="email">victoria.glynn@mail.mcgill.ca</a></p>
+<p>Maxime Fraser Franco - <a
 href="mailto:fraser_franco.maxime@courrier.uqam.ca"
-class="email">fraser_franco.maxime@courrier.uqam.ca</a></h4>
+class="email">fraser_franco.maxime@courrier.uqam.ca</a></p>
 <p><br></p>
 <p><img src="images/ciee.jpeg" width="50%" style="display: block; margin: auto auto auto 0;" /></p>
 <hr />
 </div>
 </div>
-</div>
 <div id="section-learning-objectives" class="section level2">
 <h2>Learning objectives</h2>
-<div id="section-by-the-end-of-this-tutorial-you-will-be-able-to"
-class="section level3">
-<h3>By the end of this tutorial, you will be able to :</h3>
-<p><br></p>
+<p>By the end of this tutorial, you will be able to :</p>
 <ul>
-<li><h4 id="section-interpret-community-ecology-plots.">Interpret
-community ecology plots.</h4></li>
-<li><h4
-id="section-differentiate-between-a-generalist-and-specialist-pest-species-using-community-ecology-plots.">Differentiate
-between a generalist and specialist pest species, using community
-ecology plots.</h4></li>
-<li><h4 id="section-make-data-driven-management-recommendations.">Make
-data-driven management recommendations.</h4></li>
+<li>Interpret community ecology plots.</li>
+<li>Differentiate between a generalist and specialist pest species,
+using community ecology plots.</li>
+<li>Make data-driven management recommendations.</li>
 </ul>
 <p><br></p>
-<div
-id="section-our-anticosti-island-tree-dataset-provides-a-unique-opportunity-for-us-to-use-real-and-historical-data-to-gain-skills-in-understanding-what-commonly-made-research-plots-such-as-stacked-bar-plots-mean-and-how-these-figures-can-help-us-think-more-critically-about-natural-resource-management-in-canada."
-class="section level4">
-<h4>Our Anticosti Island tree dataset provides a unique opportunity for
+<p>Our Anticosti Island tree dataset provides a unique opportunity for
 us to use <strong>real and historical data</strong> to gain skills in
 understanding what commonly made research plots, such as stacked bar
 plots, mean and how these figures can help us think more critically
-about natural resource management in Canada.</h4>
+about natural resource management in Canada.</p>
 <hr />
-</div>
-</div>
 </div>
 <div id="section-what-we-will-explore" class="section level2">
 <h2>What we will explore</h2>
-<div
-id="section-when-you-think-of-predator-prey-interactions-what-comes-to-mind-perhaps-it-is-the-emblematic-hare-and-lynx-example-from-the-hudsons-bay-company-pelt-trading-dataset-or-footage-from-nature-documentaries-that-showcase-lions-hunting-zebras.-but-predator-prey-interactions-are-often-less-conspicuous-and-yet-still-strongly-impact-ecological-communities.-a-great-example-are-insect-pests-and-their-plant-prey.-in-this-tutorial-we-are-going-to-explore-an-instance-of-this-interaction-on-anticosti-island-québec-between-the-hemlooper-looper-lambdina-fiscellaria-and-the-trees-it-predates-upon."
-class="section level4">
-<h4>When you think of predator-prey interactions, what comes to mind?
+<p>When you think of predator-prey interactions, what comes to mind?
 Perhaps it is the emblematic hare and lynx example from the <a
 href="https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html">Hudson’s
 Bay Company pelt-trading dataset</a>, or footage from nature
@@ -230,16 +270,11 @@ interactions are often less conspicuous, and yet still strongly impact
 ecological communities. A great example are insect pests and their plant
 prey. In this tutorial, we are going to explore an instance of this
 interaction on Anticosti Island, Québec, between the hemlooper looper
-(<em>Lambdina fiscellaria</em>) and the trees it predates upon.</h4>
+(<em>Lambdina fiscellaria</em>) and the trees it predates upon.</p>
 <p><br></p>
-<style>
-.html-widget {
-    margin: auto;
-}
-</style>
 <div class="figure" style="text-align: center">
-<div id="htmlwidget-9c6cc3ae52f3845790cb" style="width:50%;height:384px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9c6cc3ae52f3845790cb">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[49.5,-63,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[49.5,49.5],"lng":[-63,-63]},"setView":[[48,-62],5,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cd9dd384b31bb4f85662" style="width:50%;height:384px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cd9dd384b31bb4f85662">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[49.5,-63,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[49.5,49.5],"lng":[-63,-63]},"setView":[[48,-62],5,[]]},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Anticosti Island, Québec, shown as a blue pin on a map of Eastern Canada
 and Northeastern United States of America
@@ -254,14 +289,10 @@ Health &amp; Monitoring, Slide Collection
 </p>
 </div>
 <p><br></p>
-</div>
 <div id="section-what-happened-on-anticosti-island-in-1973"
 class="section level3">
 <h3>What happened on Anticosti Island in 1973?</h3>
-<div
-id="section-the-hemlock-looper-is-a-moth-pest-that-is-found-all-across-canada-and-parts-of-the-usa-often-as-far-south-as-the-state-of-georgia.-since-1910-it-has-wreaked-havoc-in-québecs-forests.-between-1910-and-1975-these-outbreaks-caused-an-estimated-24-million-cubic-meters-of-forest-to-be-lost-in-the-province.-since-then-additional-outbreaks-have-occurred-across-québec-in-places-like-bas-saint-laurent-gaspésie-and-anticosti-island."
-class="section level4">
-<h4>The hemlock looper is a moth pest that is found <a
+<p>The hemlock looper is a moth pest that is found <a
 href="http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf">all
 across Canada</a>, and parts of the USA, often as far south as the state
 of Georgia. Since 1910, it has wreaked havoc in Québec’s forests.
@@ -269,23 +300,19 @@ Between 1910 and 1975, these outbreaks caused an estimated <a
 href="https://fr.wikipedia.org/wiki/Lambdina_fiscellaria">24 million
 cubic meters of forest to be lost</a> in the province. Since then,
 additional outbreaks have occurred across Québec in places like
-Bas-Saint-Laurent, Gaspésie, and Anticosti Island.</h4>
-</div>
-<div
-id="section-since-the-first-outbreak-the-ministry-of-forests-wildlife-and-parks-of-québec-mffp-and-the-society-for-the-protection-of-forests-against-insects-and-diseases-sopfim-have-been-monitoring-hemlock-looper-outbreaks.-the-mffp-surveyed-one-of-the-most-extensive-tree-mortality-events-due-to-a-hemlock-looper-outbreak-from-1971-1973.-as-the-hemlock-looper-larvae-usually-attacks-mature-tree-stands-by-eating-their-leaves-it-causes-them-to-appear-yellow-and-red-brown-in-color-a-tell-tale-sign-that-an-outbreak-has-occurred."
-class="section level4">
-<h4>Since the first outbreak, the Ministry of Forests, Wildlife and
-Parks of Québec (<a href="https://mffp.gouv.qc.ca/?lang=en">MFFP</a>)
-and the Society for the Protection of Forests against Insects and
-Diseases (<a href="https://sopfim.qc.ca/fr/">SOPFIM</a>) have been
-monitoring hemlock looper outbreaks. The MFFP surveyed one of the most
-extensive tree mortality events due to a hemlock looper outbreak from <a
+Bas-Saint-Laurent, Gaspésie, and Anticosti Island.</p>
+<p>Since the first outbreak, the Ministry of Forests, Wildlife and Parks
+of Québec (<a href="https://mffp.gouv.qc.ca/?lang=en">MFFP</a>) and the
+Society for the Protection of Forests against Insects and Diseases (<a
+href="https://sopfim.qc.ca/fr/">SOPFIM</a>) have been monitoring hemlock
+looper outbreaks. The MFFP surveyed one of the most extensive tree
+mortality events due to a hemlock looper outbreak from <a
 href="https://cfs.nrcan.gc.ca/pubwarehouse/pdfs/6856.pdf">1971-1973</a>.
 As the hemlock looper larvae usually attacks mature tree stands by
 eating their leaves, it causes them to appear <a
 href="https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846">yellow and
 red-brown in color</a>, a tell-tale sign that an outbreak has
-occurred.</h4>
+occurred.</p>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/balsam_looper.jpg" alt="Severely defoliated balsam fir forest due to a hemlock looper outbreak, photograph by Dr. Luc Jobin" width="50%" />
@@ -295,11 +322,7 @@ photograph by Dr. Luc Jobin
 </p>
 </div>
 <p><br></p>
-</div>
-<div
-id="section-while-the-outbreak-was-occuring-in-1973-dr.-luc-jobin-from-the-laurentian-forestry-centre-and-his-student-michel-chabot-then-going-onto-becoming-a-forester-in-mffp-went-to-anticosti-island-to-visually-survey-the-degree-of-damage-that-the-hemlock-looper-was-causing.-in-their-data-openly-hosted-on-the-government-of-canadas-website-they-denoted-a-tree-as-either-being-good-meaning-it-did-not-show-any-signs-of-damage-from-the-outbreak-dead-if-the-hemlock-looper-had-attacked-and-killed-the-stand-and-questionable-if-they-were-unsure.-this-historical-and-yet-still-very-relevant-dataset-allows-us-to-think-about-the-impact-pest-outbreaks-have-on-ecological-communities."
-class="section level4">
-<h4>While the outbreak was occuring, in 1973 Dr. Luc Jobin from the <a
+<p>While the outbreak was occuring, in 1973 Dr. Luc Jobin from the <a
 href="https://www.nrcan.gc.ca/science-and-data/research-centres-and-labs/forestry-research-centres/laurentian-forestry-centre/13473">Laurentian
 Forestry Centre</a>, and his student Michel Chabot (then going onto
 becoming a forester in MFFP) went to Anticosti Island to visually survey
@@ -311,7 +334,7 @@ meaning it did not show any signs of damage from the outbreak, “dead” if
 the hemlock looper had attacked and killed the stand, and “questionable”
 if they were unsure. This historical, and yet still very relevant
 dataset, allows us to think about the impact pest outbreaks have on
-ecological communities.</h4>
+ecological communities.</p>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/Carte_generale1.jpg" alt="Map of Anticosti Island in 1973, during the hemlock looper outbreak, courtesy of Anne Cotton-Gagnon, MSc, Natural Resources Canada (CFS-LFC). The colors on the map represent the surveyed regions, with purple indicating severe defoliation, yellow indicating medium defoliation, and green indicating light defoliation. The red lines indicate the start of the one mile transect surveyed" width="70%" />
@@ -327,182 +350,132 @@ the one mile transect surveyed
 <hr />
 </div>
 </div>
-</div>
 <div id="section-tutorial-objectives" class="section level2">
 <h2>Tutorial objectives</h2>
-<div
-id="section-with-our-anticosti-island-tree-dataset-this-tutorial-will-walk-us-through-answering-four-driving-questions."
-class="section level3">
-<h3>With our Anticosti Island tree dataset, this tutorial will walk us
-through answering <strong>four</strong> driving questions.</h3>
+<p>With our Anticosti Island tree dataset, this tutorial will walk us
+through answering <strong>four</strong> objectives to understand the
+impacts of the hemlock looper on Anticosti’s forests.</p>
 <p><br></p>
-<div
-id="section-following-the-1973s-hemlock-looper-outbreak-in-anticosti-island"
-class="section level4">
-<h4>Following the 1973’s hemlock looper outbreak in Anticosti Island
-:</h4>
-</div>
-<div id="section-what-is-the-tree-community-composition"
-class="section level4">
-<h4><strong>1.</strong> What is the tree community composition?</h4>
-</div>
-<div
-id="section-how-was-the-tree-community-damaged-by-the-hemlock-looper-outbreak"
-class="section level4">
-<h4><strong>2.</strong> How was the tree community damaged by the
-hemlock looper outbreak?</h4>
-</div>
-<div
-id="section-did-the-hemlock-looper-preferentially-attack-certain-tree-species"
-class="section level4">
-<h4><strong>3.</strong> Did the hemlock looper preferentially attack
-certain tree species?</h4>
-</div>
-<div
-id="section-based-on-1-3-what-management-recomendations-would-you-have-for-coping-with-hemlock-looper-outbreaks-in-québecs-forests"
-class="section level4">
-<h4><strong>4.</strong> Based on 1-3, what management recomendations
-would you have for coping with hemlock looper outbreaks in Québec’s
-forests?</h4>
+<p>Following the 1973’s hemlock looper outbreak in Anticosti Island:</p>
+<ol style="list-style-type: decimal">
+<li><p>Describe the tree community composition</p></li>
+<li><p>Estimate the damage on the tree community</p></li>
+<li><p>Evaluate if the hemlock looper preferentially attacks certain
+tree species</p></li>
+<li><p>Based on 1-3, make management recomendations for coping with
+future outbreaks</p></li>
+</ol>
 <p><br></p>
-</div>
-<div
-id="section-at-the-end-of-each-objective-we-will-have-a-test-your-knowledge-section-before-moving-forward-as-each-objective-builds-upon-the-next."
-class="section level4">
-<h4>At the end of each objective, we will have a “test your knowledge!”
+<p>At the end of each objective, we will have a “test your knowledge!”
 section before moving forward, as each objective builds upon the
-next.</h4>
+next.</p>
 <hr />
 </div>
-</div>
-</div>
-<div id="section-setting-up-our-r-session" class="section level2">
-<h2>Setting up our R session</h2>
-<p>Let’s start by loading some packages we will use for our analyses</p>
-<pre class="r"><code>library(data.table)
-library(ggplot2)
-library(dplyr)</code></pre>
+<div id="section-setting-up-our-coding-session" class="section level2">
+<h2>Setting up our coding session</h2>
+<p>Let’s start by loading the packages we will need for our analyses</p>
+<div class="sourceCode" id="section-cb1"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="section-cb1-1"><a href="#section-cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="section-cb1-2"><a href="#section-cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="section-cb1-3"><a href="#section-cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
 <p>Then, we import the data in the current R session</p>
-<pre class="r"><code># Tree condition data url paths
-url_tree &lt;- &quot;https://open.canada.ca/data/en/dataset/9dda09b0-649f-4002-b207-7b204eb81cbb/resource/a1606235-95aa-4c81-a8db-19b852be288c&quot;
-csv_tree &lt;- &quot;download/anticosti_1973_trees.csv&quot;
-
-# Import the data and keep the columns we need
-tree &lt;- fread(file.path(url_tree, csv_tree),
-              select = c(&quot;Block&quot;, &quot;Compartment&quot;, &quot;Plot&quot;,
-                         &quot;Cell&quot;, &quot;Species&quot;, &quot;Species_abbrev&quot;,
-                         &quot;Condition&quot;, &quot;Number&quot;))
-
-# Separate row number as individual instances to have all individual tree counts
-tree &lt;- tree[rep(seq(.N), Number)]
-tree[, Number := 1]
-
-# Change &quot;Larch&quot; to &quot;American larch&quot;
-tree$Species &lt;- gsub(&quot;Larch&quot;, &quot;American larch&quot;, tree$Species)</code></pre>
+<div class="sourceCode" id="section-cb2"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="section-cb2-1"><a href="#section-cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tree condition data URL paths</span></span>
+<span id="section-cb2-2"><a href="#section-cb2-2" aria-hidden="true" tabindex="-1"></a>url_data_portal <span class="ot">&lt;-</span> <span class="st">&quot;https://open.canada.ca/data/en/dataset&quot;</span></span>
+<span id="section-cb2-3"><a href="#section-cb2-3" aria-hidden="true" tabindex="-1"></a>url_anticosti <span class="ot">&lt;-</span> <span class="st">&quot;9dda09b0-649f-4002-b207-7b204eb81cbb/resource/a1606235-95aa-4c81-a8db-19b852be288c&quot;</span></span>
+<span id="section-cb2-4"><a href="#section-cb2-4" aria-hidden="true" tabindex="-1"></a>csv_tree <span class="ot">&lt;-</span> <span class="st">&quot;download/anticosti_1973_trees.csv&quot;</span></span>
+<span id="section-cb2-5"><a href="#section-cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="section-cb2-6"><a href="#section-cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the data and keep the columns we need</span></span>
+<span id="section-cb2-7"><a href="#section-cb2-7" aria-hidden="true" tabindex="-1"></a>tree <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="fu">file.path</span>(url_data_portal, url_anticosti, csv_tree),</span>
+<span id="section-cb2-8"><a href="#section-cb2-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">select =</span> <span class="fu">c</span>(<span class="st">&quot;Block&quot;</span>, <span class="st">&quot;Compartment&quot;</span>, <span class="st">&quot;Plot&quot;</span>,</span>
+<span id="section-cb2-9"><a href="#section-cb2-9" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;Cell&quot;</span>, <span class="st">&quot;Species&quot;</span>, <span class="st">&quot;Species_abbrev&quot;</span>,</span>
+<span id="section-cb2-10"><a href="#section-cb2-10" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;Condition&quot;</span>, <span class="st">&quot;Number&quot;</span>))</span>
+<span id="section-cb2-11"><a href="#section-cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="section-cb2-12"><a href="#section-cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Separate row number as individual instances to have all individual tree counts</span></span>
+<span id="section-cb2-13"><a href="#section-cb2-13" aria-hidden="true" tabindex="-1"></a>tree <span class="ot">&lt;-</span> tree[<span class="fu">rep</span>(<span class="fu">seq</span>(.N), Number)]</span>
+<span id="section-cb2-14"><a href="#section-cb2-14" aria-hidden="true" tabindex="-1"></a>tree[, Number <span class="sc">:</span><span class="er">=</span> <span class="dv">1</span>]</span>
+<span id="section-cb2-15"><a href="#section-cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="section-cb2-16"><a href="#section-cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Change &quot;Larch&quot; to &quot;American larch&quot;</span></span>
+<span id="section-cb2-17"><a href="#section-cb2-17" aria-hidden="true" tabindex="-1"></a>tree<span class="sc">$</span>Species <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;Larch&quot;</span>, <span class="st">&quot;American larch&quot;</span>, tree<span class="sc">$</span>Species)</span></code></pre></div>
 <hr />
 </div>
-<div id="section-tutorial-objective-1" class="section level2">
-<h2>Tutorial objective 1</h2>
-<div
-id="section-describing-anticosti-islands-tree-community-composition"
-class="section level3">
-<h3>Describing Anticosti Island’s tree community composition</h3>
-<div
-id="section-we-will-first-gain-an-overview-of-the-tree-species-that-were-identified-during-the-outbreak.-to-do-so-we-are-going-to-plot-the-distribution-of-each-tree-species-using-a-boxplot."
-class="section level4">
-<h4>We will first gain an overview of the tree species that were
+<div id="section-describe-the-tree-community" class="section level2">
+<h2>1. Describe the tree community</h2>
+<p>We will first gain an overview of the tree species that were
 identified during the outbreak. To do so, we are going to plot the
-distribution of each tree species using a boxplot.</h4>
+distribution of each tree species using a boxplot.</p>
 <p><br></p>
 <p>We will first make some preparations for our boxplot to look nice
 :</p>
-<pre class="r"><code># First, we arrange a table to plot our tree species abundances
-
-# a. Compute the count of individuals per species in each plot
-tree[, count_ind := sum(Number),
-     by = .(Species, Plot, Compartment, Block)]
-
-# b. Keep only unique rows
-# We filter out the &quot;Condition&quot; and &quot;Cell&quot; fields to ensure that rows are unique
-boxplot_tab &lt;- unique(tree[, !c(&quot;Condition&quot;,&quot;Cell&quot;)])
-
-
-# We then prepare a custom theme to have a nice plot
-custom_theme &lt;- theme(# axis values size
-                      axis.text.x = element_text(face = &quot;plain&quot;, 
-                                                 size = 12,
-                                                 color = &quot;black&quot;),
-                      axis.text.y = element_text(face = &quot;plain&quot;, 
-                                                 size = 12,
-                                                 color = &quot;black&quot;),
-                      # axis ticks lenght
-                      axis.ticks.length = unit(.15, &quot;cm&quot;),
-                      # axis ticks width
-                      axis.ticks = element_line(size = 0.90, 
-                                                color = &quot;black&quot;),
-                      # axis titles size
-                      axis.title = element_text(size = 15, 
-                                                face = &quot;plain&quot;),
-                      plot.title = element_text(size = 17, 
-                                           face = &quot;plain&quot;),
-                      axis.line = element_line(size = 0.95),
-                      #legend.position = &quot;none&quot;,
-                      panel.grid = element_blank(),
-                      panel.background = element_blank())</code></pre>
+<div class="sourceCode" id="section-cb3"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="section-cb3-1"><a href="#section-cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, we arrange a table to plot our tree species abundances</span></span>
+<span id="section-cb3-2"><a href="#section-cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="section-cb3-3"><a href="#section-cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># a. Compute the count of individuals per species in each plot</span></span>
+<span id="section-cb3-4"><a href="#section-cb3-4" aria-hidden="true" tabindex="-1"></a>tree[, count_ind <span class="sc">:</span><span class="er">=</span> <span class="fu">sum</span>(Number),</span>
+<span id="section-cb3-5"><a href="#section-cb3-5" aria-hidden="true" tabindex="-1"></a>     by <span class="ot">=</span> .(Species, Plot, Compartment, Block)]</span>
+<span id="section-cb3-6"><a href="#section-cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="section-cb3-7"><a href="#section-cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># b. Keep only unique rows</span></span>
+<span id="section-cb3-8"><a href="#section-cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># We filter out the &quot;Condition&quot; and &quot;Cell&quot; fields to ensure that rows are unique</span></span>
+<span id="section-cb3-9"><a href="#section-cb3-9" aria-hidden="true" tabindex="-1"></a>boxplot_tab <span class="ot">&lt;-</span> <span class="fu">unique</span>(tree[, <span class="sc">!</span><span class="fu">c</span>(<span class="st">&quot;Condition&quot;</span>,<span class="st">&quot;Cell&quot;</span>)])</span>
+<span id="section-cb3-10"><a href="#section-cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="section-cb3-11"><a href="#section-cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="section-cb3-12"><a href="#section-cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># We then prepare a custom theme to have a nice plot</span></span>
+<span id="section-cb3-13"><a href="#section-cb3-13" aria-hidden="true" tabindex="-1"></a>custom_theme <span class="ot">&lt;-</span> <span class="fu">theme</span>(<span class="co"># axis values size</span></span>
+<span id="section-cb3-14"><a href="#section-cb3-14" aria-hidden="true" tabindex="-1"></a>                      <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;plain&quot;</span>, </span>
+<span id="section-cb3-15"><a href="#section-cb3-15" aria-hidden="true" tabindex="-1"></a>                                                 <span class="at">size =</span> <span class="dv">12</span>,</span>
+<span id="section-cb3-16"><a href="#section-cb3-16" aria-hidden="true" tabindex="-1"></a>                                                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="section-cb3-17"><a href="#section-cb3-17" aria-hidden="true" tabindex="-1"></a>                      <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;plain&quot;</span>, </span>
+<span id="section-cb3-18"><a href="#section-cb3-18" aria-hidden="true" tabindex="-1"></a>                                                 <span class="at">size =</span> <span class="dv">12</span>,</span>
+<span id="section-cb3-19"><a href="#section-cb3-19" aria-hidden="true" tabindex="-1"></a>                                                 <span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="section-cb3-20"><a href="#section-cb3-20" aria-hidden="true" tabindex="-1"></a>                      <span class="co"># axis ticks lenght</span></span>
+<span id="section-cb3-21"><a href="#section-cb3-21" aria-hidden="true" tabindex="-1"></a>                      <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(.<span class="dv">15</span>, <span class="st">&quot;cm&quot;</span>),</span>
+<span id="section-cb3-22"><a href="#section-cb3-22" aria-hidden="true" tabindex="-1"></a>                      <span class="co"># axis ticks width</span></span>
+<span id="section-cb3-23"><a href="#section-cb3-23" aria-hidden="true" tabindex="-1"></a>                      <span class="at">axis.ticks =</span> <span class="fu">element_line</span>(<span class="at">size =</span> <span class="fl">0.90</span>, </span>
+<span id="section-cb3-24"><a href="#section-cb3-24" aria-hidden="true" tabindex="-1"></a>                                                <span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="section-cb3-25"><a href="#section-cb3-25" aria-hidden="true" tabindex="-1"></a>                      <span class="co"># axis titles size</span></span>
+<span id="section-cb3-26"><a href="#section-cb3-26" aria-hidden="true" tabindex="-1"></a>                      <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">15</span>, </span>
+<span id="section-cb3-27"><a href="#section-cb3-27" aria-hidden="true" tabindex="-1"></a>                                                <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),</span>
+<span id="section-cb3-28"><a href="#section-cb3-28" aria-hidden="true" tabindex="-1"></a>                      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">17</span>, </span>
+<span id="section-cb3-29"><a href="#section-cb3-29" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">face =</span> <span class="st">&quot;plain&quot;</span>),</span>
+<span id="section-cb3-30"><a href="#section-cb3-30" aria-hidden="true" tabindex="-1"></a>                      <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">size =</span> <span class="fl">0.95</span>),</span>
+<span id="section-cb3-31"><a href="#section-cb3-31" aria-hidden="true" tabindex="-1"></a>                      <span class="co">#legend.position = &quot;none&quot;,</span></span>
+<span id="section-cb3-32"><a href="#section-cb3-32" aria-hidden="true" tabindex="-1"></a>                      <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="section-cb3-33"><a href="#section-cb3-33" aria-hidden="true" tabindex="-1"></a>                      <span class="at">panel.background =</span> <span class="fu">element_blank</span>())</span></code></pre></div>
 <p>Now we can visualize our boxplot :</p>
-<pre class="r"><code>ggplot(boxplot_tab,
-       aes(x = Species,
-           y = count_ind)) +
-  geom_boxplot(fill = &quot;light green&quot;,
-               color = &quot;black&quot;,
-               outlier.shape = NA) +
-  geom_jitter(shape = 16,
-              alpha = 0.3,
-              position = position_jitter(0.3)) +
-  xlab(&quot;Tree species\n&quot;) +
-  ylab(&quot;\nNumber of individuals per plot&quot;) +
-  scale_y_continuous(breaks = seq(0, 100, 20)) +
-  custom_theme +
-  coord_flip()</code></pre>
+<div class="sourceCode" id="section-cb4"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="section-cb4-1"><a href="#section-cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(boxplot_tab,</span>
+<span id="section-cb4-2"><a href="#section-cb4-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Species,</span>
+<span id="section-cb4-3"><a href="#section-cb4-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> count_ind)) <span class="sc">+</span></span>
+<span id="section-cb4-4"><a href="#section-cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;light green&quot;</span>,</span>
+<span id="section-cb4-5"><a href="#section-cb4-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="section-cb4-6"><a href="#section-cb4-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">outlier.shape =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="section-cb4-7"><a href="#section-cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">shape =</span> <span class="dv">16</span>,</span>
+<span id="section-cb4-8"><a href="#section-cb4-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">alpha =</span> <span class="fl">0.3</span>,</span>
+<span id="section-cb4-9"><a href="#section-cb4-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="fl">0.3</span>)) <span class="sc">+</span></span>
+<span id="section-cb4-10"><a href="#section-cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Tree species</span><span class="sc">\n</span><span class="st">&quot;</span>) <span class="sc">+</span></span>
+<span id="section-cb4-11"><a href="#section-cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Number of individual trees per plot&quot;</span>) <span class="sc">+</span></span>
+<span id="section-cb4-12"><a href="#section-cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="section-cb4-13"><a href="#section-cb4-13" aria-hidden="true" tabindex="-1"></a>  custom_theme <span class="sc">+</span></span>
+<span id="section-cb4-14"><a href="#section-cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
 <p><img src="LDT_Anticosti_Tutorial_files/figure-html/unnamed-chunk-9-1.png" width="768" /></p>
 <p><br></p>
-</div>
-<div
-id="section-from-this-boxplot-we-see-that-seven-different-tree-species-were-identified-with-their-respective-abbreviation-from-the-dataset-shown-in-parentheses"
-class="section level4">
-<h4>From this boxplot, we see that seven different tree species were
+<p>The boxplot shows the various tree species on the y-axis, and the
+x-axis represents the number of individual trees counted per plot. Each
+grey circle in the figure represents a different observation. Recall
+that for a boxplot, the line in the center of the box represents the
+median number of individuals corresponding to a given tree species.</p>
+<p>From this boxplot, we see that seven different tree species were
 identified, with their respective abbreviation from the dataset shown in
-parentheses :</h4>
-<ol style="list-style-type: decimal">
-<li><h4 id="section-white-birch---betula-papyrifera">White birch -
-<em>Betula papyrifera</em></h4></li>
-<li><h4 id="section-white-spruce---picea-glauca">White spruce -
-<em>Picea glauca</em></h4></li>
-<li><h4 id="section-black-spruce---picea-mariana">Black spruce -
-<em>Picea mariana</em></h4></li>
-<li><h4 id="section-american-larch---larix-laricina">American larch -
-<em>Larix laricina</em></h4></li>
-<li><h4 id="section-aspen---populus-spp.">Aspen - <em>Populus</em>
-spp.</h4></li>
-<li><h4 id="section-pine---pinus-spp.">Pine - <em>Pinus</em>
-spp.</h4></li>
-<li><h4 id="section-balsam-fir---abies-balsamea">Balsam fir - <em>Abies
-balsamea</em></h4></li>
-</ol>
-</div>
-<div
-id="section-the-boxplot-shows-the-various-tree-species-on-the-y-axis-and-the-x-axis-represents-the-number-of-individuals-per-plot."
-class="section level4">
-<h4>The boxplot shows the various tree species on the y-axis, and the
-x-axis represents the number of individuals per plot.</h4>
-</div>
-<div
-id="section-each-grey-circle-in-the-plot-represents-a-different-observation.-recall-that-for-a-boxplot-the-line-in-the-center-of-the-box-represents-the-median-number-of-individuals-corresponding-to-a-given-tree-species."
-class="section level4">
-<h4>Each grey circle in the plot represents a different observation.
-Recall that for a boxplot, the line in the center of the box represents
-the median number of individuals corresponding to a given tree
-species.</h4>
+parentheses :</p>
+<ul>
+<li>White birch - <em>Betula papyrifera</em></li>
+<li>White spruce - <em>Picea glauca</em></li>
+<li>Black spruce - <em>Picea mariana</em></li>
+<li>American larch - <em>Larix laricina</em></li>
+<li>Aspen - <em>Populus</em> spp.</li>
+<li>Pine - <em>Pinus</em> spp.</li>
+<li>Balsam fir - <em>Abies balsamea</em></li>
+</ul>
 <p><br></p>
 <div class="figure" style="text-align: center">
 <img src="images/Tree_Anticosti.png" alt="Tree species that were sampled on Anticosti Island" width="80%" />
@@ -511,12 +484,9 @@ Tree species that were sampled on Anticosti Island
 </p>
 </div>
 <p><br></p>
-</div>
-</div>
 <div id="section-lets-test-our-knowledge" class="section level3">
 <h3>Let’s test our knowledge!</h3>
-<div id="section-from-looking-at-the-boxplot" class="section level4">
-<h4>From looking at the boxplot :</h4>
+<p>From looking at the boxplot :</p>
 <div class="panel panel-default">
 <div data-label="checkbox-a" class="tutorial-question panel-body">
 <div id="checkbox-a-answer_container" class="shiny-html-output"></div>
@@ -536,49 +506,40 @@ Tree species that were sampled on Anticosti Island
 <hr />
 </div>
 </div>
-</div>
-<div id="section-tutorial-objective-2" class="section level2">
-<h2>Tutorial objective 2</h2>
-<div
-id="section-how-was-the-tree-community-of-anticosti-island-impacted-by-the-hemlock-looper"
-class="section level3">
-<h3>How was the tree community of Anticosti Island impacted by the
-hemlock looper?</h3>
-<div
-id="section-here-the-scientists-who-sampled-the-individual-trees-assigned-a-damage-state-to-each-one-of-them.-they-assigned-one-of-the-three-following-states-good-dead-or-questionable."
-class="section level4">
-<h4>Here, the scientists who sampled the individual trees assigned a
+<div id="section-estimate-the-damage-on-the-trees"
+class="section level2">
+<h2>2. Estimate the damage on the trees</h2>
+<p>Here, the scientists who sampled the individual trees assigned a
 damage state to each one of them. They assigned one of the three
-following states : “Good”, “Dead,” or “Questionable”.</h4>
+following states : “Good”, “Dead,” or “Questionable”.</p>
 <p><br></p>
 <p>To investigate the differences in damage among the tree species, we
 will first need to calculate the proportion of each observed damage
 states per tree species :</p>
-<pre class="r"><code>tree_damage &lt;- tree %&gt;%
-  group_by(Species, Condition) %&gt;%
-  summarise(n = n()) %&gt;%
-  mutate(freq = n / sum(n))</code></pre>
+<div class="sourceCode" id="section-cb5"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="section-cb5-1"><a href="#section-cb5-1" aria-hidden="true" tabindex="-1"></a>tree_damage <span class="ot">&lt;-</span> tree <span class="sc">%&gt;%</span></span>
+<span id="section-cb5-2"><a href="#section-cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species, Condition) <span class="sc">%&gt;%</span></span>
+<span id="section-cb5-3"><a href="#section-cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="section-cb5-4"><a href="#section-cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">freq =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code></pre></div>
 <p>We can then plot this with the following commands :</p>
-<pre class="r"><code>ggplot(tree_damage,
-       aes(y = freq,
-           x = Species,
-           fill = Condition)) + 
-  geom_bar(position = &quot;stack&quot;,
-           stat = &quot;identity&quot;,
-           color = &quot;black&quot;) +
-  scale_fill_manual(values = c(&quot;plum&quot;, &quot;light green&quot;, &quot;khaki1&quot;)) +
-  ggtitle(&quot;Relative damage for each tree species&quot;) +
-  xlab(&quot;Tree specie\n&quot;) +
-  ylab (&quot;\nProportion of damage&quot;) +
-  custom_theme +
-  coord_flip()</code></pre>
+<div class="sourceCode" id="section-cb6"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="section-cb6-1"><a href="#section-cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tree_damage,</span>
+<span id="section-cb6-2"><a href="#section-cb6-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">y =</span> freq,</span>
+<span id="section-cb6-3"><a href="#section-cb6-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">x =</span> Species,</span>
+<span id="section-cb6-4"><a href="#section-cb6-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> Condition)) <span class="sc">+</span> </span>
+<span id="section-cb6-5"><a href="#section-cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;stack&quot;</span>,</span>
+<span id="section-cb6-6"><a href="#section-cb6-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>,</span>
+<span id="section-cb6-7"><a href="#section-cb6-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="section-cb6-8"><a href="#section-cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;plum&quot;</span>, <span class="st">&quot;light green&quot;</span>, <span class="st">&quot;khaki1&quot;</span>)) <span class="sc">+</span></span>
+<span id="section-cb6-9"><a href="#section-cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Relative damage for each tree species&quot;</span>) <span class="sc">+</span></span>
+<span id="section-cb6-10"><a href="#section-cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Tree specie</span><span class="sc">\n</span><span class="st">&quot;</span>) <span class="sc">+</span></span>
+<span id="section-cb6-11"><a href="#section-cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span> (<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Proportion of damage&quot;</span>) <span class="sc">+</span></span>
+<span id="section-cb6-12"><a href="#section-cb6-12" aria-hidden="true" tabindex="-1"></a>  custom_theme <span class="sc">+</span></span>
+<span id="section-cb6-13"><a href="#section-cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span></code></pre></div>
 <p><img src="LDT_Anticosti_Tutorial_files/figure-html/unnamed-chunk-12-1.png" width="864" /></p>
-</div>
-</div>
 <div id="section-lets-test-our-knowledge-1" class="section level3">
 <h3>Let’s test our knowledge!</h3>
-<div id="section-from-looking-at-this-plot" class="section level4">
-<h4>From looking at this plot :</h4>
+<p>From looking at this plot :</p>
 <div class="panel panel-default">
 <div data-label="checkbox-c" class="tutorial-question panel-body">
 <div id="checkbox-c-answer_container" class="shiny-html-output"></div>
@@ -596,40 +557,26 @@ states per tree species :</p>
 </div>
 </div>
 </div>
-</div>
 <div id="section-new-questions-emerge" class="section level3">
 <h3>New questions emerge</h3>
-<div
-id="section-the-two-previous-plots-beg-the-following-question-were-hemlock-loopers-attacking-balsam-firs-because-were-more-abundant-on-anticosti-island-or-because-this-is-their-preferred-prey-in-other-words-is-this-a-generalist-or-specialist-predator-pest-species"
-class="section level4">
-<h4>The two previous plots beg the following question: were hemlock
+<p>The two previous plots beg the following question: were hemlock
 loopers attacking balsam firs because were more abundant on Anticosti
 Island, or because this is their preferred prey? In other words, is this
 a <strong>generalist</strong> or <strong>specialist</strong> predator
-pest species?</h4>
+pest species?</p>
 <p><br></p>
-</div>
-<div id="section-let-us-break-this-idea-down" class="section level4">
-<h4>Let us break this idea down :</h4>
+<p>Let us break this idea down :</p>
 <ul>
-<li><h4
-id="section-a-species-is-a-generalist-if-it-can-live-in-a-variety-of-environments-and-eat-a-variety-of-foods-meaning-it-is-quite-flexible-terms-of-its-diet-and-habitat-requirements.">A
-species is a <strong>generalist</strong> if it can live in a variety of
-environments and eat a variety of foods, meaning it is quite flexible
-terms of its diet and habitat requirements.</h4></li>
-<li><h4
-id="section-a-species-is-a-specialist-if-it-has-a-limited-diet-and-stricter-habitat-requirements-meaning-it-cannot-live-anywhere-and-cannot-eat-anything.">A
-species is a <strong>specialist</strong> if it has a limited diet, and
-stricter habitat requirements, meaning it cannot live anywhere and
-cannot eat anything.</h4></li>
+<li>A species is a <strong>generalist</strong> if it can live in a
+variety of environments and eat a variety of foods, meaning it is quite
+flexible terms of its diet and habitat requirements.</li>
+<li>A species is a <strong>specialist</strong> if it has a limited diet,
+and stricter habitat requirements, meaning it cannot live anywhere and
+cannot eat anything.</li>
 </ul>
-</div>
-<div
-id="section-two-great-examples-are-pigeons-and-koalas-pigeons-live-in-a-diversity-of-urban-environments-and-are-omnivores-eat-plant-and-animal-matter-while-koalas-only-live-on-and-eat-eucalyptus."
-class="section level4">
-<h4>Two great examples are pigeons and koalas – pigeons live in a
+<p>Two great examples are pigeons and koalas – pigeons live in a
 diversity of urban environments and are omnivores (eat plant and animal
-matter), while koalas only live on and eat eucalyptus.</h4>
+matter), while koalas only live on and eat eucalyptus.</p>
 <div class="figure" style="text-align: center">
 <img src="images/specialist_generalists.png" alt="Example of a specialist and generalist species" width="70%" />
 <p class="caption">
@@ -637,44 +584,24 @@ Example of a specialist and generalist species
 </p>
 </div>
 <p><br></p>
-</div>
-<div
-id="section-with-this-in-mind-let-us-continue-our-investigation-to-gain-some-further-insights."
-class="section level4">
-<h4>With this in mind, let us continue our investigation to gain some
-further insights.</h4>
+<p>With this in mind, let us continue our investigation to gain some
+further insights.</p>
 <hr />
 </div>
 </div>
-</div>
-<div id="section-tutorial-objective-3" class="section level2">
-<h2>Tutorial objective 3</h2>
-<div
-id="section-did-the-hemlock-looper-preferentially-attack-certain-tree-species-1"
-class="section level3">
-<h3>Did the hemlock looper preferentially attack certain tree
-species?</h3>
-<div
-id="section-this-question-asks-us-to-consider-the-role-of-relative-abundance-in-pest-prevalence.-below-is-a-comic-to-convey-this-idea."
-class="section level4">
-<h4>This question asks us to consider the role of relative abundance in
-pest prevalence. Below is a comic to convey this idea.</h4>
-</div>
-<div
-id="section-imagine-you-are-a-hemlock-looper-about-to-lay-its-eggs.-wouldnt-it-be-most-convenient-to-lay-them-on-the-first-tree-you-find-in-this-case-the-more-abundant-a-tree-is-the-more-likely-it-is-to-be-predated-upon."
-class="section level4">
-<h4>Imagine you are a hemlock looper about to lay its eggs. Wouldn’t it
+<div id="section-evaluate-the-hemlocks-preferences"
+class="section level2">
+<h2>3. Evaluate the hemlock’s preferences</h2>
+<p>This question asks us to consider the role of relative abundance in
+pest prevalence. Below is a comic to convey this idea.</p>
+<p>Imagine you are a hemlock looper about to lay its eggs. Wouldn’t it
 be most convenient to lay them on the first tree you find? In this case,
 the more abundant a tree is, the more likely it is to be predated
-upon.</h4>
-</div>
-<div
-id="section-alternatively-perhaps-hemlock-loopers-prefer-a-particular-tree-species-because-it-has-more-tender-leaves.-in-this-case-even-if-this-species-was-more-rare-in-the-forest-we-would-notice-it-has-more-hemlock-looper-damage-than-we-would-expect-based-on-its-relative-abundance."
-class="section level4">
-<h4>Alternatively, perhaps hemlock loopers prefer a particular tree
+upon.</p>
+<p>Alternatively, perhaps hemlock loopers prefer a particular tree
 species because it has more tender leaves. In this case, even if this
 species was more rare in the forest, we would notice it has more hemlock
-looper damage than we would expect based on its relative abundance.</h4>
+looper damage than we would expect based on its relative abundance.</p>
 <div class="figure" style="text-align: center">
 <img src="images/moth_pref.png" alt="Comic on the role of relative abundance and pest prevalence, by Victoria Marie Glynn" width="70%" />
 <p class="caption">
@@ -683,38 +610,22 @@ Marie Glynn
 </p>
 </div>
 <p><br></p>
-</div>
-<div
-id="section-we-thus-need-to-consider-the-relative-abundance-of-a-given-tree-species-our-x-axis-or-independent-variable-as-it-relates-to-the-relative-prevalence-of-trees-that-were-denoted-as-dead-our-y-axis-or-dependent-variable-which-is-proxy-for-predation-pressure.-with-this-in-mind-we-can-create-the-following-schematic-to-predict-three-possible-scenarios."
-class="section level4">
-<h4>We thus need to consider the <strong>relative abundance</strong> (%)
+<p>We thus need to consider the <strong>relative abundance</strong> (%)
 of a given tree species, our x-axis or independent variable, as it
 relates to the <strong>relative prevalence</strong> (%) of trees that
 were denoted as “dead,” our y-axis or dependent variable, which is proxy
 for predation pressure. With this in mind, we can create the following
-schematic to predict <strong>three possible scenarios</strong>.</h4>
-</div>
-<div
-id="section-these-three-scenarios-are-our-hypotheses-as-these-are-possible-answers-to-our-overall-question---did-the-hemlock-looper-preferentially-attack-certain-tree-species"
-class="section level4">
-<h4>These three scenarios are our <strong>hypotheses</strong>, as these
+schematic to predict <strong>three possible scenarios</strong>.</p>
+<p>These three scenarios are our <strong>hypotheses</strong>, as these
 are possible answers to our overall question - did the hemlock looper
-preferentially attack certain tree species?</h4>
-</div>
-<div
-id="section-for-each-hypothesis-we-have-a-corresponding-prediction-the-outcome-we-would-expect-to-see-if-our-hypothesis-is-supported."
-class="section level4">
-<h4>For each hypothesis, we have a corresponding
+preferentially attack certain tree species?</p>
+<p>For each hypothesis, we have a corresponding
 <strong>prediction</strong>, the outcome we would expect to see if our
-hypothesis is supported.</h4>
-</div>
-<div
-id="section-making-hypotheses-and-predictions-before-diving-into-data-analysis-is-very-useful-as-it-allows-us-to-foresee-and-think-through-the-dynamics-represented-in-our-dataset-improving-our-ability-to-interpret-our-results."
-class="section level4">
-<h4>Making hypotheses and predictions before diving into data analysis
-is very useful, as it allows us to foresee and think through the
-dynamics represented in our dataset, improving our ability to interpret
-our results.</h4>
+hypothesis is supported.</p>
+<p>Making hypotheses and predictions before diving into data analysis is
+very useful, as it allows us to foresee and think through the dynamics
+represented in our dataset, improving our ability to interpret our
+results.</p>
 <div class="figure" style="text-align: center">
 <img src="images/rel_abund.jpg" alt="Three possible scenarios regarding the hemlock loopers' predation behavior" width="80%" />
 <p class="caption">
@@ -723,133 +634,103 @@ behavior
 </p>
 </div>
 <p><br></p>
-</div>
-<div
-id="section-hypothesis-1-the-hemlock-looper-has-no-preference-on-what-tree-it-predates-upon-it-is-a-generalist-pest-species."
-class="section level4">
-<h4><strong>Hypothesis 1</strong>: The hemlock looper has no preference
+<p><strong>Hypothesis 1</strong>: The hemlock looper has no preference
 on what tree it predates upon – it is a <strong>generalist</strong> pest
-species.</h4>
-<div
-id="section-prediction-1-we-would-see-this-on-our-graph-as-a-one-to-one-relationship-diagonal-black-line-where-a-tree-species-abundance-in-the-forest-is-directly-proportional-to-the-number-of-trees-from-that-species-denoted-as-dead.-this-means-that-the-more-trees-we-have-of-a-given-species-the-more-the-hemlock-looper-will-attack-it."
-class="section level5">
-<h5>→ <strong>Prediction 1</strong>: We would see this on our graph as a
+species.</p>
+<p>→ <strong>Prediction 1</strong>: We would see this on our graph as a
 <strong>one-to-one relationship</strong> (diagonal black line), where a
 tree species’ abundance in the forest is directly proportional to the
 number of trees from that species denoted as “dead.” This means that the
 more trees we have of a given species, the more the hemlock looper will
-attack it.</h5>
-</div>
-</div>
-<div
-id="section-hypothesis-2-the-hemlock-looper-prefers-to-predate-upon-some-species-versus-others-it-is-a-specialist-pest-species."
-class="section level4">
-<h4><strong>Hypothesis 2</strong>: The hemlock looper prefers to predate
+attack it.</p>
+<p><strong>Hypothesis 2</strong>: The hemlock looper prefers to predate
 upon some species versus others – it is a <strong>specialist</strong>
-pest species.</h4>
-<div
-id="section-prediction-2-we-would-see-this-on-our-graph-if-a-tree-species-points-lie-above-the-one-to-one-line-orange-triangle-as-this-means-that-the-hemlock-looper-attacks-more-trees-of-a-given-species-tree-denoted-as-dead-even-if-the-relative-abundance-of-this-species-is-low."
-class="section level5">
-<h5>→ <strong>Prediction 2</strong>: We would see this on our graph if a
+pest species.</p>
+<p>→ <strong>Prediction 2</strong>: We would see this on our graph if a
 tree species’ points lie <strong>above the one-to-one line</strong>
 (orange triangle), as this means that the hemlock looper attacks more
 trees of a given species (tree denoted as “dead”) even if the relative
-abundance of this species is low.</h5>
-</div>
-</div>
-<div
-id="section-hypothesis-3-the-hemlock-looper-avoids-some-species-and-thus-these-are-less-predated-upon-it-is-a-specialist-pest-species."
-class="section level4">
-<h4><strong>Hypothesis 3</strong>: The hemlock looper avoids some
+abundance of this species is low.</p>
+<p><strong>Hypothesis 3</strong>: The hemlock looper avoids some
 species, and thus these are less predated upon – it is a
-<strong>specialist</strong> pest species.</h4>
-<div
-id="section-prediction-3-we-would-see-this-on-our-graph-if-a-species-points-lie-below-the-one-to-one-line-blue-triangle-as-this-means-that-less-individuals-of-a-given-tree-species-are-attacked-by-the-hemlock-looper-even-if-their-abundance-relative-to-other-species-is-high."
-class="section level5">
-<h5>→ <strong>Prediction 3</strong>: We would see this on our graph if a
+<strong>specialist</strong> pest species.</p>
+<p>→ <strong>Prediction 3</strong>: We would see this on our graph if a
 species’ points lie <strong>below the one-to-one line</strong> (blue
 triangle), as this means that less individuals of a given tree species
 are attacked by the hemlock looper, even if their abundance relative to
-other species is high.</h5>
+other species is high.</p>
 <p><br></p>
-</div>
-</div>
-</div>
-<div
-id="section-lets-plot-our-actual-data-and-see-where-the-results-lie-in-relationship-to-our-guiding-schematic-above."
-class="section level3">
-<h3>Let’s plot our actual data and see where the results lie, in
-relationship to our guiding schematic above.</h3>
+<p>Let’s plot our actual data and see where the results lie, in
+relationship to our guiding schematic above.</p>
 <p>We’ll start by filtering out the “Questionable” tree status, as it is
 unclear if these trees will die as a result of the hemlock looper
 outbreak. Then, we will calculate the total abundance of tree species by
 plot, which were denoted as either “dead” or “alive.” With this, like we
 did before, we will be able to calculate the abundance of a given
 species relative to the abundance of all species within a plot.</p>
-<pre class="r"><code># Filter out &quot;Questionable&quot; individuals
-tree_filter &lt;- tree[Condition != &quot;Questionable&quot;,
-                    .(Block, Compartment, Plot, Species, Condition, Number)]
-
-# Calculate the number of individuals of each species for each plot
-tree_filter[, ind_sp_plot := sum(Number),
-            by = .(Species, Plot, Compartment, Block)]
-
-# Calculate the total abundance of individuals, irrespective of the species, in each plot
-tree_filter[, total_id_plot := sum(unique(ind_sp_plot)),
-            by = .(Plot, Compartment, Block)]
-
-# Calculate the relative of each species in each plot
-tree_filter[, rel_abund_plot := ind_sp_plot / total_id_plot]</code></pre>
+<div class="sourceCode" id="section-cb7"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="section-cb7-1"><a href="#section-cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter out &quot;Questionable&quot; individuals</span></span>
+<span id="section-cb7-2"><a href="#section-cb7-2" aria-hidden="true" tabindex="-1"></a>tree_filter <span class="ot">&lt;-</span> tree[Condition <span class="sc">!=</span> <span class="st">&quot;Questionable&quot;</span>,</span>
+<span id="section-cb7-3"><a href="#section-cb7-3" aria-hidden="true" tabindex="-1"></a>                    .(Block, Compartment, Plot, Species, Condition, Number)]</span>
+<span id="section-cb7-4"><a href="#section-cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="section-cb7-5"><a href="#section-cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the number of individuals of each species for each plot</span></span>
+<span id="section-cb7-6"><a href="#section-cb7-6" aria-hidden="true" tabindex="-1"></a>tree_filter[, ind_sp_plot <span class="sc">:</span><span class="er">=</span> <span class="fu">sum</span>(Number),</span>
+<span id="section-cb7-7"><a href="#section-cb7-7" aria-hidden="true" tabindex="-1"></a>            by <span class="ot">=</span> .(Species, Plot, Compartment, Block)]</span>
+<span id="section-cb7-8"><a href="#section-cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="section-cb7-9"><a href="#section-cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the total abundance of individuals, irrespective of the species, in each plot</span></span>
+<span id="section-cb7-10"><a href="#section-cb7-10" aria-hidden="true" tabindex="-1"></a>tree_filter[, total_id_plot <span class="sc">:</span><span class="er">=</span> <span class="fu">sum</span>(<span class="fu">unique</span>(ind_sp_plot)),</span>
+<span id="section-cb7-11"><a href="#section-cb7-11" aria-hidden="true" tabindex="-1"></a>            by <span class="ot">=</span> .(Plot, Compartment, Block)]</span>
+<span id="section-cb7-12"><a href="#section-cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="section-cb7-13"><a href="#section-cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the relative of each species in each plot</span></span>
+<span id="section-cb7-14"><a href="#section-cb7-14" aria-hidden="true" tabindex="-1"></a>tree_filter[, rel_abund_plot <span class="sc">:</span><span class="er">=</span> ind_sp_plot <span class="sc">/</span> total_id_plot]</span></code></pre></div>
 <p>We then evaluate the count of “dead” trees per species, relative to
 all individuals denoted as “dead,” across all plots :</p>
-<pre class="r"><code># Calculate the total count of &quot;dead&quot; individuals by plot
-tree_filter[Condition == &quot;Dead&quot;,
-            total_dead := length(Condition),
-            by = .(Plot, Compartment, Block)]
-
-# Calculate the number of &quot;dead&quot; individuals per each species, for each plot
-tree_filter[Condition == &quot;Dead&quot;,
-            dead_sp_plot := length(Condition),
-            by = .(Species, Plot, Compartment, Block)]
-
-# Calculate each species&#39; &quot;dead&quot; status relative to other species
-tree_filter[Condition == &quot;Dead&quot;,
-            prop_dead_plot := dead_sp_plot / total_dead,
-            by = .(Species, Plot, Compartment, Block)]
-
-# Keep unique values with only &quot;dead&quot; rows and use this table for plotting
-tree_filter &lt;- unique(tree_filter[Condition == &quot;Dead&quot;,])</code></pre>
+<div class="sourceCode" id="section-cb8"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="section-cb8-1"><a href="#section-cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the total count of &quot;dead&quot; individuals by plot</span></span>
+<span id="section-cb8-2"><a href="#section-cb8-2" aria-hidden="true" tabindex="-1"></a>tree_filter[Condition <span class="sc">==</span> <span class="st">&quot;Dead&quot;</span>,</span>
+<span id="section-cb8-3"><a href="#section-cb8-3" aria-hidden="true" tabindex="-1"></a>            total_dead <span class="sc">:</span><span class="er">=</span> <span class="fu">length</span>(Condition),</span>
+<span id="section-cb8-4"><a href="#section-cb8-4" aria-hidden="true" tabindex="-1"></a>            by <span class="ot">=</span> .(Plot, Compartment, Block)]</span>
+<span id="section-cb8-5"><a href="#section-cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="section-cb8-6"><a href="#section-cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the number of &quot;dead&quot; individuals per each species, for each plot</span></span>
+<span id="section-cb8-7"><a href="#section-cb8-7" aria-hidden="true" tabindex="-1"></a>tree_filter[Condition <span class="sc">==</span> <span class="st">&quot;Dead&quot;</span>,</span>
+<span id="section-cb8-8"><a href="#section-cb8-8" aria-hidden="true" tabindex="-1"></a>            dead_sp_plot <span class="sc">:</span><span class="er">=</span> <span class="fu">length</span>(Condition),</span>
+<span id="section-cb8-9"><a href="#section-cb8-9" aria-hidden="true" tabindex="-1"></a>            by <span class="ot">=</span> .(Species, Plot, Compartment, Block)]</span>
+<span id="section-cb8-10"><a href="#section-cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="section-cb8-11"><a href="#section-cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate each species&#39; &quot;dead&quot; status relative to other species</span></span>
+<span id="section-cb8-12"><a href="#section-cb8-12" aria-hidden="true" tabindex="-1"></a>tree_filter[Condition <span class="sc">==</span> <span class="st">&quot;Dead&quot;</span>,</span>
+<span id="section-cb8-13"><a href="#section-cb8-13" aria-hidden="true" tabindex="-1"></a>            prop_dead_plot <span class="sc">:</span><span class="er">=</span> dead_sp_plot <span class="sc">/</span> total_dead,</span>
+<span id="section-cb8-14"><a href="#section-cb8-14" aria-hidden="true" tabindex="-1"></a>            by <span class="ot">=</span> .(Species, Plot, Compartment, Block)]</span>
+<span id="section-cb8-15"><a href="#section-cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="section-cb8-16"><a href="#section-cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep unique values with only &quot;dead&quot; rows and use this table for plotting</span></span>
+<span id="section-cb8-17"><a href="#section-cb8-17" aria-hidden="true" tabindex="-1"></a>tree_filter <span class="ot">&lt;-</span> <span class="fu">unique</span>(tree_filter[Condition <span class="sc">==</span> <span class="st">&quot;Dead&quot;</span>,])</span></code></pre></div>
 <p>We finish by plotting the relationship between tree species and being
 denoted as “dead” :</p>
-<pre class="r"><code>ggplot(tree_filter,
-       aes(x = rel_abund_plot,
-           y = prop_dead_plot,
-           colour = Species)) +
-  geom_abline(intercept = 0,
-              slope = 1,
-              size = 0.8,
-              linetype = &quot;dashed&quot;) +
-  geom_point(size = 4,
-             shape = 21,
-             aes(fill = Species)) +
-  scale_colour_manual(values = c(&quot;black&quot;,&quot;black&quot;, &quot;black&quot;, &quot;black&quot;)) +
-  scale_fill_manual(values = c(&quot;darkgreen&quot;, &quot;chartreuse4&quot;, &quot;lemonchiffon1&quot;, &quot;lightgreen&quot;)) +
-  ylab(&quot;Abundance of dead trees relative to all dead trees\n&quot;) +
-  xlab(&quot;\nRelative abundance of focal tree species&quot;) +
-  scale_y_continuous(breaks = seq(0, 1, .25),
-                     limits = c(0,1)) +
-  scale_x_continuous(breaks = seq(0, 1, .25),
-                     limits = c(0,1)) +
-  custom_theme</code></pre>
-<p><img src="LDT_Anticosti_Tutorial_files/figure-html/unnamed-chunk-19-1.png" width="816" /></p>
-</div>
+<div class="sourceCode" id="section-cb9"><pre
+class="sourceCode r"><code class="sourceCode r"><span id="section-cb9-1"><a href="#section-cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tree_filter,</span>
+<span id="section-cb9-2"><a href="#section-cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> rel_abund_plot,</span>
+<span id="section-cb9-3"><a href="#section-cb9-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> prop_dead_plot,</span>
+<span id="section-cb9-4"><a href="#section-cb9-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
+<span id="section-cb9-5"><a href="#section-cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>,</span>
+<span id="section-cb9-6"><a href="#section-cb9-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">slope =</span> <span class="dv">1</span>,</span>
+<span id="section-cb9-7"><a href="#section-cb9-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">size =</span> <span class="fl">0.8</span>,</span>
+<span id="section-cb9-8"><a href="#section-cb9-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="section-cb9-9"><a href="#section-cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>,</span>
+<span id="section-cb9-10"><a href="#section-cb9-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">21</span>,</span>
+<span id="section-cb9-11"><a href="#section-cb9-11" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="section-cb9-12"><a href="#section-cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;black&quot;</span>, <span class="st">&quot;black&quot;</span>, <span class="st">&quot;black&quot;</span>)) <span class="sc">+</span></span>
+<span id="section-cb9-13"><a href="#section-cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;darkgreen&quot;</span>, <span class="st">&quot;chartreuse4&quot;</span>, <span class="st">&quot;lemonchiffon1&quot;</span>, <span class="st">&quot;lightgreen&quot;</span>)) <span class="sc">+</span></span>
+<span id="section-cb9-14"><a href="#section-cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Abundance of dead trees relative to all dead trees</span><span class="sc">\n</span><span class="st">&quot;</span>) <span class="sc">+</span></span>
+<span id="section-cb9-15"><a href="#section-cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Relative abundance of focal tree species&quot;</span>) <span class="sc">+</span></span>
+<span id="section-cb9-16"><a href="#section-cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, .<span class="dv">25</span>),</span>
+<span id="section-cb9-17"><a href="#section-cb9-17" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="section-cb9-18"><a href="#section-cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, .<span class="dv">25</span>),</span>
+<span id="section-cb9-19"><a href="#section-cb9-19" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="section-cb9-20"><a href="#section-cb9-20" aria-hidden="true" tabindex="-1"></a>  custom_theme</span></code></pre></div>
+<p><img src="LDT_Anticosti_Tutorial_files/figure-html/unnamed-chunk-18-1.png" width="816" /></p>
 <div id="section-lets-test-our-knowledge-2" class="section level3">
 <h3>Let’s test our knowledge!</h3>
-<div
-id="section-from-the-graph-and-based-on-our-predictions-above-we-can-now-answer-the-question"
-class="section level4">
-<h4>From the graph and based on our predictions above, we can now answer
-the question :</h4>
+<p>From the graph and based on our predictions above, we can now answer
+the question :</p>
 <div class="panel panel-default">
 <div data-label="letterx-d" class="tutorial-question panel-body">
 <div id="letterx-d-answer_container" class="shiny-html-output"></div>
@@ -861,48 +742,37 @@ the question :</h4>
 <hr />
 </div>
 </div>
-</div>
-<div id="section-tutorial-objective-4" class="section level2">
-<h2>Tutorial objective 4</h2>
+<div id="section-management-recomendations" class="section level2">
+<h2>4. Management recomendations</h2>
 <div
 id="section-what-do-our-findings-imply-in-terms-of-pest-management-on-anticosti-island"
 class="section level3">
 <h3>What do our findings imply in terms of pest management on Anticosti
 Island?</h3>
-<div
-id="section-this-dataset-represents-one-of-the-many-hemlock-looper-outbreaks-anticosti-island-and-québec-as-a-whole-has-experienced.-based-on-your-findings-please-reflect-and-respond-to-the-following-questions.-to-help-inform-your-answers-please-refer-to-the-following-helpful-links-about-the-hemlock-looper"
-class="section level4">
-<h4>This dataset represents one of the many hemlock looper outbreaks
+<p>This dataset represents one of the many hemlock looper outbreaks
 Anticosti Island, and Québec as a whole, has experienced. Based on your
 findings, please reflect and respond to the following questions. To help
 inform your answers, please refer to the following helpful links about
-the hemlock looper :</h4>
+the hemlock looper :</p>
 <ul>
-<li><h4 id="section-hemlock-looper-overview"><a
+<li><a
 href="https://www.plantwise.org/knowledgebank/datasheet/29749">Hemlock
-looper overview</a></h4></li>
-<li><h4 id="section-biological-control-of-the-hemlock-looper"><a
+looper overview</a></li>
+<li><a
 href="https://www.plantwise.org/KnowledgeBank/pestalert?pan=19740515762">Biological
-control of the hemlock looper</a></h4></li>
-<li><h4
-id="section-hemlock-looper-life-history-management-considerations"><a
+control of the hemlock looper</a></li>
+<li><a
 href="https://www.fs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb5191788.pdf">Hemlock
-looper life history, management considerations</a></h4></li>
+looper life history, management considerations</a></li>
 </ul>
-</div>
 </div>
 <div id="section-big-picture-questions" class="section level3">
 <h3>“Big-picture” questions</h3>
 <ul>
-<li><h4 id="section-what-trees-would-you-most-closely-monitor">What
-trees would you most closely monitor?</h4></li>
-<li><h4
-id="section-what-additional-protectionsrestrictions-should-exist-on-anticosti-island">What
-additional protections/restrictions should exist on Anticosti
-Island?</h4></li>
-<li><h4
-id="section-what-management-suggestions-would-you-provide-to-the-mffp">What
-management suggestions would you provide to the MFFP?</h4></li>
+<li>What trees would you most closely monitor?</li>
+<li>What additional protections/restrictions should exist on Anticosti
+Island?</li>
+<li>What management suggestions would you provide to the MFFP?</li>
 </ul>
 <p><br></p>
 </div>
@@ -964,44 +834,32 @@ class="section level3">
 <h3>As our Anticosti Island tree dataset underscores, historical data is
 a powerful tool to help us best contextualize current management
 concerns, and assist us in making data-driven decisions.</h3>
-</div>
-<div id="section-from-our-tutorial-you-have" class="section level3">
-<h3>From our tutorial, you have:</h3>
-<div
-id="section-interpreted-community-ecology-plots-to-understand-the-tree-community-present-on-anticosti-island-in-1973-and-how-different-species-were-impacted-by-the-hemlock-looper-outbreak."
-class="section level5">
-<h5>1. <strong>Interpreted community ecology plots,</strong> <em>to
+<p>From our tutorial, you have:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Interpreted community ecology plots,</strong> <em>to
 understand the tree community present on Anticosti Island in 1973, and
 how different species were impacted by the hemlock looper
-outbreak.</em></h5>
+outbreak.</em></li>
+</ol>
 <p><br></p>
-</div>
-<div
-id="section-differentiated-between-a-generalist-and-specialist-pest-species-using-community-ecology-plots-by-connecting-how-the-relative-abundance-of-a-given-tree-species-is-linked-to-the-prevalence-of-a-tree-being-denoted-as-dead."
-class="section level5">
-<h5>2. <strong>Differentiated between a generalist and specialist pest
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Differentiated between a generalist and specialist pest
 species, using community ecology plots,</strong> <em>by connecting how
 the relative abundance of a given tree species is linked to the
-prevalence of a tree being denoted as “dead.”</em></h5>
+prevalence of a tree being denoted as “dead.”</em></li>
+</ol>
 <p><br></p>
-</div>
-<div
-id="section-made-data-driven-management-recommendations-considering-not-only-the-data-presented-in-the-tutorial-but-also-looking-further-into-the-biology-of-the-hemlock-looper-what-already-established-strategies-exist-and-thinking-critically-about-the-link-between-society-and-the-environment."
-class="section level5">
-<h5>3. <strong>Made data-driven management recommendations,</strong>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Made data-driven management recommendations,</strong>
 <em>considering not only the data presented in the tutorial, but also
 looking further into the biology of the hemlock looper, what already
 established strategies exist, and thinking critically about the link
-between society and the environment.</em></h5>
+between society and the environment.</em></li>
+</ol>
 <p><br></p>
-</div>
-</div>
-<div
-id="section-together-this-tutorial-underscores-that-historical-data-is-a-powerful-but-not-the-only-consideration-to-bring-into-modern-pest-management."
-class="section level3">
-<h3>Together, this tutorial underscores that historical data is a
+<p>Together, this tutorial underscores that historical data is a
 powerful, but not the only consideration to bring into modern pest
-management.</h3>
+management.</p>
 <hr />
 </div>
 </div>
@@ -1057,7 +915,9 @@ Island</a></p>
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
 library(rsconnect)
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
@@ -1072,29 +932,29 @@ session$onSessionEnded(function() {
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "checkbox-a", question = structure("What tree species is the <strong>MOST<\u002fstrong> abundant?", html = TRUE, class = c("html", "character")), answers = list(structure(list(id = "lnr_ans_16c3ac1",     option = "White birch - *Betula papyrifera*", value = "White birch - *Betula papyrifera*",     label = structure("White birch - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>largest<\u002fstrong> median value of individuals identified", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_8baeebc", option = "White spruce  - *Picea glauca*",     value = "White spruce  - *Picea glauca*", label = structure("White spruce  - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>largest<\u002fstrong> median value of individuals identified", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6e5234b", option = "Black spruce - *Picea mariana*",     value = "Black spruce - *Picea mariana*", label = structure("Black spruce - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: You are close! Is there a tree species with a <strong>larger<\u002fstrong> median value of individuals identified?", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_90f3db7", option = "American larch - *Larix laricina*",     value = "American larch - *Larix laricina*", label = structure("American larch - <em>Larix laricina<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>largest<\u002fstrong> median value of individuals identified", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_7584fa9", option = "Aspen - *Populus* spp.",     value = "Aspen - *Populus* spp.", label = structure("Aspen - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>largest<\u002fstrong> median value of individuals identified", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_8c57680", option = "Pine - *Pinus* spp.",     value = "Pine - *Pinus* spp.", label = structure("Pine - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>largest<\u002fstrong> median value of individuals identified", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2990e69", option = "Balsam fir - *Abies balsamea*",     value = "Balsam fir - *Abies balsamea*", label = structure("Balsam fir - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html",     "character")), correct = TRUE, message = structure("Balsam fir is the tree species with the <strong>largest<\u002fstrong> median value of individuals identified", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", "character")), try_again = structure("Try Again", html = TRUE, class = c("html", "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", "character")), message = NULL, post_message = NULL), ids = list(    answer = "checkbox-a-answer", question = "checkbox-a"), loading = structure("<strong>Loading:<\u002fstrong> \nWhat tree species is the <strong>MOST<\u002fstrong> abundant?\n<br/><br/><br/>", html = TRUE, class = c("html", "character")), random_answer_order = FALSE, allow_retry = TRUE,     seed = 811975409.621894, options = list()), class = c("learnr_radio", "tutorial_question")))
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "checkbox-a", question = structure("What tree species is the <strong>MOST<\u002fstrong> abundant?", html = TRUE, class = c("html", "character")), answers = list(structure(list(id = "lnr_ans_54d30f3",     option = "White birch - *Betula papyrifera*", value = "White birch - *Betula papyrifera*",     label = structure("White birch - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>largest<\u002fstrong> median value of individuals identified", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c084306", option = "White spruce  - *Picea glauca*",     value = "White spruce  - *Picea glauca*", label = structure("White spruce  - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>largest<\u002fstrong> median value of individuals identified", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_dcb39ee", option = "Black spruce - *Picea mariana*",     value = "Black spruce - *Picea mariana*", label = structure("Black spruce - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: You are close! Is there a tree species with a <strong>larger<\u002fstrong> median value of individuals identified?", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_801b320", option = "American larch - *Larix laricina*",     value = "American larch - *Larix laricina*", label = structure("American larch - <em>Larix laricina<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>largest<\u002fstrong> median value of individuals identified", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_f1b4c1d", option = "Aspen - *Populus* spp.",     value = "Aspen - *Populus* spp.", label = structure("Aspen - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>largest<\u002fstrong> median value of individuals identified", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d4f865a", option = "Pine - *Pinus* spp.",     value = "Pine - *Pinus* spp.", label = structure("Pine - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>largest<\u002fstrong> median value of individuals identified", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3c564d7", option = "Balsam fir - *Abies balsamea*",     value = "Balsam fir - *Abies balsamea*", label = structure("Balsam fir - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html",     "character")), correct = TRUE, message = structure("Balsam fir is the tree species with the <strong>largest<\u002fstrong> median value of individuals identified", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", "character")), try_again = structure("Try Again", html = TRUE, class = c("html", "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", "character")), message = NULL, post_message = NULL), ids = list(    answer = "checkbox-a-answer", question = "checkbox-a"), loading = structure("<strong>Loading:<\u002fstrong> \nWhat tree species is the <strong>MOST<\u002fstrong> abundant?\n<br/><br/><br/>", html = TRUE, class = c("html", "character")), random_answer_order = FALSE, allow_retry = TRUE,     seed = 1227958257.42819, options = list()), class = c("learnr_radio", "tutorial_question")))
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "checkbox-b", question = structure("What tree species is the <strong>LEAST<\u002fstrong> abundant?", html = TRUE, class = c("html", "character")), answers = list(structure(list(id = "lnr_ans_ff62f9d",     option = "White birch - *Betula papyrifera*", value = "White birch - *Betula papyrifera*",     label = structure("White birch - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>smallest<\u002fstrong> median value of individuals identified.", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_819cf90", option = "White spruce - *Picea glauca*",     value = "White spruce - *Picea glauca*", label = structure("White spruce - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>smallest<\u002fstrong> median value of individuals identified.", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_71844f4", option = "Black spruce - *Picea mariana*",     value = "Black spruce - *Picea mariana*", label = structure("Black spruce - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>smallest<\u002fstrong> median value of individuals identified.", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_409aa86", option = "American larch - *Larix laricina*",     value = "American larch - *Larix laricina*", label = structure("American larch - <em>Larix laricina<\u002fem>", html = TRUE, class = c("html",     "character")), correct = TRUE, message = structure("American larch is the tree species with the <strong>smallest<\u002fstrong> median value of individuals identified.", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6f7a50", option = "Aspen - *Populus* spp.",     value = "Aspen - *Populus* spp.", label = structure("Aspen - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: You are close! Is there a tree species with a <strong>smaller<\u002fstrong> median value of individuals identified?", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d48d5c", option = "Pine - *Pinus* spp.",     value = "Pine - *Pinus* spp.", label = structure("Pine - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: You are close! Is there a tree species with a <strong>smaller<\u002fstrong> median value of individuals identified?", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_1f772b7", option = "Balsam fir - *Abies balsamea*",     value = "Balsam fir - *Abies balsamea*", label = structure("Balsam fir - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>smallest<\u002fstrong> median value of individuals identified.", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", "character")), try_again = structure("Try Again", html = TRUE, class = c("html", "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", "character")), message = NULL, post_message = NULL), ids = list(    answer = "checkbox-b-answer", question = "checkbox-b"), loading = structure("<strong>Loading:<\u002fstrong> \nWhat tree species is the <strong>LEAST<\u002fstrong> abundant?\n<br/><br/><br/>", html = TRUE, class = c("html", "character")), random_answer_order = FALSE, allow_retry = TRUE,     seed = 1674536365.22023, options = list()), class = c("learnr_radio", "tutorial_question")))
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "checkbox-c", question = structure("What tree species was <strong>MOST<\u002fstrong> affected by the hemlock looper? Select all that apply.", html = TRUE, class = c("html", "character")), answers = list(structure(list(id = "lnr_ans_43ae2bd",     option = "White birch - *Betula papyrifera*", value = "White birch - *Betula papyrifera*",     label = structure("White birch - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;dead&#39; (purple bar).", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_73abafa", option = "White spruce  - *Picea glauca*",     value = "White spruce  - *Picea glauca*", label = structure("White spruce  - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: You are close! Is there a tree species with <strong>more<\u002fstrong> individuals denoted as &#39;dead&#39; (purple bar)?", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ef7b9b5", option = "Black spruce - *Picea mariana*",     value = "Black spruce - *Picea mariana*", label = structure("Black spruce - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;dead&#39; (purple bar).", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ede77d0", option = "American larch - *Larix laricina*.",     value = "American larch - *Larix laricina*.", label = structure("American larch - <em>Larix laricina<\u002fem>.", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;dead&#39; (purple bar).", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_1ddc4f4", option = "Aspen - *Populus* spp.",     value = "Aspen - *Populus* spp.", label = structure("Aspen - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;dead&#39; (purple bar).", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_ac10d2", option = "Pine - *Pinus* spp.",     value = "Pine - *Pinus* spp.", label = structure("Pine - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;dead&#39; (purple bar).", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_5a0e85e", option = "Balsam fir - *Abies balsamea*",     value = "Balsam fir - *Abies balsamea*", label = structure("Balsam fir - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html",     "character")), correct = TRUE, message = structure("Balsam fir is the species with the <strong>most<\u002fstrong> individuals denoted as &#39;dead&#39; (purple bar).", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", "character")), try_again = structure("Try Again", html = TRUE, class = c("html", "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", "character")), message = NULL, post_message = NULL), ids = list(    answer = "checkbox-c-answer", question = "checkbox-c"), loading = structure("<strong>Loading:<\u002fstrong> \nWhat tree species was <strong>MOST<\u002fstrong> affected by the hemlock looper? Select all that apply.\n<br/><br/><br/>", html = TRUE, class = c("html", "character")), random_answer_order = FALSE, allow_retry = TRUE,     seed = 2029538093.55492, options = list()), class = c("learnr_radio", "tutorial_question")))
-</script>
-
-
-<script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "checkbox-d",     question = structure("What three tree species were <strong>LEAST<\u002fstrong> affected by the hemlock looper? Select all that apply.", html = TRUE, class = c("html",     "character")), answers = list(structure(list(id = "lnr_ans_756f74b",         option = "White birch - *Betula papyrifera*", value = "White birch - *Betula papyrifera*",         label = structure("White birch - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html",         "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;good&#39; (green bar).", html = TRUE, class = c("html",         "character"))), class = c("tutorial_question_answer",     "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d82e7f5",         option = "White spruce - *Picea glauca*", value = "White spruce - *Picea glauca*",         label = structure("White spruce - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html",         "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;good&#39; (green bar).", html = TRUE, class = c("html",         "character"))), class = c("tutorial_question_answer",     "tutorial_quiz_answer")), structure(list(id = "lnr_ans_eec3248",         option = "Black spruce - *Picea mariana*", value = "Black spruce - *Picea mariana*",         label = structure("Black spruce - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html",         "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;good&#39; (green bar).", html = TRUE, class = c("html",         "character"))), class = c("tutorial_question_answer",     "tutorial_quiz_answer")), structure(list(id = "lnr_ans_21ddc7c",         option = "American larch - *Larix laricina*", value = "American larch - *Larix laricina*",         label = structure("American larch - <em>Larix laricina<\u002fem>", html = TRUE, class = c("html",         "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer",     "tutorial_quiz_answer")), structure(list(id = "lnr_ans_24e5b26",         option = "Aspen - *Populus* spp.", value = "Aspen - *Populus* spp.",         label = structure("Aspen - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html",         "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer",     "tutorial_quiz_answer")), structure(list(id = "lnr_ans_85780c8",         option = "Pine - *Pinus* spp.", value = "Pine - *Pinus* spp.",         label = structure("Pine - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html",         "character")), correct = TRUE, message = structure("American larch, aspen, and pine are the three species with the <strong>most<\u002fstrong> individuals denoted as &#39;good&#39; (green bar).", html = TRUE, class = c("html",         "character"))), class = c("tutorial_question_answer",     "tutorial_quiz_answer")), structure(list(id = "lnr_ans_f89a44e",         option = "Balsam fir - *Abies balsamea*", value = "Balsam fir - *Abies balsamea*",         label = structure("Balsam fir - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html",         "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;good&#39; (green bar).", html = TRUE, class = c("html",         "character"))), class = c("tutorial_question_answer",     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html",     "character")), try_again = structure("Try Again", html = TRUE, class = c("html",     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html",     "character")), try_again = structure("Incorrect", html = TRUE, class = c("html",     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html",     "character")), message = NULL, post_message = NULL), ids = list(        answer = "checkbox-d-answer", question = "checkbox-d"),     loading = structure("<strong>Loading:<\u002fstrong> \nWhat three tree species were <strong>LEAST<\u002fstrong> affected by the hemlock looper? Select all that apply.\n<br/><br/><br/>", html = TRUE, class = c("html",     "character")), random_answer_order = FALSE, allow_retry = TRUE,     seed = 2082515599.53025, options = list()), class = c("learnr_checkbox", "tutorial_question")))
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "checkbox-b", question = structure("What tree species is the <strong>LEAST<\u002fstrong> abundant?", html = TRUE, class = c("html", "character")), answers = list(structure(list(id = "lnr_ans_ba79d3f",     option = "White birch - *Betula papyrifera*", value = "White birch - *Betula papyrifera*",     label = structure("White birch - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>smallest<\u002fstrong> median value of individuals identified.", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_8ac1e8b", option = "White spruce - *Picea glauca*",     value = "White spruce - *Picea glauca*", label = structure("White spruce - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>smallest<\u002fstrong> median value of individuals identified.", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_65049c7", option = "Black spruce - *Picea mariana*",     value = "Black spruce - *Picea mariana*", label = structure("Black spruce - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>smallest<\u002fstrong> median value of individuals identified.", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c5c02e", option = "American larch - *Larix laricina*",     value = "American larch - *Larix laricina*", label = structure("American larch - <em>Larix laricina<\u002fem>", html = TRUE, class = c("html",     "character")), correct = TRUE, message = structure("American larch is the tree species with the <strong>smallest<\u002fstrong> median value of individuals identified.", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_feeec0f", option = "Aspen - *Populus* spp.",     value = "Aspen - *Populus* spp.", label = structure("Aspen - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: You are close! Is there a tree species with a <strong>smaller<\u002fstrong> median value of individuals identified?", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4d1ec1e", option = "Pine - *Pinus* spp.",     value = "Pine - *Pinus* spp.", label = structure("Pine - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: You are close! Is there a tree species with a <strong>smaller<\u002fstrong> median value of individuals identified?", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_58d7ec8", option = "Balsam fir - *Abies balsamea*",     value = "Balsam fir - *Abies balsamea*", label = structure("Balsam fir - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>smallest<\u002fstrong> median value of individuals identified.", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", "character")), try_again = structure("Try Again", html = TRUE, class = c("html", "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", "character")), message = NULL, post_message = NULL), ids = list(    answer = "checkbox-b-answer", question = "checkbox-b"), loading = structure("<strong>Loading:<\u002fstrong> \nWhat tree species is the <strong>LEAST<\u002fstrong> abundant?\n<br/><br/><br/>", html = TRUE, class = c("html", "character")), random_answer_order = FALSE, allow_retry = TRUE,     seed = 1870531615.12897, options = list()), class = c("learnr_radio", "tutorial_question")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "letterx-d", question = structure("Do hemlock loopers preferentially attack a given tree species?", html = TRUE, class = c("html", "character")), answers = list(structure(list(id = "lnr_ans_baba57c",     option = "**Yes**, hemlock loopers preferentially attack **balsam fir trees** because there are proportionally more dead trees of this species relative to their overall abundance in the forest",     value = "**Yes**, hemlock loopers preferentially attack **balsam fir trees** because there are proportionally more dead trees of this species relative to their overall abundance in the forest",     label = structure("<strong>Yes<\u002fstrong>, hemlock loopers preferentially attack <strong>balsam fir trees<\u002fstrong> because there are proportionally more dead trees of this species relative to their overall abundance in the forest", html = TRUE, class = c("html",     "character")), correct = TRUE, message = structure("We see that all the data points for balsam fir (darkest green) are above the one-to-one line (dotted, black).", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_6b71f21", option = "**Yes**, hemlock loopers preferentially attack **black spruce trees** because there are proportionally less dead trees of this species relative to their overall abundance in the forest",     value = "**Yes**, hemlock loopers preferentially attack **black spruce trees** because there are proportionally less dead trees of this species relative to their overall abundance in the forest",     label = structure("<strong>Yes<\u002fstrong>, hemlock loopers preferentially attack <strong>black spruce trees<\u002fstrong> because there are proportionally less dead trees of this species relative to their overall abundance in the forest", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: Recall that if data points are <strong>below<\u002fstrong> the one-to-one line, this means that although there are many trees of this species, this does not correlate to more trees being denoted &#39;dead.&#39;", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_19cc0e9", option = "**No**, the relative abundance of dead trees for each species is directly proportional to their overall abundance in the forest",     value = "**No**, the relative abundance of dead trees for each species is directly proportional to their overall abundance in the forest",     label = structure("<strong>No<\u002fstrong>, the relative abundance of dead trees for each species is directly proportional to their overall abundance in the forest", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: Where are most data points located, relative to the one-to-one line (dotted, black)? What does this mean in terms of pest preference?", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_38e4913", option = "I am not sure, I would need more data",     value = "I am not sure, I would need more data", label = structure("I am not sure, I would need more data", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: You do have enough information to answer this question! Recall that the position of the data points relative to the one-to-one line (dotted, black) can provide insights on pest preference.", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", "character")), try_again = structure("Try Again", html = TRUE, class = c("html", "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", "character")), message = NULL, post_message = NULL), ids = list(    answer = "letterx-d-answer", question = "letterx-d"), loading = structure("<strong>Loading:<\u002fstrong> \nDo hemlock loopers preferentially attack a given tree species?\n<br/><br/><br/>", html = TRUE, class = c("html", "character")), random_answer_order = FALSE, allow_retry = TRUE,     seed = 2134407303.00609, options = list()), class = c("learnr_radio", "tutorial_question")))
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "checkbox-c", question = structure("What tree species was <strong>MOST<\u002fstrong> affected by the hemlock looper? Select all that apply.", html = TRUE, class = c("html", "character")), answers = list(structure(list(id = "lnr_ans_b14256c",     option = "White birch - *Betula papyrifera*", value = "White birch - *Betula papyrifera*",     label = structure("White birch - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;dead&#39; (purple bar).", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_4015485", option = "White spruce  - *Picea glauca*",     value = "White spruce  - *Picea glauca*", label = structure("White spruce  - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: You are close! Is there a tree species with <strong>more<\u002fstrong> individuals denoted as &#39;dead&#39; (purple bar)?", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_dc115d7", option = "Black spruce - *Picea mariana*",     value = "Black spruce - *Picea mariana*", label = structure("Black spruce - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;dead&#39; (purple bar).", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_7fe5468", option = "American larch - *Larix laricina*.",     value = "American larch - *Larix laricina*.", label = structure("American larch - <em>Larix laricina<\u002fem>.", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;dead&#39; (purple bar).", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_8afb614", option = "Aspen - *Populus* spp.",     value = "Aspen - *Populus* spp.", label = structure("Aspen - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;dead&#39; (purple bar).", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3bc234c", option = "Pine - *Pinus* spp.",     value = "Pine - *Pinus* spp.", label = structure("Pine - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;dead&#39; (purple bar).", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_dfb3982", option = "Balsam fir - *Abies balsamea*",     value = "Balsam fir - *Abies balsamea*", label = structure("Balsam fir - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html",     "character")), correct = TRUE, message = structure("Balsam fir is the species with the <strong>most<\u002fstrong> individuals denoted as &#39;dead&#39; (purple bar).", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", "character")), try_again = structure("Try Again", html = TRUE, class = c("html", "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", "character")), message = NULL, post_message = NULL), ids = list(    answer = "checkbox-c-answer", question = "checkbox-c"), loading = structure("<strong>Loading:<\u002fstrong> \nWhat tree species was <strong>MOST<\u002fstrong> affected by the hemlock looper? Select all that apply.\n<br/><br/><br/>", html = TRUE, class = c("html", "character")), random_answer_order = FALSE, allow_retry = TRUE,     seed = 1184090962.44861, options = list()), class = c("learnr_radio", "tutorial_question")))
+</script>
+
+
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "checkbox-d",     question = structure("What three tree species were <strong>LEAST<\u002fstrong> affected by the hemlock looper? Select all that apply.", html = TRUE, class = c("html",     "character")), answers = list(structure(list(id = "lnr_ans_f0b1445",         option = "White birch - *Betula papyrifera*", value = "White birch - *Betula papyrifera*",         label = structure("White birch - <em>Betula papyrifera<\u002fem>", html = TRUE, class = c("html",         "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;good&#39; (green bar).", html = TRUE, class = c("html",         "character"))), class = c("tutorial_question_answer",     "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d9db0f3",         option = "White spruce - *Picea glauca*", value = "White spruce - *Picea glauca*",         label = structure("White spruce - <em>Picea glauca<\u002fem>", html = TRUE, class = c("html",         "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;good&#39; (green bar).", html = TRUE, class = c("html",         "character"))), class = c("tutorial_question_answer",     "tutorial_quiz_answer")), structure(list(id = "lnr_ans_d5fec56",         option = "Black spruce - *Picea mariana*", value = "Black spruce - *Picea mariana*",         label = structure("Black spruce - <em>Picea mariana<\u002fem>", html = TRUE, class = c("html",         "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;good&#39; (green bar).", html = TRUE, class = c("html",         "character"))), class = c("tutorial_question_answer",     "tutorial_quiz_answer")), structure(list(id = "lnr_ans_fc571a1",         option = "American larch - *Larix laricina*", value = "American larch - *Larix laricina*",         label = structure("American larch - <em>Larix laricina<\u002fem>", html = TRUE, class = c("html",         "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer",     "tutorial_quiz_answer")), structure(list(id = "lnr_ans_61f198b",         option = "Aspen - *Populus* spp.", value = "Aspen - *Populus* spp.",         label = structure("Aspen - <em>Populus<\u002fem> spp.", html = TRUE, class = c("html",         "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer",     "tutorial_quiz_answer")), structure(list(id = "lnr_ans_626aa2f",         option = "Pine - *Pinus* spp.", value = "Pine - *Pinus* spp.",         label = structure("Pine - <em>Pinus<\u002fem> spp.", html = TRUE, class = c("html",         "character")), correct = TRUE, message = structure("American larch, aspen, and pine are the three species with the <strong>most<\u002fstrong> individuals denoted as &#39;good&#39; (green bar).", html = TRUE, class = c("html",         "character"))), class = c("tutorial_question_answer",     "tutorial_quiz_answer")), structure(list(id = "lnr_ans_e280d01",         option = "Balsam fir - *Abies balsamea*", value = "Balsam fir - *Abies balsamea*",         label = structure("Balsam fir - <em>Abies balsamea<\u002fem>", html = TRUE, class = c("html",         "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: We are looking for the species with the <strong>most<\u002fstrong> individuals denoted as &#39;good&#39; (green bar).", html = TRUE, class = c("html",         "character"))), class = c("tutorial_question_answer",     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html",     "character")), try_again = structure("Try Again", html = TRUE, class = c("html",     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html",     "character")), try_again = structure("Incorrect", html = TRUE, class = c("html",     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html",     "character")), message = NULL, post_message = NULL), ids = list(        answer = "checkbox-d-answer", question = "checkbox-d"),     loading = structure("<strong>Loading:<\u002fstrong> \nWhat three tree species were <strong>LEAST<\u002fstrong> affected by the hemlock looper? Select all that apply.\n<br/><br/><br/>", html = TRUE, class = c("html",     "character")), random_answer_order = FALSE, allow_retry = TRUE,     seed = 82191038.9617268, options = list()), class = c("learnr_checkbox", "tutorial_question")))
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "letterx-d", question = structure("Do hemlock loopers preferentially attack a given tree species?", html = TRUE, class = c("html", "character")), answers = list(structure(list(id = "lnr_ans_d75e31b",     option = "**Yes**, hemlock loopers preferentially attack **balsam fir trees** because there are proportionally more dead trees of this species relative to their overall abundance in the forest",     value = "**Yes**, hemlock loopers preferentially attack **balsam fir trees** because there are proportionally more dead trees of this species relative to their overall abundance in the forest",     label = structure("<strong>Yes<\u002fstrong>, hemlock loopers preferentially attack <strong>balsam fir trees<\u002fstrong> because there are proportionally more dead trees of this species relative to their overall abundance in the forest", html = TRUE, class = c("html",     "character")), correct = TRUE, message = structure("We see that all the data points for balsam fir (darkest green) are above the one-to-one line (dotted, black).", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_94567fa", option = "**Yes**, hemlock loopers preferentially attack **black spruce trees** because there are proportionally less dead trees of this species relative to their overall abundance in the forest",     value = "**Yes**, hemlock loopers preferentially attack **black spruce trees** because there are proportionally less dead trees of this species relative to their overall abundance in the forest",     label = structure("<strong>Yes<\u002fstrong>, hemlock loopers preferentially attack <strong>black spruce trees<\u002fstrong> because there are proportionally less dead trees of this species relative to their overall abundance in the forest", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: Recall that if data points are <strong>below<\u002fstrong> the one-to-one line, this means that although there are many trees of this species, this does not correlate to more trees being denoted &#39;dead.&#39;", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_72faa99", option = "**No**, the relative abundance of dead trees for each species is directly proportional to their overall abundance in the forest",     value = "**No**, the relative abundance of dead trees for each species is directly proportional to their overall abundance in the forest",     label = structure("<strong>No<\u002fstrong>, the relative abundance of dead trees for each species is directly proportional to their overall abundance in the forest", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: Where are most data points located, relative to the one-to-one line (dotted, black)? What does this mean in terms of pest preference?", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_365196c", option = "I am not sure, I would need more data",     value = "I am not sure, I would need more data", label = structure("I am not sure, I would need more data", html = TRUE, class = c("html",     "character")), correct = FALSE, message = structure("<strong>Hint<\u002fstrong>: You do have enough information to answer this question! Recall that the position of the data points relative to the one-to-one line (dotted, black) can provide insights on pest preference.", html = TRUE, class = c("html",     "character"))), class = c("tutorial_question_answer", "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", "character")), try_again = structure("Try Again", html = TRUE, class = c("html", "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", "character")), message = NULL, post_message = NULL), ids = list(    answer = "letterx-d-answer", question = "letterx-d"), loading = structure("<strong>Loading:<\u002fstrong> \nDo hemlock loopers preferentially attack a given tree species?\n<br/><br/><br/>", html = TRUE, class = c("html", "character")), random_answer_order = FALSE, allow_retry = TRUE,     seed = 342339302.840586, options = list()), class = c("learnr_radio", "tutorial_question")))
 </script>
  <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="dependencies">
-{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["header-attrs"]},{"type":"character","attributes":{},"value":["2.13"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/pandoc"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["header-attrs.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.13"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["jquery"]},{"type":"character","attributes":{},"value":["3.6.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/3.6.0"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquery-3.6.0.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquerylib"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.1.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["bootstrap"]},{"type":"character","attributes":{},"value":["3.3.5"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/bootstrap"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["viewport"]}},"value":[{"type":"character","attributes":{},"value":["width=device-width, initial-scale=1"]}]},{"type":"character","attributes":{},"value":["js/bootstrap.min.js","shim/html5shiv.min.js","shim/respond.min.js"]},{"type":"character","attributes":{},"value":["css/cosmo.min.css"]},{"type":"character","attributes":{},"value":["<style>h1 {font-size: 34px;}\n       h1.title {font-size: 38px;}\n       h2 {font-size: 30px;}\n       h3 {font-size: 24px;}\n       h4 {font-size: 18px;}\n       h5 {font-size: 16px;}\n       h6 {font-size: 12px;}\n       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}\n       pre:not([class]) { background-color: white }<\/style>"]},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.13"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["pagedtable"]},{"type":"character","attributes":{},"value":["1.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/pagedtable-1.1"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["js/pagedtable.js"]},{"type":"character","attributes":{},"value":["css/pagedtable.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.13"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["highlightjs"]},{"type":"character","attributes":{},"value":["9.12.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/highlightjs"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["highlight.js"]},{"type":"character","attributes":{},"value":["textmate.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.13"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial"]},{"type":"character","attributes":{},"value":["0.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial.js"]},{"type":"character","attributes":{},"value":["tutorial.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial-autocompletion"]},{"type":"character","attributes":{},"value":["0.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial-autocompletion.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial-diagnostics"]},{"type":"character","attributes":{},"value":["0.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial-diagnostics.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial-format"]},{"type":"character","attributes":{},"value":["0.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmarkdown/templates/tutorial/resources"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial-format.js"]},{"type":"character","attributes":{},"value":["tutorial-format.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["jquery"]},{"type":"character","attributes":{},"value":["3.6.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/3.6.0"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquery-3.6.0.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquerylib"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.1.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["navigation"]},{"type":"character","attributes":{},"value":["1.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/navigation-1.1"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tabsets.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.13"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["highlightjs"]},{"type":"character","attributes":{},"value":["9.12.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/highlightjs"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["highlight.js"]},{"type":"character","attributes":{},"value":["default.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.13"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["jquery"]},{"type":"character","attributes":{},"value":["3.6.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/3.6.0"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquery-3.6.0.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquerylib"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.1.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["font-awesome"]},{"type":"character","attributes":{},"value":["5.1.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/fontawesome"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["css/all.css","css/v4-shims.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.13"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["bootbox"]},{"type":"character","attributes":{},"value":["4.4.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/bootbox"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["bootbox.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["idb-keyvalue"]},{"type":"character","attributes":{},"value":["3.2.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/idb-keyval"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["idb-keyval-iife-compat.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial"]},{"type":"character","attributes":{},"value":["0.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial.js"]},{"type":"character","attributes":{},"value":["tutorial.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial-autocompletion"]},{"type":"character","attributes":{},"value":["0.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial-autocompletion.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial-diagnostics"]},{"type":"character","attributes":{},"value":["0.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial-diagnostics.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets"]},{"type":"character","attributes":{},"value":["1.5.4"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmlwidgets.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmlwidgets"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.5.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["jquery"]},{"type":"character","attributes":{},"value":["1.12.4"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets/lib/jquery"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquery.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.1.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["leaflet"]},{"type":"character","attributes":{},"value":["1.3.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets/lib/leaflet"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet.js"]},{"type":"character","attributes":{},"value":["leaflet.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.1.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["leafletfix"]},{"type":"character","attributes":{},"value":["1.0.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets/lib/leafletfix"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leafletfix.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.1.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["proj4"]},{"type":"character","attributes":{},"value":["2.6.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets/plugins/Proj4Leaflet"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["proj4.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["2.1.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["Proj4Leaflet"]},{"type":"character","attributes":{},"value":["1.0.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets/plugins/Proj4Leaflet"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["proj4leaflet.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["2.1.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["rstudio_leaflet"]},{"type":"character","attributes":{},"value":["1.3.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets/lib/rstudio_leaflet"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rstudio_leaflet.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.1.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["leaflet-binding"]},{"type":"character","attributes":{},"value":["2.1.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["2.1.1"]}]}]}
+{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["header-attrs"]},{"type":"character","attributes":{},"value":["2.13"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/pandoc"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["header-attrs.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.13"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["jquery"]},{"type":"character","attributes":{},"value":["3.6.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/3.6.0"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquery-3.6.0.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquerylib"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.1.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["bootstrap"]},{"type":"character","attributes":{},"value":["3.3.5"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/bootstrap"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["viewport"]}},"value":[{"type":"character","attributes":{},"value":["width=device-width, initial-scale=1"]}]},{"type":"character","attributes":{},"value":["js/bootstrap.min.js","shim/html5shiv.min.js","shim/respond.min.js"]},{"type":"character","attributes":{},"value":["css/sandstone.min.css"]},{"type":"character","attributes":{},"value":["<style>h1 {font-size: 34px;}\n       h1.title {font-size: 38px;}\n       h2 {font-size: 30px;}\n       h3 {font-size: 24px;}\n       h4 {font-size: 18px;}\n       h5 {font-size: 16px;}\n       h6 {font-size: 12px;}\n       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}\n       pre:not([class]) { background-color: white }<\/style>"]},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.13"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["pagedtable"]},{"type":"character","attributes":{},"value":["1.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/pagedtable-1.1"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["js/pagedtable.js"]},{"type":"character","attributes":{},"value":["css/pagedtable.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.13"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial"]},{"type":"character","attributes":{},"value":["0.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial.js"]},{"type":"character","attributes":{},"value":["tutorial.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial-autocompletion"]},{"type":"character","attributes":{},"value":["0.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial-autocompletion.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial-diagnostics"]},{"type":"character","attributes":{},"value":["0.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial-diagnostics.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial-format"]},{"type":"character","attributes":{},"value":["0.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmarkdown/templates/tutorial/resources"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial-format.js"]},{"type":"character","attributes":{},"value":["tutorial-format.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["jquery"]},{"type":"character","attributes":{},"value":["3.6.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/3.6.0"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquery-3.6.0.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquerylib"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.1.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["navigation"]},{"type":"character","attributes":{},"value":["1.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/navigation-1.1"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tabsets.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.13"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["highlightjs"]},{"type":"character","attributes":{},"value":["9.12.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/highlightjs"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["highlight.js"]},{"type":"character","attributes":{},"value":["default.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.13"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["jquery"]},{"type":"character","attributes":{},"value":["3.6.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/3.6.0"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquery-3.6.0.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquerylib"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.1.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["font-awesome"]},{"type":"character","attributes":{},"value":["5.1.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["rmd/h/fontawesome"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["css/all.css","css/v4-shims.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rmarkdown"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.13"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["bootbox"]},{"type":"character","attributes":{},"value":["4.4.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/bootbox"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["bootbox.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["idb-keyvalue"]},{"type":"character","attributes":{},"value":["3.2.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/idb-keyval"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["idb-keyval-iife-compat.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial"]},{"type":"character","attributes":{},"value":["0.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial.js"]},{"type":"character","attributes":{},"value":["tutorial.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial-autocompletion"]},{"type":"character","attributes":{},"value":["0.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial-autocompletion.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["tutorial-diagnostics"]},{"type":"character","attributes":{},"value":["0.10.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/tutorial"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["tutorial-diagnostics.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["learnr"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.10.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets"]},{"type":"character","attributes":{},"value":["1.5.4"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmlwidgets.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmlwidgets"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.5.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["jquery"]},{"type":"character","attributes":{},"value":["1.12.4"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets/lib/jquery"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquery.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.1.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["leaflet"]},{"type":"character","attributes":{},"value":["1.3.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets/lib/leaflet"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet.js"]},{"type":"character","attributes":{},"value":["leaflet.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.1.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["leafletfix"]},{"type":"character","attributes":{},"value":["1.0.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets/lib/leafletfix"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leafletfix.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.1.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["proj4"]},{"type":"character","attributes":{},"value":["2.6.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets/plugins/Proj4Leaflet"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["proj4.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["2.1.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["Proj4Leaflet"]},{"type":"character","attributes":{},"value":["1.0.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets/plugins/Proj4Leaflet"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["proj4leaflet.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["2.1.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["rstudio_leaflet"]},{"type":"character","attributes":{},"value":["1.3.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets/lib/rstudio_leaflet"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["rstudio_leaflet.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["2.1.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["leaflet-binding"]},{"type":"character","attributes":{},"value":["2.1.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["leaflet"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["2.1.1"]}]}]}
 </script>
 <!--/html_preserve-->
 <!--html_preserve-->

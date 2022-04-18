@@ -23,23 +23,21 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### The project
 
-#### The Living Data Tutorials (LDTs) were developed by graduate students in ecology and evolution during the spring of 2022 as part of the Canadian Institute of Ecology and Evolution's [(CIEE)](https://www.ciee-icee.ca/data.html) Living Data Project (LDP). Our goal is to provide free and open-access teaching material in the form of online tutorials to undergraduate students in ecology and evolution.
+#### The Living Data Tutorials (LDTs) were developed by graduate students in ecology and evolution during the spring of 2022 as part of the Canadian Institute of Ecology and Evolution's ([CIEE](https://www.ciee-icee.ca/data.html)) Living Data Project (LDP). Our goal is to provide free and open-access teaching material in the form of online tutorials to undergraduate students in ecology and evolution.
 
-#### All the tutorials make use of publicly available Canadian datasets to address specific topics in ecology and evolution. The following tutorial was built with the free and open-source software environment [R](https://www.r-project.org/) using the [leanr package](https://rstudio.github.io/learnr/). You can find the project folders and files in this [GitHub repository](https://github.com/Living-Data-Tutorials/Anticosti-Historical-Data).
+#### All the tutorials make use of publicly available Canadian datasets to address specific topics in ecology and evolution. The following tutorial was built with the free and open-source [R](https://www.r-project.org/) programming language using the [leanr package](https://rstudio.github.io/learnr/). You can find the project folders and files in this [GitHub repository](https://github.com/Living-Data-Tutorials/Anticosti-Historical-Data).
 
-<br>
+#### We would like to thank [Anne Cotton-Gagnon](https://scf.rncan.gc.ca/employes/vue/acottong), MSc, and [Christian Hébert](https://cfs.nrcan.gc.ca/employees/read/chhebert), PhD, from Natural Resources Canada and the Laurentian Forestry Centre for their insights on the original datasets and access to the reports and maps associated with such.
+
+### Developers
 
 #### The present tutorial was developed by Victoria Marie Glynn who is a PhD student at McGill University in Montréal, Québec, and Maxime Fraser Franco who is a PhD student at the Université du Québec à Montréal (UQAM) in Montréal, Québec. Please feel free to contact us if you have any question.
-
-<br>
 
 #### Victoria Marie Glynn - victoria.glynn@mail.mcgill.ca
 
 #### Maxime Fraser Franco - fraser_franco.maxime@courrier.uqam.ca
 
 <br>
-
-#### We would like to thank Anne Cotton-Gagnon, MSc, and Christian Hébert, PhD, from Natural Resources Canada and the Laurentian Forestry Centre for their insights on the original datasets and access to the reports and maps associated with such.
 
 ```{r, echo = FALSE, out.width = "50%", fig.align = "left"}
 knitr::include_graphics("images/ciee.jpeg")

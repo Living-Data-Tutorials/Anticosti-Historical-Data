@@ -4,7 +4,7 @@ The Living Data Tutorials (LDTs) were developed by graduate students in ecology 
 
 This tutorial uses a tree damage dataset from Anticosti Island during a hemlock looper outbreak in 1973. The dataset can be found on the government of Canada's official [data portal](https://open.canada.ca/data/en/dataset/9dda09b0-649f-4002-b207-7b204eb81cbb). We would like to thank Anne Cotton-Gagnon, MSc, and Christian Hébert, PhD, from Natural Resources Canada and the Laurentian Forestry Centre for their insights on the original datasets and access to the reports and maps associated with such.
 
-The tutorial was built with the free and open-source software environment [R](https://www.r-project.org/) using the [leanr package](https://rstudio.github.io/learnr/) and and deployed using [Shiny](https://shiny.rstudio.com/).
+The tutorial was built with the free and open-source programming language [R](https://www.r-project.org/) using the [leanr package](https://rstudio.github.io/learnr/), and deployed using [Shiny](https://shiny.rstudio.com/).
 
 [Here is a direct link to our tutorial](https://vmglynn-ldp.shinyapps.io/LDT_Anticosti_Tutorial/#section-welcome-to-the-living-data-tutorials)
 

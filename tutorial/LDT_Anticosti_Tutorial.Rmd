@@ -79,11 +79,21 @@ Our Anticosti Island tree dataset provides a unique opportunity for us to use **
 
 ## What we will explore
 
-When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that showcase lions hunting zebras. But predator-prey interactions are often less conspicuous, and yet still strongly impact ecological communities. A great example are insect pests and their plant prey. In this tutorial, we are going to explore an instance of this interaction on Anticosti Island, Québec, between the hemlooper looper (*Lambdina fiscellaria*) and the trees it predates upon. 
+When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that showcase lions hunting zebras. But predator-prey interactions are often less conspicuous, and yet still strongly impact ecological communities. A great example are insect pests and their plant prey. Insect pests are an important source of economic losses in the agricultural and forest industries. It is thus crucial that we understand the ecology of these insects if we want to minimize their damages and predict when and where they will strike.
+
+###
+
+### Getting acquainted with our study system
+
+In this tutorial, we are going to explore an instance of a predator-prey interaction between an insect and its tree hosts. We will investigate the case of a hemlooper looper (*Lambdina fiscellaria*) outbreak in Québec's Anticosti Island in 1973. The hemlock looper is a moth pest that is found [all across Canada](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf), and parts of the USA, often as far south as the state of Georgia.
 
 <br>
 
-
+<style>
+.html-widget {
+    margin: auto;
+}
+</style>
 ```{r, echo = FALSE, out.width = "50%", fig.align = "center", fig.cap = "Anticosti Island, Québec, shown as a blue pin on a map of Eastern Canada and Northeastern United States of America"}
 
 library(leaflet)
@@ -105,7 +115,7 @@ knitr::include_graphics("images/hemlock_looper_larva.jpg")
 
 ### What happened on Anticosti Island in 1973?
 
-The hemlock looper is a moth pest that is found [all across Canada](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf), and parts of the USA, often as far south as the state of Georgia. Since 1910, it has wreaked havoc in Québec's forests. Between 1910 and 1975, these outbreaks caused an estimated [24 million cubic meters of forest to be lost](https://fr.wikipedia.org/wiki/Lambdina_fiscellaria) in the province. Since then, additional outbreaks have occurred across Québec in places like Bas-Saint-Laurent, Gaspésie, and Anticosti Island. 
+Since 1910, the hemlock looper has wreaked havoc in Québec's forests. Between 1910 and 1975, these outbreaks caused an estimated [24 million cubic meters of forest to be lost](https://fr.wikipedia.org/wiki/Lambdina_fiscellaria) in the province. Since then, additional outbreaks have occurred across Québec in places like Bas-Saint-Laurent, Gaspésie, and Anticosti Island. 
 
 Since the first outbreak, the Ministry of Forests, Wildlife and Parks of Québec ([MFFP](https://mffp.gouv.qc.ca/?lang=en)) and the Society for the Protection of Forests against Insects and Diseases ([SOPFIM](https://sopfim.qc.ca/fr/)) have been monitoring hemlock looper outbreaks. The MFFP surveyed one of the most extensive tree mortality events due to a hemlock looper outbreak from [1971-1973](https://cfs.nrcan.gc.ca/pubwarehouse/pdfs/6856.pdf). As the hemlock looper larvae usually attacks mature tree stands by eating their leaves, it causes them to appear [yellow and red-brown in color](https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846), a tell-tale sign that an outbreak has occurred. 
 
@@ -133,7 +143,7 @@ With our Anticosti Island tree dataset, this tutorial will walk us through answe
 
 <br> 
 
-Following the 1973's hemlock looper outbreak in Anticosti Island: 
+Following the 1973's hemlock looper outbreak in Anticosti Island : 
 
 1. Describe the tree community composition
 
@@ -145,7 +155,7 @@ Following the 1973's hemlock looper outbreak in Anticosti Island:
 
 <br> 
 
-At the end of each objective, we will have a "test your knowledge!" section before moving forward, as each objective builds upon the next.
+At the end of each objective, we will have a "Test your knowledge!" section before moving forward, as each objective builds upon the next.
 
 ---------------------------------------------------------------------------------------
 
@@ -171,14 +181,83 @@ tree <- fread(file.path(url_data_portal, url_anticosti, csv_tree),
                          "Cell", "Species", "Species_abbrev",
                          "Condition", "Number"))
 
-# Separate row number as individual instances to have all individual tree counts
-tree <- tree[rep(seq(.N), Number)]
-tree[, Number := 1]
+```
 
-# Change "Larch" to "American larch"
+---------------------------------------------------------------------------------------
+
+## Data exploration
+
+Exploring our data is a crucial step that needs to be done before attempting any analysis or ecological interpretation. In this section, we will perform some basic exploration procedures to help us understand the structure of our data.
+
+###
+
+### Basic data information - Part I
+
+The first thing we will do is to simply visualize the structure of our data. The tree dataset contains information about the tree community in 1973 following the hemlock looper outbreak. Let's visualize the data :
+```{r}
+tree
+
+```
+
+As you can see, the tree dataset contains 8 variables (columns). The sampling design goes as follows : 
+
+- **Block** - the region where the trees were sampled
+- **Compartment** - a section of the block
+- **Plot** - 400 $m^2$ plots nested within a compartment which is the sampling unit
+- **Cell** - multiple random cells were used per plot to sample the trees
+- **Species** - name of the tree species that was identified
+- **Species_abbrev** - a short name for the tree species
+- **Condition** - condition of the tree that was identified (Dead, Questionable, or Good)
+- **Number** - count of each tree species sampled in a cell
+
+###
+
+If you run the code above in your own R console, you will realize that it won't show the table as we see it here. However, you have multiple options to visualize your data directly in your console. Here are some examples.
+
+Looking at the first 6 lines :
+```{r}
+head(tree, 6)
+
+```
+
+Listing the column names :
+```{r}
+names(tree)
+
+```
+
+Investigate the variable types :
+```{r}
+str(tree)
+
+```
+
+### Basic data information - Part II
+
+We know that the column "Species" contains information about the tree species that were identified. It would be good to know which species were identified on Anticosti in 1973. To do so, we can simply run this code :
+```{r}
+levels(as.factor(tree$Species))
+
+```
+
+As you can see, there are 7 tree species.
+
+### Minor adjustments to the data
+
+In the previous code output, we saw that there was a specie called "larch". We will change the name of the "larch" species for "American larch", since we know that only this species can be found on Anticosti Island.
+```{r}
 tree$Species <- gsub("Larch", "American larch", tree$Species)
 
 ```
+
+We also know that the column called "Number" indicates the amount of trees of a given species that were counted in a cell. However, it is usually better to have individual counts. We will thus manipulate this column to spread the counts across our dataset.
+```{r}
+tree <- tree[rep(seq(.N), Number)]
+tree[, Number := 1]
+
+```
+
+We now have a good understanding of our data and are thus ready to move on and analyse it!
 
 ---------------------------------------------------------------------------------------
 

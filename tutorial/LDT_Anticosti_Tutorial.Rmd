@@ -1,9 +1,12 @@
 ---
 title: "After the storm: Impacts of a hemlock looper outbreak on tree species in Anticosti Island, 1973"
-author: |
-  | Living Data Project  
-  | Victoria Marie Glynn (McGill)
-  | Maxime Fraser Franco (UQAM)
+author:
+  - name: Victoria Marie Glynn
+    affiliation: McGill University
+    email: victoria.glynn@mail.mcgill.ca
+  - name: Maxime Fraser Franco
+    affiliation: Université du Québec à Montréal (UQAM) 
+    email: fraser_franco.maxime@courrier.uqam.ca
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   learnr::tutorial:
@@ -165,7 +168,7 @@ Any R coding session requires that the user defines the packages required for da
 
 <br>
 
-Let's start by loading the packages we will need for our analyses :
+Let us start by loading the packages we will need for our analyses :
 ```{r}
 # To perform data manipulations
 library(data.table)
@@ -175,7 +178,7 @@ library(dplyr)
 library(ggplot2)
 ```
 
-Then, we import the data in the current R session. To do so, we will directly access the data from the web server where it is hosted. This is a nice way of importing data because it does not require that we download it in our computer.
+Then, we import the data in the current R session. To do so, we will directly access the data from the web server where it is hosted. This is a nice way of importing data because it does not require that we download it to our computer.
 ```{r}
 # Tree condition data URL paths
 url_data_portal <- "https://open.canada.ca/data/en/dataset"
@@ -194,13 +197,13 @@ tree <- fread(file.path(url_data_portal, url_anticosti, csv_tree),
 
 ## Data exploration
 
-Exploring our data is a crucial step that needs to be done before attempting any analysis or ecological interpretation. In this section, we will perform some basic exploration procedures to help us understand the structure of our data.
+Exploring our data is a crucial step that needs to be done before attempting any analysis. In this section, we will perform some basic exploration procedures to help us understand the structure of our data.
 
 ###
 
 ### Basic data information - Part I
 
-The first thing we will do is to simply visualize the structure of our data. The tree dataset contains information about the tree community in 1973 following the hemlock looper outbreak. Let's visualize the data :
+The first thing we will do is to simply visualize the structure of our data. The tree dataset contains information about the tree community in 1973 following the hemlock looper outbreak. Let us visualize the data :
 ```{r}
 tree
 
@@ -212,7 +215,7 @@ As you can see, the tree dataset contains 8 variables (columns) and 1780 observa
 
 - **Block** - the region where the trees were sampled
 - **Compartment** - a section of the block
-- **Plot** - 400 $m^2$ plots nested within a compartment which is the sampling unit
+- **Plot** - 400 $m^2$ plots nested within a compartment, which is the sampling unit
 - **Cell** - multiple random cells were used per plot to sample the trees
 - **Species** - name of the tree species that was identified
 - **Species_abbrev** - a short name for the tree species
@@ -221,7 +224,7 @@ As you can see, the tree dataset contains 8 variables (columns) and 1780 observa
 
 ###
 
-If you run the code above in your own R console, you will realize that it won't show the table as we see it here. However, you have multiple options to visualize your data directly in your console. Here are some examples.
+If you run the code above in your own R console, you will realize that it will not show the table as we see it here. However, you have multiple options to visualize your data directly in your console. Here are some examples.
 
 Looking at the first 6 lines :
 ```{r}
@@ -243,7 +246,7 @@ str(tree)
 
 ### Basic data information - Part II
 
-We know that the column "Species" contains information about the tree species that were identified. It would be good to know which species were identified on Anticosti in 1973. To do so, we can simply run this code :
+We know that the column "Species" contains information about the tree species that were identified. It would be good to know which species were identified on Anticosti in 1973. To do so, we can simply run the following code :
 ```{r}
 levels(as.factor(tree$Species))
 
@@ -261,13 +264,13 @@ levels(as.factor(tree$Condition))
 
 ### Minor adjustments to the data
 
-In the previous code output, we saw that there was a species called "Larch". We will change the name of the "Larch" species for "American larch", since we know that only this species can be found on Anticosti Island. We do so by running this code :
+In the previous code output, we saw that there was a species called "Larch". We will change the name of the "Larch" species for "American larch", since we know that only this species can be found on Anticosti Island. We do so by running the following code :
 ```{r}
 tree$Species <- gsub("Larch", "American larch", tree$Species)
 
 ```
 
-We also know that the column called "Number" indicates the amount of trees of a given species that were counted in a cell. However, it is usually better to have individual counts. We will thus manipulate this column to spread the counts across our dataset as follows :
+We also know that the column called "Number" indicates the number of trees of a given species that were counted in a cell. However, it is usually better to have individual counts, and not a summary of total counts per sampling unit. We will thus manipulate the "Number" column to extract the counts of each individual species as follows :
 ```{r}
 tree <- tree[rep(seq(.N), Number)]
 tree[, Number := 1]
@@ -290,15 +293,15 @@ We now have a good understanding of our data and are thus ready to move on and a
 
 ## 1. Describe the tree community
 
-The first objective of our investigation is to characterize the tree community by gaining an overview of the tree species that were identified during the outbreak. To do so, we are going to plot the distribution of each tree species using a boxplot. This will provide us information on the abundances of each species and their variation across the island.
+Our first objective is to characterize the tree community by gaining an overview of the tree species that were identified during the outbreak. To do so, we are going to plot the distribution of each tree species using a boxplot. This will provide us information on the abundances of each species and their variation across the island.
 
 ###
 
-### Preparing the plot
+### Preparing the boxplots
 
-We will first need to make some data manipulations to create our boxplot. Here, we will create a simple table from our tree dataset. In this table, we count the number of individuals per species that were sampled in each plot. Recall that each block represents a region of the island, and that compartments are sections of the blocks.
+We will first need to further manipulate our data to create our boxplot. Here, we will create a simple table from our tree dataset. In this table, we will count the number of individuals per species that were sampled in each plot. Recall that each block represents a region of the island, and that compartments are sections of the blocks.
 
-Since plots and compartments are independent from each other across the blocks, we need to take this into account in our calculations. We will thus have a unique count of tree species that were found in each plot sampled in the compartment of a given block. Here is the procedure :
+Since plots and compartments are independent from each other across the blocks, we need to take this into account in our calculations. We will thus have a unique count of tree species that were found in each plot sampled in a compartment of a given block. Here is the procedure :
 ```{r}
 # a. Compute the count of individuals per species in each plot
 tree[, count_ind := sum(Number),
@@ -341,7 +344,7 @@ custom_theme <- theme(# axis values size
 
 OK. We are now ready to go!
 
-### Let's plot our data
+### Let us plot our data
 
 Now, we can create and visualize our boxplot :
 ```{r, fig.width = 8, fig.height = 8}
@@ -384,7 +387,7 @@ knitr::include_graphics("images/Tree_Anticosti.png")
 
 <br>
 
-### Let's test our knowledge!
+### Let us test our knowledge!
 
 From looking at the boxplot : 
 
@@ -432,7 +435,7 @@ tree_damage <- tree %>%
   mutate(freq = n / sum(n))
 ```
 
-### Let's plot our data
+### Let us plot our data
 
 We can now plot the proportion of damage for each tree species with the following commands :
 ```{r, fig.width = 9, fig.height = 6}
@@ -451,7 +454,7 @@ ggplot(tree_damage,
   coord_flip()
 ```
 
-### Let's test our knowledge!
+### Let us test our knowledge!
 
 From looking at this plot :
 
@@ -548,7 +551,7 @@ knitr::include_graphics("images/rel_abund.jpg")
 
 ### Testing our hypothesis
 
-Let's plot our actual data and see where the results lie, in relationship to our guiding schematic above.
+Let us plot our actual data and see where the results lie, in relationship to our guiding schematic above.
 
 We'll start by filtering out the "Questionable" tree status, as it is unclear if these trees will die as a result of the hemlock looper outbreak. Then, we will calculate the total abundance of tree species by plot, which were denoted as either "dead" or "alive." With this, like we did before, we will be able to calculate the abundance of a given species relative to the abundance of all species within a plot.
 ```{r}
@@ -623,7 +626,7 @@ ggplot(tree_filter,
 
 ```
 
-### Let's test our knowledge!
+### Let us test our knowledge!
 
 From the graph and  based on our predictions above, we can now answer the question :
 

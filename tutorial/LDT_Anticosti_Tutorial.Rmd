@@ -532,17 +532,17 @@ knitr::include_graphics("images/rel_abund.jpg")
 
 <br> 
 
-**Hypothesis 1**: The hemlock looper has no preference on what tree it predates upon -- it is a **generalist** pest species. 
+**Hypothesis 1** - The hemlock looper has no preference on what tree it predates upon -- it is a **generalist** pest species :  
 
- → **Prediction 1**: We would see this on our graph as a **one-to-one relationship** (diagonal black line), where a tree species' abundance in the forest is directly proportional to the number of trees from that species denoted as "dead." This means that the more trees we have of a given species, the more the hemlock looper will attack it.
+- **Prediction** - We would see this on our graph as a **one-to-one relationship** (diagonal black line), where a tree species' abundance in the forest is directly proportional to the number of trees from that species denoted as "dead." This means that the more trees we have of a given species, the more the hemlock looper will attack it.
 
-**Hypothesis 2**: The hemlock looper prefers to predate upon some species versus others -- it is a **specialist** pest species. 
+**Hypothesis 2** - The hemlock looper prefers to predate upon some species versus others -- it is a **specialist** pest species :  
 
- → **Prediction 2**: We would see this on our graph if a tree species' points lie **above the one-to-one line** (orange triangle), as this means that the hemlock looper attacks more trees of a given species (tree denoted as "Dead") even if the relative abundance of this species is low.
+- **Prediction** - We would see this on our graph if a tree species' points lie **above the one-to-one line** (orange triangle), as this means that the hemlock looper attacks more trees of a given species (tree denoted as "Dead") even if the relative abundance of this species is low.
 
-**Hypothesis 3**: The hemlock looper avoids some species, and thus these are less predated upon -- it is a **specialist** pest species. 
+**Hypothesis 3** - The hemlock looper avoids some species, and thus these are less predated upon -- it is a **specialist** pest species :  
 
- → **Prediction 3**: We would see this on our graph if a species' points lie **below the one-to-one line** (blue triangle), as this means that less individuals of a given tree species are attacked by the hemlock looper, even if their abundance relative to other species is high.
+- **Prediction** - We would see this on our graph if a species' points lie **below the one-to-one line** (blue triangle), as this means that less individuals of a given tree species are attacked by the hemlock looper, even if their abundance relative to other species is high.
 
 <br>
 
@@ -690,20 +690,6 @@ Together, this tutorial underscores that historical data is useful, but also tha
 
 ## References   {data-progressive=FALSE}
 
-### Images
-
-- [Photograph of a hemlock looper](https://www.maine.gov/dacf/mfs/forest_health/insects/hemlock_looper.htm)
-- [Photograph of severely defoliated balsam fir forest](https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846?wbdisable=true)
-- [Photograph of a white birch](https://www.flickr.com/photos/bryanto/6190721247)
-- [Photograph of a white spruce](https://commons.wikimedia.org/wiki/File:Picea_glauca_Fairbanks.jpg)
-- [Photograph of a black spruce](https://commons.wikimedia.org/wiki/File:Picea_mariana_(Spruce_black).jpg)
-- [Photograph of a larch](https://en.wikipedia.org/wiki/Larch#/media/File:SubalpineLarch_7735tl.jpg)
-- [Photograph of an aspen](https://www.flickr.com/photos/dianasch/23567442848)
-- [Photograph of a pine](https://commons.wikimedia.org/wiki/File:Pinus_ponderosa_15932.JPG)
-- [Photograph of a balsam fir](https://commons.wikimedia.org/wiki/File:Abies_balsamea_0165.jpg)
-- [Photograph of a pigeon](https://www.piqsels.com/en/public-domain-photo-oyrzq)
-- [Photograph of a koala](https://pixabay.com/photos/koala-animal-eucalyptus-wildlife-6094650/)
-
 ### Further reading
 
 - [The impact of hemlock looper (*Lambdina fiscellaria fiscellaria* (Guen.)) on balsam fir and spruce in New Brunswick, Canada](https://www.sciencedirect.com/science/article/abs/pii/S0378112798005271?casa_token=pZW2ZnLwB0YAAAAA:bJHXx-f-cIU7UOPzxfe9Swj5OD9Gfm6bs3AM0ZK7IekzDOUzOdmayh9z62VAO6gV3Sjy8VVcMw#FIG2)
@@ -717,5 +703,19 @@ Together, this tutorial underscores that historical data is useful, but also tha
 - [Extreme cold weather causes the collapse of a population of *Lambdina fiscellaria* (Lepidoptera: Geometridae) in the Laurentian Mountains of Québec, Canada](https://www.cambridge.org/core/journals/canadian-entomologist/article/abs/extreme-cold-weather-causes-the-collapse-of-a-population-of-lambdina-fiscellaria-lepidoptera-geometridae-in-the-laurentian-mountains-of-quebec-canada/4D36CE7C818EF7D75D8E5C7B7F75DA0F)
 
 - [Capability of ERTS-1 imagery for mapping forest cover types of Anticosti Island](https://pubs.cif-ifc.org/doi/pdf/10.5558/tfc50233-6)
+
+### Images
+
+- [Photograph of a hemlock looper](https://www.maine.gov/dacf/mfs/forest_health/insects/hemlock_looper.htm)
+- [Photograph of severely defoliated balsam fir forest](https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846?wbdisable=true)
+- [Photograph of a white birch](https://www.flickr.com/photos/bryanto/6190721247)
+- [Photograph of a white spruce](https://commons.wikimedia.org/wiki/File:Picea_glauca_Fairbanks.jpg)
+- [Photograph of a black spruce](https://commons.wikimedia.org/wiki/File:Picea_mariana_(Spruce_black).jpg)
+- [Photograph of a larch](https://en.wikipedia.org/wiki/Larch#/media/File:SubalpineLarch_7735tl.jpg)
+- [Photograph of an aspen](https://www.flickr.com/photos/dianasch/23567442848)
+- [Photograph of a pine](https://commons.wikimedia.org/wiki/File:Pinus_ponderosa_15932.JPG)
+- [Photograph of a balsam fir](https://commons.wikimedia.org/wiki/File:Abies_balsamea_0165.jpg)
+- [Photograph of a pigeon](https://www.piqsels.com/en/public-domain-photo-oyrzq)
+- [Photograph of a koala](https://pixabay.com/photos/koala-animal-eucalyptus-wildlife-6094650/)
 
 ---------------------------------------------------------------------------------------

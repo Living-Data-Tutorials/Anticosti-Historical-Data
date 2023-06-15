@@ -66,7 +66,7 @@ knitr::include_graphics("images/ciee.jpeg")
 
 ---------------------------------------------------------------------------------------
 
-## Learning objectives 
+## Tutorial objectives
 
 By the end of this tutorial, you will be able to : 
 
@@ -76,7 +76,7 @@ By the end of this tutorial, you will be able to :
 
 <br>
 
-Our Anticosti Island tree dataset provides a unique opportunity for us to use **real and historical data** to gain skills in understanding what commonly made research plots, such as stacked bar plots, mean and how these figures can help us think more critically about natural resource management in Canada.
+The Anticosti Island tree dataset provides a unique opportunity for us to use **real and historical data** to gain skills in understanding what commonly made research plots, such as stacked bar plots, mean and how these figures can help us think more critically about natural resource management in Canada.
 
 ---------------------------------------------------------------------------------------
 
@@ -90,6 +90,16 @@ When you think of predator-prey interactions, what comes to mind? Perhaps it is 
 
 In this tutorial, we are going to explore an instance of a predator-prey interaction between an insect and its tree hosts. We will investigate the case of a hemlooper looper (*Lambdina fiscellaria*) outbreak in Québec's Anticosti Island in 1973. The hemlock looper is a moth pest that is found [all across Canada](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf), and parts of the USA, often as far south as the state of Georgia.
 
+###
+
+#### Meeting the hemlock looper
+
+The hemlock looper is a voracious coniferous and deciduous plant pest. Native to North America and found in Eastern Canada and the United States, part of its destruction is linked to its life cycle. The moth lays its eggs on tree leaves, which upon hatching in June, the looper larvae proceeds to eat young leaves. As the larvae develops, it proceeds to move onto mature leaves. The larvae is often described as a "messy eater," as it goes nipping from leaf to leaf. These chewed leaves then die and drop to the underlying under story. 
+
+After chewing away at a trees leaves, the looper larvae retreats into the cracks of the tree to become a pupate. In early-August, after 2-3 weeks of being a pupae, the larvae flutter away as an adult hemlock looper moth. 
+
+
+
 <br>
 
 <style>
@@ -97,6 +107,11 @@ In this tutorial, we are going to explore an instance of a predator-prey interac
     margin: auto;
 }
 </style>
+
+```{r, echo = FALSE, out.width = "70%", fig.align = "center", fig.cap = "Comic illustrating the hemlock looper lifecycle, by Victoria Marie Glynn "}
+knitr::include_graphics("images/Carte_generale1.jpg")
+```
+
 ```{r, echo = FALSE, out.width = "50%", fig.align = "center", fig.cap = "Anticosti Island, Québec, shown as a blue pin on a map of Eastern Canada and Northeastern United States of America"}
 
 library(leaflet)
@@ -120,7 +135,7 @@ knitr::include_graphics("images/hemlock_looper_larva.jpg")
 
 Since 1910, the hemlock looper has wreaked havoc in Québec's forests. Between 1910 and 1975, these outbreaks caused an estimated [24 million cubic meters of forest to be lost](https://fr.wikipedia.org/wiki/Lambdina_fiscellaria) in the province. Since then, additional outbreaks have occurred across Québec in places like Bas-Saint-Laurent, Gaspésie, and Anticosti Island. 
 
-Since the first outbreak, the Ministry of Forests, Wildlife and Parks of Québec ([MFFP](https://mffp.gouv.qc.ca/?lang=en)) and the Society for the Protection of Forests against Insects and Diseases ([SOPFIM](https://sopfim.qc.ca/fr/)) have been monitoring hemlock looper outbreaks. The MFFP surveyed one of the most extensive tree mortality events due to a hemlock looper outbreak from [1971-1973](https://cfs.nrcan.gc.ca/pubwarehouse/pdfs/6856.pdf). As the hemlock looper larvae usually attacks mature tree stands by eating their leaves, it causes them to appear [yellow and red-brown in color](https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846), a tell-tale sign that an outbreak has occurred. 
+Since the first outbreak, the Ministry of Forests, Wildlife and Parks of Québec ([MFFP](https://mffp.gouv.qc.ca/?lang=en)) and the Society for the Protection of Forests against Insects and Diseases ([SOPFIM](https://sopfim.qc.ca/fr/)) have been monitoring hemlock looper outbreaks. The MFFP surveyed one of the most extensive tree mortality events due to a hemlock looper outbreak from [1971-1973](https://cfs.nrcan.gc.ca/pubwarehouse/pdfs/6856.pdf). As the hemlock looper larvae usually attacks mature tree stands by eating their leaves, it causes them to appear [yellow and red-brown in color](https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846), a tell-tale sign that an outbreak has occurred. Researchers often use this visual cue to assess degree of damage. 
 
 <br>
 
@@ -140,13 +155,13 @@ knitr::include_graphics("images/Carte_generale1.jpg")
 
 ---------------------------------------------------------------------------------------
 
-## Tutorial objectives 
+## Tutorial sections 
 
-With our Anticosti Island tree dataset, this tutorial will walk us through answering **four** objectives to understand the impacts of the hemlock looper on Anticosti's forests.
+With our Anticosti Island tree dataset, this tutorial will walk us through **four sections** in order for us to understand the impacts of the hemlock looper on Anticosti's forests.
 
 <br> 
 
-Following the 1973's hemlock looper outbreak in Anticosti Island : 
+Following the 1973's hemlock looper outbreak in Anticosti Island, we will: 
 
 1. Describe the tree community composition
 
@@ -158,7 +173,9 @@ Following the 1973's hemlock looper outbreak in Anticosti Island :
 
 <br> 
 
-At the end of each objective, we will have a "Test your knowledge!" section before moving forward, as each objective builds upon the next.
+At the end of each section, we will have a "Test your knowledge!" section before moving forward, as each section builds upon the next.
+
+But before jumping into our tutorial, it is important we **set up our coding session and explore our data**. This is an important but often overlooked aspect of research -- how and what data is gathered often drives the inferences we can make. 
 
 ---------------------------------------------------------------------------------------
 
@@ -381,7 +398,7 @@ From this boxplot, we see that seven different tree species were identified, wit
 
 <br> 
 
-```{r, echo = FALSE, out.width = "80%", fig.align = "center", fig.cap = "Tree species that were sampled on Anticosti Island"}
+```{r, echo = FALSE, out.width = "80%", fig.align = "center", fig.cap = "Tree species that were sampled on Anticosti Island. Photography credits are as follows: white birch - Bryant Olsen, white spruce - dmcdevit, black spruce - Treetime.ca, larch - Walter Siegmund, aspen - Diana Robinson, pine - Walter Siegmund, balsam fir - R. A. Nonenmacher"}
 knitr::include_graphics("images/Tree_Anticosti.png")
 ```
 
@@ -495,7 +512,7 @@ Let us break this idea down :
 
 Two great examples are pigeons and koalas -- pigeons live in a diversity of urban environments and are omnivores (eat plant and animal matter), while koalas only live on and eat eucalyptus.
 
-```{r, echo = FALSE, out.width = "70%", fig.align = "center", fig.cap = "Example of a specialist and generalist species"}
+```{r, echo = FALSE, out.width = "70%", fig.align = "center", fig.cap = "Example of a specialist and generalist species. Photography credits: pigeon - Andrew Dunn, koala - Kévin Charpentier"}
 knitr::include_graphics("images/specialist_generalists.png")
 ```
 
@@ -537,15 +554,13 @@ knitr::include_graphics("images/rel_abund.jpg")
 
 **Hypothesis 1**: The hemlock looper has no preference on what tree it predates upon -- it is a **generalist** pest species. 
 
- → **Prediction 1**: We would see this on our graph as a **one-to-one relationship** (diagonal black line), where a tree species' abundance in the forest is directly proportional to the number of trees from that species denoted as "dead." This means that the more trees we have of a given species, the more the hemlock looper will attack it.
+ → **Prediction 1**: We would see this on our graph as a **one-to-one relationship** (diagonal black line), where a tree species' abundance in the forest is directly proportional to the number of trees from that species denoted as "dead." This means that the trees with the highest abundance will also be the most attacked. 
 
-**Hypothesis 2**: The hemlock looper prefers to predate upon some species versus others -- it is a **specialist** pest species. 
+**Hypothesis 2**: The hemlock looper prefers to predate upon some species versus others -- it is a **specialist** pest species. This could be seen in one of two ways.
 
- → **Prediction 2**: We would see this on our graph if a tree species' points lie **above the one-to-one line** (orange triangle), as this means that the hemlock looper attacks more trees of a given species (tree denoted as "dead") even if the relative abundance of this species is low.
+ → **Prediction 2**: We would see this on our graph if a tree species' points lie **above the one-to-one line** (orange triangle). This means that the hemlock looper attacks more trees of a given species (tree denoted as "dead") even if the relative abundance of this species is low. This reflects that the looper is actively seeking out these three species. 
 
-**Hypothesis 3**: The hemlock looper avoids some species, and thus these are less predated upon -- it is a **specialist** pest species. 
-
- → **Prediction 3**: We would see this on our graph if a species' points lie **below the one-to-one line** (blue triangle), as this means that less individuals of a given tree species are attacked by the hemlock looper, even if their abundance relative to other species is high.
+ → **Prediction 3**: We would see this on our graph if a species' points lie **below the one-to-one line** (blue triangle). This means that less individuals of a given tree species are attacked by the hemlock looper, even if their abundance relative to other species is high. This reflects that the looper is avoiding these tree species. This observation would suggest that the looper has a preferred tree species, which is our **Prediction 2***. Yet our data may not capture the preference scenario, based on the field collection methods, therefore having evidence for the opposite scenario can still provide insights.
 
 <br>
 
@@ -696,8 +711,6 @@ Together, this tutorial underscores that historical data is useful, but also tha
 
 ### Images
 
-- [Photograph of a hemlock looper](https://www.maine.gov/dacf/mfs/forest_health/insects/hemlock_looper.htm)
-- [Photograph of severely defoliated balsam fir forest](https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846?wbdisable=true)
 - [Photograph of a white birch](https://www.flickr.com/photos/bryanto/6190721247)
 - [Photograph of a white spruce](https://commons.wikimedia.org/wiki/File:Picea_glauca_Fairbanks.jpg)
 - [Photograph of a black spruce](https://commons.wikimedia.org/wiki/File:Picea_mariana_(Spruce_black).jpg)
@@ -705,7 +718,7 @@ Together, this tutorial underscores that historical data is useful, but also tha
 - [Photograph of an aspen](https://www.flickr.com/photos/dianasch/23567442848)
 - [Photograph of a pine](https://commons.wikimedia.org/wiki/File:Pinus_ponderosa_15932.JPG)
 - [Photograph of a balsam fir](https://commons.wikimedia.org/wiki/File:Abies_balsamea_0165.jpg)
-- [Photograph of a pigeon](https://www.piqsels.com/en/public-domain-photo-oyrzq)
+- [Photograph of a pigeon](https://commons.wikimedia.org/wiki/File:WinterPigeons02.jpg)
 - [Photograph of a koala](https://pixabay.com/photos/koala-animal-eucalyptus-wildlife-6094650/)
 
 ### Further reading

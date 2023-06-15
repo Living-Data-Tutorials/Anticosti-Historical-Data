@@ -79,13 +79,13 @@ Our Anticosti Island tree dataset provides a unique opportunity for us to use **
 
 ## What we will explore
 
-When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that showcase lions hunting zebras. But predator-prey interactions are often less conspicuous, and yet still strongly impact ecological communities. A great example are insect pests and their plant prey. Insect pests are an important source of economic losses in the agricultural and forest industries. It is thus crucial that we understand the ecology of these insects if we want to minimize their damages and predict when and where they will strike.
+When you think of consumer-resource interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that showcase lions hunting zebras. But consumer-resource interactions are often less conspicuous, and yet still strongly impact ecological communities. A great example are animals that consume plants as their main source of food (i.e. plant-herbivore interactions), such as insect pests and their plant prey. Insect pests are an important source of economic losses in the agricultural and forest industries. It is thus crucial that we understand the ecology of these insects if we want to minimize their damages and predict when and where they will strike.
 
 ###
 
 ### Getting acquainted with our study system
 
-In this tutorial, we are going to explore an instance of a predator-prey interaction between an insect and its tree hosts. We will investigate the case of a hemlooper looper (*Lambdina fiscellaria*) outbreak in Québec's Anticosti Island in 1973. The hemlock looper is a moth pest that is found [all across Canada](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf), and parts of the USA, often as far south as the state of Georgia.
+In this tutorial, we are going to explore an instance of a consumer-resource interaction between an insect and its tree hosts. We will investigate the case of a hemlooper looper (*Lambdina fiscellaria*) outbreak in Québec's Anticosti Island in 1973. The hemlock looper is a moth pest that is found [all across Canada](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf), and parts of the USA, often as far south as the state of Georgia.
 
 <br>
 
@@ -483,7 +483,7 @@ question("What three tree species were **LEAST** affected by the hemlock looper?
 
 ### New questions emerge
 
-The two previous plots beg the following question: were hemlock loopers attacking balsam firs because they were more abundant on Anticosti Island, or because this is their preferred prey? In other words, is the hemlock looper a **generalist** or a **specialist** insect pest species?
+The two previous plots beg the following question: were hemlock loopers attacking balsam firs because they were more abundant on Anticosti Island, or because this is their preferred resource? In other words, is the hemlock looper a **generalist** or a **specialist** insect pest species?
 
 Let us break this idea down : 
 
@@ -660,7 +660,7 @@ To help inform your answers, please refer to the following helpful links about t
 
 There is no one "right answer" to pest management, as it should be an integrative, collaborative, and ever-evolving endeavor. However, having data to drive these decisions is a powerful tool : 
 
-- Although our data indicates that on Anticosti Island, the hemlock looper had a preference for balsam fir in 1973, this is not its only or main host. By directing management initiatives towards a **single** tree species, this may cause other equally-liked prey to be even more strongly attacked -- this is a delicate balance to strike. Likewise, this dataset is from the 20th century -- would you foresee predator-prey dynamics in Anticosti Island to have changed since?
+- Although our data indicates that on Anticosti Island, the hemlock looper had a preference for balsam fir in 1973, this is not its only or main host. By directing management initiatives towards a **single** tree species, this may cause other equally-liked trees to be even more strongly attacked -- this is a delicate balance to strike. Likewise, this dataset is from the 20th century -- would you foresee consumer-resource dynamics in Anticosti Island to have changed since?
 
 - Adding a biological agent, like the fungi *Entomophthora* or bacteria *Bacillus thuringiensis kurstaki* (Btk) to control hemlock looper seems like a sensible option. Perhaps you think this is better than spraying a chemical insecticide. But biological agents are controversial, as they can often have unintended consequences, impacting species you did not wish to target. See this wonderful [paper](https://www.esf.edu/efb/parry/invasivesseminar_readings/Simberloff_2012.pdf) that delves into this topic further.
 

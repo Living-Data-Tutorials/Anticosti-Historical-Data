@@ -94,7 +94,7 @@ In this tutorial, we are going to explore an instance of a predator-prey interac
 
 #### Meeting the hemlock looper
 
-The hemlock looper is a voracious coniferous and deciduous plant pest. Native to North America and found in Eastern Canada and the United States, part of its destruction is linked to its life cycle. The moth lays its eggs on tree leaves, which upon hatching in June, the looper larvae proceeds to eat young leaves. As the larvae develops, it proceeds to move onto mature leaves. The larvae is often described as a "messy eater," as it goes nipping from leaf to leaf. These chewed leaves then die and drop to the underlying under story. 
+The hemlock looper is a voracious coniferous and deciduous plant pest. Native to North America and found in Eastern Canada and the United States, part of its destruction is linked to its [life cycle](https://www.maine.gov/dacf/mfs/forest_health/insects/hemlock_looper.htm). The moth lays its eggs on tree leaves, which upon hatching in June, the looper larvae proceeds to eat young leaves. As the larvae develops, it proceeds to move onto mature leaves. The larvae is often described as a "messy eater," as it goes nipping from leaf to leaf. These chewed leaves then die and drop to the underlying under story. 
 
 After chewing away at a trees leaves, the looper larvae retreats into the cracks of the tree to become a pupate. In early-August, after 2-3 weeks of being a pupae, the larvae flutter away as an adult hemlock looper moth. 
 

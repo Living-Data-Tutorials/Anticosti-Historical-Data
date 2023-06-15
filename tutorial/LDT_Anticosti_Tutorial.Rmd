@@ -82,13 +82,13 @@ Our Anticosti Island tree dataset provides a unique opportunity for us to use **
 
 ## What we will explore
 
-When you think of predator-prey interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that showcase lions hunting zebras. But predator-prey interactions are often less conspicuous, and yet still strongly impact ecological communities. A great example are insect pests and their plant prey. Insect pests are an important source of economic losses in the agricultural and forest industries. It is thus crucial that we understand the ecology of these insects if we want to minimize their damages and predict when and where they will strike.
+When you think of consumer-resource interactions, what comes to mind? Perhaps it is the emblematic hare and lynx example from the [Hudson's Bay Company pelt-trading dataset](https://jckantor.github.io/CBE30338/02.05-Hare-and-Lynx-Population-Dynamics.html), or footage from nature documentaries that showcase lions hunting zebras. But consumer-resource interactions are often less conspicuous, and yet still strongly impact ecological communities. A great example are animals that consume plants as their main source of food (i.e. plant-herbivore interactions), such as insect pests and their plant prey. Insect pests are an important source of economic losses in the agricultural and forest industries. It is thus crucial that we understand the ecology of these insects if we want to minimize their damages and predict when and where they will strike.
 
 ###
 
 ### Getting acquainted with our study system
 
-In this tutorial, we are going to explore an instance of a predator-prey interaction between an insect and its tree hosts. We will investigate the case of a hemlooper looper (*Lambdina fiscellaria*) outbreak in Québec's Anticosti Island in 1973. The hemlock looper is a moth pest that is found [all across Canada](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf), and parts of the USA, often as far south as the state of Georgia.
+In this tutorial, we are going to explore an instance of a consumer-resource interaction between an insect and its tree hosts. We will investigate the case of a hemlooper looper (*Lambdina fiscellaria*) outbreak in Québec's Anticosti Island in 1973. The hemlock looper is a moth pest that is found [all across Canada](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf), and parts of the USA, often as far south as the state of Georgia.
 
 <br>
 
@@ -130,7 +130,7 @@ knitr::include_graphics("images/balsam_looper.jpg")
 
 <br>
 
-While the outbreak was occuring, in 1973 Dr. Luc Jobin from the [Laurentian Forestry Centre](https://www.nrcan.gc.ca/science-and-data/research-centres-and-labs/forestry-research-centres/laurentian-forestry-centre/13473), and his student Michel Chabot (then going onto becoming a forester in MFFP) went to Anticosti Island to visually survey the degree of damage that the hemlock looper was causing. In their data, openly hosted on the [Government of Canada's website](https://open.canada.ca/data/en/dataset/9dda09b0-649f-4002-b207-7b204eb81cbb), they denoted a tree as either being "good," meaning it did not show any signs of damage from the outbreak, "dead" if the hemlock looper had attacked and killed the stand, and "questionable" if they were unsure. This historical, and yet still very relevant dataset, allows us to think about the impact pest outbreaks have on ecological communities.
+While the outbreak was occuring, in 1973 Dr. Luc Jobin from the [Laurentian Forestry Centre](https://www.nrcan.gc.ca/science-and-data/research-centres-and-labs/forestry-research-centres/laurentian-forestry-centre/13473), and his student Michel Chabot (then going onto becoming a forester in MFFP) went to Anticosti Island to visually survey the degree of damage that the hemlock looper was causing. In their data, openly hosted on the [Government of Canada's website](https://open.canada.ca/data/en/dataset/9dda09b0-649f-4002-b207-7b204eb81cbb), they denoted a tree as either being "Good," meaning it did not show any signs of damage from the outbreak, "Dead" if the hemlock looper had attacked and killed the stand, and "Questionable" if they were unsure. This historical, and yet still very relevant dataset, allows us to think about the impact pest outbreaks have on ecological communities.
 
 <br>
 
@@ -486,7 +486,7 @@ question("What three tree species were **LEAST** affected by the hemlock looper?
 
 ### New questions emerge
 
-The two previous plots beg the following question: were hemlock loopers attacking balsam firs because they were more abundant on Anticosti Island, or because this is their preferred prey? In other words, is the hemlock looper a **generalist** or a **specialist** insect pest species?
+The two previous plots beg the following question: were hemlock loopers attacking balsam firs because they were more abundant on Anticosti Island, or because this is their preferred resource? In other words, is the hemlock looper a **generalist** or a **specialist** insect pest species?
 
 Let us break this idea down : 
 
@@ -535,17 +535,17 @@ knitr::include_graphics("images/rel_abund.jpg")
 
 <br> 
 
-**Hypothesis 1**: The hemlock looper has no preference on what tree it predates upon -- it is a **generalist** pest species. 
+**Hypothesis 1** - The hemlock looper has no preference on what tree it predates upon -- it is a **generalist** pest species :  
 
- → **Prediction 1**: We would see this on our graph as a **one-to-one relationship** (diagonal black line), where a tree species' abundance in the forest is directly proportional to the number of trees from that species denoted as "dead." This means that the more trees we have of a given species, the more the hemlock looper will attack it.
+- **Prediction** - We would see this on our graph as a **one-to-one relationship** (diagonal black line), where a tree species' abundance in the forest is directly proportional to the number of trees from that species denoted as "dead." This means that the more trees we have of a given species, the more the hemlock looper will attack it.
 
-**Hypothesis 2**: The hemlock looper prefers to predate upon some species versus others -- it is a **specialist** pest species. 
+**Hypothesis 2** - The hemlock looper prefers to predate upon some species versus others -- it is a **specialist** pest species :  
 
- → **Prediction 2**: We would see this on our graph if a tree species' points lie **above the one-to-one line** (orange triangle), as this means that the hemlock looper attacks more trees of a given species (tree denoted as "dead") even if the relative abundance of this species is low.
+- **Prediction** - We would see this on our graph if a tree species' points lie **above the one-to-one line** (orange triangle), as this means that the hemlock looper attacks more trees of a given species (tree denoted as "Dead") even if the relative abundance of this species is low.
 
-**Hypothesis 3**: The hemlock looper avoids some species, and thus these are less predated upon -- it is a **specialist** pest species. 
+**Hypothesis 3** - The hemlock looper avoids some species, and thus these are less predated upon -- it is a **specialist** pest species :  
 
- → **Prediction 3**: We would see this on our graph if a species' points lie **below the one-to-one line** (blue triangle), as this means that less individuals of a given tree species are attacked by the hemlock looper, even if their abundance relative to other species is high.
+- **Prediction** - We would see this on our graph if a species' points lie **below the one-to-one line** (blue triangle), as this means that less individuals of a given tree species are attacked by the hemlock looper, even if their abundance relative to other species is high.
 
 <br>
 
@@ -553,7 +553,7 @@ knitr::include_graphics("images/rel_abund.jpg")
 
 Let us plot our actual data and see where the results lie, in relationship to our guiding schematic above.
 
-We'll start by filtering out the "Questionable" tree status, as it is unclear if these trees will die as a result of the hemlock looper outbreak. Then, we will calculate the total abundance of tree species by plot, which were denoted as either "dead" or "alive." With this, like we did before, we will be able to calculate the abundance of a given species relative to the abundance of all species within a plot.
+We'll start by filtering out the "Questionable" tree status, as it is unclear if these trees will die as a result of the hemlock looper outbreak. Then, we will calculate the total abundance of tree species by plot, which were denoted as either "Dead" or "Alive." With this, like we did before, we will be able to calculate the abundance of a given species relative to the abundance of all species within a plot.
 ```{r}
 
 # Filter out "Questionable" individuals
@@ -568,41 +568,40 @@ tree_filter[, ind_sp_plot := sum(Number),
 tree_filter[, total_id_plot := sum(unique(ind_sp_plot)),
             by = .(Plot, Compartment, Block)]
 
-# Calculate the relative of each species in each plot
+# Calculate the relative abundance of each species in each plot
 tree_filter[, rel_abund_plot := ind_sp_plot / total_id_plot]
 
 ```
 
 ###
 
-We then evaluate the count of "dead" trees per species, relative to all individuals denoted as "dead," across all plots :
+We then evaluate the count of "Dead" trees per species, relative to all individuals denoted as "dead," across all plots :
 ```{r}
 
-# Calculate the total count of "dead" individuals by plot
+# Calculate the total count of "Dead" individuals by plot
 tree_filter[Condition == "Dead",
             total_dead := length(Condition),
             by = .(Plot, Compartment, Block)]
 
-# Calculate the number of "dead" individuals per each species, for each plot
+# Calculate the number of "Dead" individuals per each species, for each plot
 tree_filter[Condition == "Dead",
             dead_sp_plot := length(Condition),
             by = .(Species, Plot, Compartment, Block)]
 
-# Calculate each species' "dead" status relative to other species
+# Calculate each species' "Dead" status relative to other species
 tree_filter[Condition == "Dead",
             prop_dead_plot := dead_sp_plot / total_dead,
             by = .(Species, Plot, Compartment, Block)]
 
-# Keep unique values with only "dead" rows and use this table for plotting
+# Keep unique values with only "Dead" rows and use this table for plotting
 tree_filter <- unique(tree_filter[Condition == "Dead",])
 
 ```
 
 ###
 
-We finish by plotting the relationship between tree species and being denoted as "dead" :
+We finish by plotting the relationship between tree species and being denoted as "Dead" :
 ```{r, fig.width = 8.5, fig.height = 6}
-
 ggplot(tree_filter,
        aes(x = rel_abund_plot,
            y = prop_dead_plot,
@@ -664,7 +663,7 @@ To help inform your answers, please refer to the following helpful links about t
 
 There is no one "right answer" to pest management, as it should be an integrative, collaborative, and ever-evolving endeavor. However, having data to drive these decisions is a powerful tool : 
 
-- Although our data indicates that on Anticosti Island, the hemlock looper had a preference for balsam fir in 1973, this is not its only or main host. By directing management initiatives towards a **single** tree species, this may cause other equally-liked prey to be even more strongly attacked -- this is a delicate balance to strike. Likewise, this dataset is from the 20th century -- would you foresee predator-prey dynamics in Anticosti Island to have changed since?
+- Although our data indicates that on Anticosti Island, the hemlock looper had a preference for balsam fir in 1973, this is not its only or main host. By directing management initiatives towards a **single** tree species, this may cause other equally-liked trees to be even more strongly attacked -- this is a delicate balance to strike. Likewise, this dataset is from the 20th century -- would you foresee consumer-resource dynamics in Anticosti Island to have changed since?
 
 - Adding a biological agent, like the fungi *Entomophthora* or bacteria *Bacillus thuringiensis kurstaki* (Btk) to control hemlock looper seems like a sensible option. Perhaps you think this is better than spraying a chemical insecticide. But biological agents are controversial, as they can often have unintended consequences, impacting species you did not wish to target. See this wonderful [paper](https://www.esf.edu/efb/parry/invasivesseminar_readings/Simberloff_2012.pdf) that delves into this topic further.
 
@@ -694,20 +693,6 @@ Together, this tutorial underscores that historical data is useful, but also tha
 
 ## References   {data-progressive=FALSE}
 
-### Images
-
-- [Photograph of a hemlock looper](https://www.maine.gov/dacf/mfs/forest_health/insects/hemlock_looper.htm)
-- [Photograph of severely defoliated balsam fir forest](https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846?wbdisable=true)
-- [Photograph of a white birch](https://www.flickr.com/photos/bryanto/6190721247)
-- [Photograph of a white spruce](https://commons.wikimedia.org/wiki/File:Picea_glauca_Fairbanks.jpg)
-- [Photograph of a black spruce](https://commons.wikimedia.org/wiki/File:Picea_mariana_(Spruce_black).jpg)
-- [Photograph of a larch](https://en.wikipedia.org/wiki/Larch#/media/File:SubalpineLarch_7735tl.jpg)
-- [Photograph of an aspen](https://www.flickr.com/photos/dianasch/23567442848)
-- [Photograph of a pine](https://commons.wikimedia.org/wiki/File:Pinus_ponderosa_15932.JPG)
-- [Photograph of a balsam fir](https://commons.wikimedia.org/wiki/File:Abies_balsamea_0165.jpg)
-- [Photograph of a pigeon](https://www.piqsels.com/en/public-domain-photo-oyrzq)
-- [Photograph of a koala](https://pixabay.com/photos/koala-animal-eucalyptus-wildlife-6094650/)
-
 ### Further reading
 
 - [The impact of hemlock looper (*Lambdina fiscellaria fiscellaria* (Guen.)) on balsam fir and spruce in New Brunswick, Canada](https://www.sciencedirect.com/science/article/abs/pii/S0378112798005271?casa_token=pZW2ZnLwB0YAAAAA:bJHXx-f-cIU7UOPzxfe9Swj5OD9Gfm6bs3AM0ZK7IekzDOUzOdmayh9z62VAO6gV3Sjy8VVcMw#FIG2)
@@ -721,5 +706,19 @@ Together, this tutorial underscores that historical data is useful, but also tha
 - [Extreme cold weather causes the collapse of a population of *Lambdina fiscellaria* (Lepidoptera: Geometridae) in the Laurentian Mountains of Québec, Canada](https://www.cambridge.org/core/journals/canadian-entomologist/article/abs/extreme-cold-weather-causes-the-collapse-of-a-population-of-lambdina-fiscellaria-lepidoptera-geometridae-in-the-laurentian-mountains-of-quebec-canada/4D36CE7C818EF7D75D8E5C7B7F75DA0F)
 
 - [Capability of ERTS-1 imagery for mapping forest cover types of Anticosti Island](https://pubs.cif-ifc.org/doi/pdf/10.5558/tfc50233-6)
+
+### Images
+
+- [Photograph of a hemlock looper](https://www.maine.gov/dacf/mfs/forest_health/insects/hemlock_looper.htm)
+- [Photograph of severely defoliated balsam fir forest](https://tidcf.nrcan.gc.ca/en/insects/factsheet/8846?wbdisable=true)
+- [Photograph of a white birch](https://www.flickr.com/photos/bryanto/6190721247)
+- [Photograph of a white spruce](https://commons.wikimedia.org/wiki/File:Picea_glauca_Fairbanks.jpg)
+- [Photograph of a black spruce](https://commons.wikimedia.org/wiki/File:Picea_mariana_(Spruce_black).jpg)
+- [Photograph of a larch](https://en.wikipedia.org/wiki/Larch#/media/File:SubalpineLarch_7735tl.jpg)
+- [Photograph of an aspen](https://www.flickr.com/photos/dianasch/23567442848)
+- [Photograph of a pine](https://commons.wikimedia.org/wiki/File:Pinus_ponderosa_15932.JPG)
+- [Photograph of a balsam fir](https://commons.wikimedia.org/wiki/File:Abies_balsamea_0165.jpg)
+- [Photograph of a pigeon](https://www.piqsels.com/en/public-domain-photo-oyrzq)
+- [Photograph of a koala](https://pixabay.com/photos/koala-animal-eucalyptus-wildlife-6094650/)
 
 ---------------------------------------------------------------------------------------

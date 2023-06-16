@@ -108,8 +108,8 @@ After chewing away at a trees leaves, the looper larvae retreats into the cracks
 }
 </style>
 
-```{r, echo = FALSE, out.width = "70%", fig.align = "center", fig.cap = "Comic illustrating the hemlock looper lifecycle, by Victoria Marie Glynn "}
-knitr::include_graphics("images/Carte_generale1.jpg")
+```{r, echo = FALSE, out.width = "70%", fig.align = "center", fig.cap = "Comic illustrating the hemlock looper lifecycle, by Victoria Marie Glynn. The hemlock looper lays its eggs on coniferous and deciduous leaves (pink circles, left panel). When the eggs hatch, the larvae proceeds to eat the leaves on a branch (middle panel), moving throughout the tree chewing leaves; the chewed leaves eventually fall and die to the floor, killing the tree if the damage is sufficient (right panel)."}
+knitr::include_graphics("images/hemlock_eating_comic.png")
 ```
 
 ```{r, echo = FALSE, out.width = "50%", fig.align = "center", fig.cap = "Anticosti Island, Québec, shown as a blue pin on a map of Eastern Canada and Northeastern United States of America"}

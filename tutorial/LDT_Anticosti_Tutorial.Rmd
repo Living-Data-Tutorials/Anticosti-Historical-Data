@@ -1,5 +1,5 @@
 ---
-title: "After the storm: Impacts of a hemlock looper outbreak on tree species in Anticosti Island, 1973"
+title: "Community Ecology: Hemlock Looper Outbreak on Anticosti Island"
 author:
   - name: Victoria Marie Glynn
     affiliation: McGill University

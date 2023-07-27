@@ -1,6 +1,6 @@
 # CIEE Living Data Tutorials
 
-## Community Ecology: Hemlock looper outbreak on Anticosti island
+## Community Ecology: Hemlock looper outbreak on Anticosti Island
 
 The Living Data Tutorials (LDTs) were developed by graduate students in ecology and evolution during the spring of 2022 as part of the Canadian Institute of Ecology and Evolution's [(CIEE)](https://www.ciee-icee.ca/data.html) Living Data Project (LDP). Our goal is to provide free and open-access teaching material in the form of online tutorials to undergraduate students in ecology and evolution. All the tutorials make use of publicly available Canadian datasets to address tailored topics in ecology and evolution. 
 

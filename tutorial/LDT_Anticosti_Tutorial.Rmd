@@ -31,6 +31,8 @@ runtime: shiny_prerendered
 ```{r setup, include = FALSE}
 library(learnr)
 library(rsconnect)
+library(shiny)
+library(shinyFeedback)
 knitr::opts_chunk$set(echo = TRUE,
                       message = FALSE,
                       warning = FALSE)
@@ -513,7 +515,7 @@ Let us break this idea down :
 Two great examples are pigeons and koalas -- pigeons live in a diversity of urban environments and are omnivores (eat plant and animal matter), while koalas only live on and eat eucalyptus.
 
 ```{r, echo = FALSE, out.width = "70%", fig.align = "center", fig.cap = "Example of a specialist and generalist species. Photography credits: pigeon - Andrew Dunn, koala - Kévin Charpentier"}
-knitr::include_graphics("images/specialist_generalists.png")
+knitr::include_graphics("images/specialist_generalist.png")
 ```
 
 <br>
@@ -661,35 +663,134 @@ question("Do hemlock loopers preferentially attack a given tree species?",
 
 ## 4. Management recomendations
 
-### What do our findings imply in terms of pest management on Anticosti Island?
+### What do our findings imply in terms of hemlock looper management, within and outside Anticosti Island?
 
-This dataset represents one of the many hemlock looper outbreaks Anticosti Island, and Québec as a whole, has experienced. Based on your findings, please reflect and respond to the following questions : 
+This dataset represents one of the many hemlock looper outbreaks Anticosti Island, and Québec as a whole, has experienced. However, similar outbreaks have been seen across Canada, such as in Vancouver. Please see the three videos below regarding how different provinces are managing the hemlock looper. While watching the videos consider the following questions:
 
-1. What trees would you most closely monitor?
-2. What additional protections/restrictions should exist on Anticosti Island?
-3. What management suggestions would you provide to the MFFP?
+1. What factors naturally control the hemlock looper population? 
+2. What environmental factor(s) may be exacerbating a hemlock looper outbreak in a forest? 
+3. What management intervention strategies are typically implemented? 
 
 <br>
 
-To help inform your answers, please refer to the following helpful links about the hemlock looper : 
+ 
+#### **Hemlock looper moths killing Stanley Park trees in Vancouver, British Columbia**
+![](https://www.youtube.com/watch?v=lnTNT_HhnL8)
 
-- [Hemlock looper overview](https://www.plantwise.org/knowledgebank/datasheet/29749)
-- [Biological control of the hemlock looper](https://www.plantwise.org/KnowledgeBank/pestalert?pan=19740515762)
-- [Hemlock looper life history, management considerations](https://www.fs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb5191788.pdf)
+<br>
+
+#### **Looper Moth Natural Cycle in Metro Vancouver, British Columbia**
+![](https://www.youtube.com/watch?v=lPWERt8coks)
+
+<br>
+
+#### **Extent of damage due to the hemlock looper in Metro Vancouver, British Columbia**
+![](https://www.youtube.com/watch?v=ZETdXXo1Q0k)
+
+<br>
+
+After watching these videos and reflecting on the insights from the Anticosti dataset (hint: think about relative tree mortality, the hemlock looper's life cycle), provide one management strategy that Metro Vancouver could implement this year if they have another looper outbreak. Submit this below as a PDF document (250 words max). 
+
+```{r, echo = FALSE}
+library(shiny)
+
+# Define UI for data upload app ----
+ui <- fluidPage(
 
 ### Factors to consider
+  # App title ----
+  titlePanel("Upload File"),
 
-There is no one "right answer" to pest management, as it should be an integrative, collaborative, and ever-evolving endeavor. However, having data to drive these decisions is a powerful tool : 
+  # Sidebar layout with input and output definitions ----
+  sidebarLayout(
+
+    # Sidebar panel for inputs ----
+    sidebarPanel(
+
+      # Input: Select a file ----
+      fileInput("file1", "Choose Word Document File",
+                multiple = FALSE,
+                accept = "application/pdf"),
+
+      # Input: Select number of rows to display ----
+      radioButtons("disp", "Display",
+                   choices = c(Head = "head",
+                               All = "all"),
+                   selected = "head")
+
+    ),
+
+    # Main panel for displaying outputs ----
+    mainPanel(
+
+      # Output: Data file ----
+      tableOutput("contents")
+
+    )
+
+  )
+)
+
+# Define server logic to read selected file ----
+server <- function(input, output) {
+
+  output$contents <- renderTable({
+
+    # input$file1 will be NULL initially. After the user selects
+    # and uploads a file, head of that data file by default,
+    # or all rows if selected, will be shown.
+
+    req(input$file1)
+
+    # when reading semicolon separated files,
+    # having a comma separator causes `read.csv` to error
+    tryCatch(
+      {
+        df <- read.csv(input$file1$datapath,
+                 header = input$header,
+                 sep = input$sep,
+                 quote = input$quote)
+      },
+      error = function(e) {
+        # return a safeError if a parsing error occurs
+        stop(safeError(e))
+      }
+    )
+
+    if(input$disp == "head") {
+      return(head(df))
+    }
+    else {
+      return(df)
+    }
+
+  })
+
+}
+
+# Create Shiny app ----
+shinyApp(ui, server)
+```
+
+### **How do we manage a moth that is native to Canada?** 
+
+As the videos highlighting the outbreak in British Columbia present, **there is no one "right answer" to pest management**, as it should be an integrative, collaborative, and ever-evolving endeavor. However, having data to drive these decisions is a powerful tool : 
 
 - Although our data indicates that on Anticosti Island, the hemlock looper had a preference for balsam fir in 1973, this is not its only or main host. By directing management initiatives towards a **single** tree species, this may cause other equally-liked trees to be even more strongly attacked -- this is a delicate balance to strike. Likewise, this dataset is from the 20th century -- would you foresee consumer-resource dynamics in Anticosti Island to have changed since?
 
 - Adding a biological agent, like the fungi *Entomophthora* or bacteria *Bacillus thuringiensis kurstaki* (Btk) to control hemlock looper seems like a sensible option. Perhaps you think this is better than spraying a chemical insecticide. But biological agents are controversial, as they can often have unintended consequences, impacting species you did not wish to target. See this wonderful [paper](https://www.esf.edu/efb/parry/invasivesseminar_readings/Simberloff_2012.pdf) that delves into this topic further.
+- Adding a biological agent, like the fungi *Entomophthora* or bacteria *Bacillus thuringiensis kurstaki* (Btk) to control hemlock looper seems like a sensible option. Perhaps you think this is better than spraying a chemical insecticide. But biological agents are controversial, as they can often have unintended consequences, impacting species you did not wish to target. See this wonderful [paper](https://www.esf.edu/efb/parry/invasivesseminar_readings/Simberloff_2012.pdf) that delves into this topic further. 
 
 - Prevention is often be more effective than intervention. Understanding the hemlock looper's life history is a critical component here -- we know the larvae prefer certain species and more mature tree stands. We can promote forests of a certain age and species composition, and evenly spread out tree stands, to reduce the probability of a hemlock looper outbreak in the future.
+- **Prevention is often be more effective than intervention.** Understanding the hemlock looper's life history is a critical component here -- we know the larvae prefer certain species and more mature tree stands. We can promote forests of a certain age and species composition, and evenly spread out tree stands, to reduce the probability of a hemlock looper outbreak in the future.
 
 - With all management initiatives, it is important to consult the local community and have them integrally involved in the process, such as the [Innu community on the North Shore](https://ici.radio-canada.ca/nouvelle/1011203/unesco-cinq-communautes-innues-solidaires-danticosti). Asking them what the want the forest to look like and what they need, and not making these assumptions, can help insure that pest management initiatives are ethical, sustainable, and as such, a success. 
+- With all management initiatives, it is important to **consult the local community and have them integrally involved in the process**, such as the [Innu community on the North Shore](https://ici.radio-canada.ca/nouvelle/1011203/unesco-cinq-communautes-innues-solidaires-danticosti). Asking them what the want the forest to look like and what they need, and not making these assumptions, can help insure that pest management initiatives are ethical, sustainable, and as such, a success. 
+
+- Hemlock looper outbreaks are cyclical in nature, and may in and of themselves be necessary for forest health, taking the regenerative role of fire disturbance in many places. Although epidemic outbreaks can be quite devastating, **some tree mortality may actually be beneficial for a tree stand's long-term health.** 
 
 ---------------------------------------------------------------------------------------
+
 
 ## Main takeaways
 
@@ -699,7 +800,7 @@ From our tutorial, you have :
 
 - **Interpreted community ecology plots,** *to understand the tree community present on Anticosti Island in 1973, and how different species were impacted by the hemlock looper outbreak.*
 
-- **Differentiated between a generalist and specialist pest species, using community ecology plots,** *by connecting how the relative abundance of a given tree species is linked to the prevalence of a tree being denoted as "dead."*
+- **Differentiated between a generalist and specialist pest species, using community ecology plots,** *by connecting how the relative abundance of a given tree species is linked to the prevalence of a tree being denoted as "Dead."*
 
 - **Made data-driven management recommendations,** *considering not only the data presented in the tutorial, but also looking further into the biology of the hemlock looper, what already established strategies exist, and thinking critically about the link between society and the environment.* 
 
@@ -709,15 +810,13 @@ Together, this tutorial underscores that historical data is useful, but also tha
 
 ---------------------------------------------------------------------------------------
 
-## References   {data-progressive=FALSE}
-
 ### Further reading
 
 - [The impact of hemlock looper (*Lambdina fiscellaria fiscellaria* (Guen.)) on balsam fir and spruce in New Brunswick, Canada](https://www.sciencedirect.com/science/article/abs/pii/S0378112798005271?casa_token=pZW2ZnLwB0YAAAAA:bJHXx-f-cIU7UOPzxfe9Swj5OD9Gfm6bs3AM0ZK7IekzDOUzOdmayh9z62VAO6gV3Sjy8VVcMw#FIG2)
 
 - [Hemlock Looper, Overview of the last 15 years - Presentation by Christian Hébert during the Pest Forum – 2 December, 2008](http://www.glfc.forestry.ca/VLF/ForumPresentations/heberthemlocklooper_08e.pdf)
 
-- [Early succession of bark and wood boring beetles during an outbreak of the hemlock looper (*Lambdina fiscellaria* (Guenée)) (Lepidoptera: Geometridae) in boreal balsam fir forest](https://corpus.ulaval.ca/jspui/bitstream/20.500.11794/27571/1/33338.pdf#page=54)
+- [Early succession of bark and wood boring beetles during an outbreak of the hemlock looper (*Lambdina fiscellaria* (Guenée)) (Lepidoptera: Geometridae) in boreal balsam fir forest](https://www.researchgate.net/publication/334302125_Early_responses_of_bark_and_wood_boring_beetles_to_an_outbreak_of_the_hemlock_looper_Lambdina_fiscellaria_Guenee_Lepidoptera_Geometridae_in_a_boreal_balsam_fir_forest_of_North_America)
 
 - [Early responses of bark and wood boring beetles to an outbreak of the hemlock looper *Lambdina fiscellaria* (Guenée) (Lepidoptera: Geometridae) in a boreal balsam fir forest of North America](https://resjournals.onlinelibrary.wiley.com/doi/abs/10.1111/afe.12347)
 
@@ -725,15 +824,8 @@ Together, this tutorial underscores that historical data is useful, but also tha
 
 - [Capability of ERTS-1 imagery for mapping forest cover types of Anticosti Island](https://pubs.cif-ifc.org/doi/pdf/10.5558/tfc50233-6)
 
-### Images
+- [Biological control of the hemlock looper](https://www.plantwise.org/KnowledgeBank/pestalert?pan=19740515762)
 
-- [Photograph of a white birch](https://www.flickr.com/photos/bryanto/6190721247)
-- [Photograph of a white spruce](https://commons.wikimedia.org/wiki/File:Picea_glauca_Fairbanks.jpg)
-- [Photograph of a black spruce](https://commons.wikimedia.org/wiki/File:Picea_mariana_(Spruce_black).jpg)
-- [Photograph of a larch](https://en.wikipedia.org/wiki/Larch#/media/File:SubalpineLarch_7735tl.jpg)
-- [Photograph of an aspen](https://www.flickr.com/photos/dianasch/23567442848)
-- [Photograph of a pine](https://commons.wikimedia.org/wiki/File:Pinus_ponderosa_15932.JPG)
-- [Photograph of a balsam fir](https://commons.wikimedia.org/wiki/File:Abies_balsamea_0165.jpg)
-- [Photograph of a pigeon](https://commons.wikimedia.org/wiki/File:WinterPigeons02.jpg)
-- [Photograph of a koala](https://pixabay.com/photos/koala-animal-eucalyptus-wildlife-6094650/)
+- [Hemlock looper life history, management considerations](https://www.fs.usda.gov/Internet/FSE_DOCUMENTS/stelprdb5191788.pdf)
+
 ---------------------------------------------------------------------------------------

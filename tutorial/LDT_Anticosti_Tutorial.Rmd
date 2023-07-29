@@ -445,7 +445,7 @@ question("What tree species is the **LEAST** abundant?",
 
 ---------------------------------------------------------------------------------------
 
-## 2. Estimate the damage on the trees
+## 2. Estimate tree damage
 
 Knowing the relative abundance of the island's tree species, we now need to assess the damage that was done by the hemlock looper outbreak. The scientists who sampled the individual trees assigned a damage state to each one of them. They assigned one of the three following states: "Good", "Questionable" or "Dead." Hence, our second objective is to determine, for each species, the proportion of trees that were denoted as dead by the scientists. This should give us a general overview of the damage across the island.
 

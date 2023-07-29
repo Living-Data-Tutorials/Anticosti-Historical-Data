@@ -642,7 +642,7 @@ ggplot(tree_filter,
              aes(fill = Species)) +
   scale_colour_manual(values = c("black","black", "black", "black")) +
   scale_fill_manual(values = c("darkgreen", "chartreuse4", "lemonchiffon1", "lightgreen")) +
-  ylab("Relative abundance of dead tree species\n") +
+  ylab("Relative abundance of dead focal tree species\n") +
   xlab("\nRelative abundance of focal tree species") +
   scale_y_continuous(breaks = seq(0, 1, .25),
                      limits = c(0,1)) +

@@ -668,7 +668,7 @@ question("Do hemlock loopers preferentially attack a given tree species?",
 
 ---------------------------------------------------------------------------------------
 
-## 4. Management recomendations
+## 4. Management recommendations
 
 ### What do our findings imply in terms of hemlock looper management, within and outside Anticosti Island?
 
